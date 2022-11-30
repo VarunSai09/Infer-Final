@@ -1,0 +1,158 @@
+.container-fluid {
+  /* position: relative; */
+  background-color: #ffffff;
+}
+#Library {
+  position: relative;
+  right: 0;
+  left: 16rem;
+  padding-left: 57px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 157px;
+  height: 33px;
+  /* font-family: "Avenir Next LT Pro"; */
+  margin-right: 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  color: #222222;
+}
+.Logo-Home {
+  position: inherit;
+  width: 130.6px;
+  height: 36px;
+  left: 67px;
+  top: 32px;
+  margin-top: 0px;
+  margin-left: 0px;
+  right: 0px;
+}
+.navbar-search {
+  border-right-width: 0px;
+  padding-right: 0px;
+  width: 1300px;
+  position: fixed;
+  padding-left: rem;
+  /* left: 16.05rem; */
+  height: 80px;
+  width: 2070px;
+  background-color: #ffffff;
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-left: 2px solid #f7f7f7;
+  border-bottom: 2px solid #f7f7f7;
+}
+
+input {
+  width: 202px;
+  height: 27px;
+
+  font-family: "Avenir Next ";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+.search-NAV {
+  position: relative;
+  right: 62rem;
+  top: 0.5rem;
+}
+search {
+  right: 10px;
+}
+#Search-Logo {
+  position: absolute;
+  top: 45px;
+  left: 14rem;
+}
+.Search {
+  position: relative;
+  left: 13rem;
+  width: 978px;
+  height: 70px;
+  background-color: #f6f6f6;
+  border: 0;
+  padding-left: 3rem;
+  padding-right: 0px;
+  margin-right: 20px;
+  border-radius: 15px;
+  margin-top: 33px;
+}
+.form {
+  position: relative;
+  left: 350px;
+  width: 978px;
+  height: 56px;
+  bottom: 21px;
+  border-right-width: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 20px;
+}
+#Search {
+  height: 120px;
+  margin-left: 30px;
+  border-left: 2px solid #f7f7f7;
+  position: absolute;
+  left: 14rem;
+}
+@media screen and (max-width: 440px) {
+  .Logo-Home {
+    width: 78.075;
+    height: 17;
+    position: initial;
+    padding-left: 10px;
+    margin-top: 3px;
+  }
+  #Search {
+    border: none;
+    margin-left: 0px;
+    left: 12rem;
+  }
+  #Library {
+    position: absolute;
+    left: 6rem;
+    right: 0;
+    font-size: 13px;
+    font-weight: 600;
+    width: fit-content;
+    display: inline-flex;
+    line-height: 10px;
+    padding-left: 8px;
+  }
+  .Search {
+    position: relative;
+    left: 0;
+    width: 160px;
+    height: 50px;
+    background-color: #f6f6f6;
+    border: 0;
+    padding-left: 3rem;
+    margin-left: 5px;
+    /* padding-right: 0px; */
+    margin-right: 0px;
+    border-radius: 15px;
+    margin-top: 44px;
+  }
+  form {
+    margin-left: 0;
+  }
+  #Search-Logo {
+    left: 1.1rem;
+  }
+  .navbar-search {
+    width: 100%;
+    height: 85px;
+  }
+}
