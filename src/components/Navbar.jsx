@@ -8,7 +8,7 @@ import { SidebarData } from "./SlidebarData";
 import "./Navbar.css";
 
 export default function Navbar() {
-  const [sidebar, setSidebar] = useState(false);
+  const [sidebar, setSidebar] = useState(true);
 
   const showSidebar = () => setSidebar(!sidebar);
 
