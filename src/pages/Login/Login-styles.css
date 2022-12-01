@@ -358,5 +358,13 @@ input::placeholder {
   }
   #forgot{
     width: 253px;
+    line-height: 27px;
+  }
+  .copyright{
+    font-size: 12px;
+    line-height: 4;
+  }
+  .row button{
+    top:46px;
   }
 }
