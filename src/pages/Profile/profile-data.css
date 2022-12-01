@@ -81,7 +81,8 @@ input{
 
 @media screen and (max-width:440px) {
     .Profile-Avatar{
-        padding-left: 100px;
+        padding-left: 33%;
+    padding-right: 50%;
     }
     .nav-menu.active{
         width: -10%;;
@@ -90,13 +91,15 @@ input{
         width: 180px;
         font-size: 20px;
         top: 109%;
-        left: 75%;
+        left: 33%;
+    right: 67%;
     }
     .row-data {
 
         top: 14rem;
-        left: 11.5rem;
-        width: 175px;
+        left: 31%;
+    right: 67%;
+        width: 200px;
         padding-left: 0;
     }
     input{
