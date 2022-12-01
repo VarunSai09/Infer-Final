@@ -325,11 +325,38 @@ input::placeholder {
 
 @media screen and (min-width: 300px) and (max-width: 480px) {
   .loginform {
-    width: 50%;
-    left: 25%;
-    margin-top: 110px;
+    width: 70%;
+    left: 15%;
+    margin-top: 145px;
   }
   .Login-Page {
     padding-bottom: 31.4%;
+  }
+  #headerTitle {
+    font-size: 20px;
+    margin-top: 1%;
+    line-height: 30px;
+  }
+  #version{
+    margin-bottom: 0;
+    font-size: 20px;
+    margin-top: 0;
+  }
+  .desc{
+    margin-top:1%;
+    height: 52px;
+    line-height: 20px;
+  }
+  .row .password{
+    margin-bottom: 1%;
+  }
+  #box{
+    margin-bottom: 5px;
+  }
+  .remember-label{
+    width: 226px;
+  }
+  #forgot{
+    width: 253px;
   }
 }
