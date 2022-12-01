@@ -5,6 +5,7 @@
   height: 780px;
   left: 1045px;
   top: 5px;
+  z-index:120;
   background: #ffffff;
   border-right: 1px solid #f7f7f7;
   /* box-shadow: -7px 4px 31px 24px rgba(0, 0, 0, 0.03); */
@@ -13,6 +14,7 @@
   position: fixed;
   width: 1519px;
   height: 1024px;
+  z-index:110;
   left: 0px;
   top: 0px;
 
