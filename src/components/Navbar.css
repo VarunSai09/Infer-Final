@@ -167,6 +167,7 @@ body {
   transition: 350ms;
   border-right: 2px solid #f7f7f7;
   right: 0.05rem;
+  z-index: 100;
 }
 
 .nav-text {
@@ -250,6 +251,7 @@ span {
   }
   .menu-bars {
     display: flex;
+    
   }
   .navbar-search {
     width: 100%;
