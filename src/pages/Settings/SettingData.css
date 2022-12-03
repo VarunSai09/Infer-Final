@@ -207,3 +207,45 @@ flex: none;
 order: 1;
 flex-grow: 0;
 }
+
+@media screen and (max-width:440px) {
+    .theme-headings{
+        left: 50px;
+        top: 200px;
+    }
+    .theme-subhead{
+        left: 50px;
+        top:220px;
+    }
+    .history-headings{
+        top: 295px;
+        left: 50px;
+    }
+    .history-subhead{
+        top:315px;
+        left: 50px;
+    }
+    .Theme-Light{
+        left: 190px;
+        top:233px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 85px;
+    }
+    .Theme-Dark{
+        left: 280px;
+        top:231px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 90px;
+        height: 35px;
+    }
+    .history-options{
+        left: 190px;
+        top: 331px;
+    }
+}
