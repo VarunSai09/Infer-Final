@@ -1,4 +1,4 @@
-#Profile {
+#Profile-Nav-Content {
   position: relative;
   padding-left: 57px;
   /* left: 16.05rem; */
@@ -49,15 +49,15 @@
   border-left: 2px solid #f7f7f7;
 }
 
-@media screen and (max-width:440px) {
-  .navbar-profile{
+@media screen and (max-width: 440px) {
+  .navbar-profile {
     height: 85px;
     width: 100%;
   }
-  #Profile-Nav{
+  #Profile-Nav {
     height: 0;
   }
-  #Profile {
+  #Profile-Nav-Content{
     position: absolute;
     left: 7rem;
     top: 0px;

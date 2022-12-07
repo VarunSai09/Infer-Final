@@ -10,7 +10,7 @@ function SettingsNav() {
         alt="Logo"
       />
       <div id="Settings-Nav">
-        <p id="Settings">Settings</p>
+        <p id="Settings-Nav-Content">Settings</p>
       </div>
     </Navbar>
   );

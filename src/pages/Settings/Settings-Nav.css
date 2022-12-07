@@ -1,4 +1,4 @@
-#Settings {
+#Settings-Nav-Content {
   position: relative;
   padding-left: 57px;
   /* left:16.05rem; */
@@ -46,15 +46,15 @@
   border-left: 2px solid #f7f7f7;
 }
 
-@media screen and (max-width:440px) {
-  .navbar-settings{
+@media screen and (max-width: 440px) {
+  .navbar-settings {
     height: 85px;
     width: 100%;
   }
-  #Settings-Nav{
+  #Settings-Nav {
     height: 0;
   }
-  #Settings {
+  #Settings-Nav-Content {
     position: absolute;
     left: 7rem;
     top: 0px;
