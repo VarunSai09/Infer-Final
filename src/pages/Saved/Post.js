@@ -17,7 +17,7 @@ const Post = ({ post }) => {
       <div className="saved">
         <div className="saved-note">
           <div className="note-header">
-            <a href="/saved">{post.title}</a>
+            <a classname="saved-title" href="/saved">{post.title}</a>
             <div className="add-delete" id="add-delete">
               <a
                 className="add-delete-saved"

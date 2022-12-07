@@ -10,7 +10,7 @@ function ProfileNav() {
         alt="Logo"
       />
       <div id="Profile-Nav">
-        <p id="Profile">Profile</p>
+        <p id="Profile-Nav-Content">Profile</p>
       </div>
     </Navbar>
   );
