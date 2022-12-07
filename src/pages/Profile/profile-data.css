@@ -82,6 +82,9 @@ input {
     padding-right: 50%;
     padding-top: 22%;
   }
+  .profile-values {
+    font-size: 20px;
+  }
   .nav-menu.active {
     width: -10%;
   }
