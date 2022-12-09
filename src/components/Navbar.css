@@ -168,6 +168,7 @@ body {
   border-right: 2px solid #f7f7f7;
   right: 0.05rem;
   z-index: 100;
+  height: -webkit-fill-available;
 }
 
 .nav-text {
@@ -251,7 +252,6 @@ span {
   }
   .menu-bars {
     display: flex;
-    
   }
   .navbar-search {
     width: 100%;
@@ -272,8 +272,9 @@ span {
     padding-left: 0;
     width: 550px;
   }
-  .profile{
+  .profile {
     width: 100%;
-    height:100%;
+    height: 100%;
   }
 }
+
