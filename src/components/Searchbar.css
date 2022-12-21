@@ -118,7 +118,7 @@ search {
   #Search {
     border: none;
     margin-left: 0px;
-    left: 12rem;
+    left: 13rem;
   }
   #Library {
     position: absolute;
@@ -157,6 +157,23 @@ search {
   }
 }
 
-@media screen and (max-width: 935px) {
-  
+@media screen and (max-width: 800px) {
+  .Logo-Home {
+    left: 28px;
+  }
+  #Search {
+    border: none;
+    margin-left: 0px;
+    left: 7rem;
+  }
+  #Library {
+    position: absolute;
+    left: 7rem;
+  }
+  .Search {
+    width: 400px;
+  }
+  #Search-Logo {
+    left: 14.1rem;
+  }
 }

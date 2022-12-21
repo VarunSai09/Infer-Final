@@ -3,7 +3,7 @@ import Data from "./Data";
 const SearchData = ({ googleData, searchTerm }) => {
   return (
     <div>
-      <p className="results-count">
+      <p className="results-count" id="results-count">
         Showing top
         <span className="google-count">{googleData?.items.length} </span> search
         results for <span className="google-count">"{searchTerm}"</span>

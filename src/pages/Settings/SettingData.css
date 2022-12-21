@@ -249,3 +249,21 @@ flex-grow: 0;
         top: 331px;
     }
 }
+@media screen and (max-width:800px) {
+    #theme{
+            position: absolute;
+    right: 60rem;
+    top: 4rem;
+    }
+    #history{
+         position: absolute;
+    right: 60rem;
+    top: 6rem;
+    }
+    .history-headings {
+    width: 250px;
+    }
+    .history-subhead{
+        width:150px;
+    }
+}
