@@ -67,3 +67,17 @@
     padding-left: 0;
   }
 }
+@media screen and (min-width:441px) and (max-width: 800px){
+  #Profile-Nav {
+    border-left:none;
+  }
+  #Profile-Nav-Content{
+    position: absolute;
+    left: 12rem;
+    top: 7px;
+    font-weight: 600;
+    bottom: 0px;
+    margin-top: 27px;
+    padding-left: 0;
+  }
+}

@@ -106,3 +106,23 @@ input {
     width: 100%;
   }
 }
+@media screen and (min-width:441px) and (max-width: 800px){
+.Profile-Avatar {
+    /* padding-left: 32%; */
+    padding-right: 50%;
+    padding-top: 22%;
+  }
+    .profile-pic-options {
+  width: 300px;
+    top: 52%;
+    left: 45%;
+    right: 64%;
+  }
+  .row-data {
+       top: 11rem;
+    left: 20%;
+    right: 67%;
+    width: 550px;
+    padding-left: 0;
+  }
+}

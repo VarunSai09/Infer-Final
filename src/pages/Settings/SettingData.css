@@ -209,6 +209,9 @@ flex-grow: 0;
 }
 
 @media screen and (max-width:440px) {
+    #theme{
+        
+    }
     .theme-headings{
         left: 50px;
         top: 200px;
@@ -247,5 +250,23 @@ flex-grow: 0;
     .history-options{
         left: 190px;
         top: 331px;
+    }
+}
+@media screen and (min-width:441px) and (max-width: 800px){
+    #theme{
+            position: absolute;
+    right: 60rem;
+    top: 4rem;
+    }
+    #history{
+         position: absolute;
+    right: 60rem;
+    top: 6rem;
+    }
+    .history-headings {
+    width: 250px;
+    }
+    .history-subhead{
+        width:150px;
     }
 }

@@ -5,7 +5,7 @@
   height: 780px;
   left: 1045px;
   top: 5px;
-  z-index:120;
+  z-index: 120;
   background: #ffffff;
   border-right: 1px solid #f7f7f7;
   /* box-shadow: -7px 4px 31px 24px rgba(0, 0, 0, 0.03); */
@@ -14,7 +14,7 @@
   position: fixed;
   width: 1519px;
   height: 1024px;
-  z-index:110;
+  z-index: 110;
   left: 0px;
   top: 0px;
 
@@ -246,3 +246,33 @@ h4 {
 /* .save-button {
     width: 121px;
   } */
+@media screen and (min-width:441px) and (max-width: 800px){
+  .add-note-popup {
+    width: 600px;
+    height: 770px;
+    left: 100px;
+    right: 100px;
+    margin-top: 50px;
+  }
+  .body {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+  }
+  #add-note-input {
+      width: 500px;
+    height: 400px;
+    left: 21;
+    top: 20%;
+  }
+  .buttons {
+    width: 276px;
+    left: 22%;
+    top: 88%;
+  }
+  .save-button{
+    width:220px;
+  }
+  .cancel-button{
+    width:220px;
+  }
+}

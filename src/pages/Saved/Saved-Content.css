@@ -192,3 +192,15 @@ a:hover + .add-delete {
     font-size: 15px;
   }
 }
+@media screen and (min-width:441px) and (max-width: 800px){
+  .saved-note {
+  }
+  #Saved-Nav {
+    border-left: none;
+  }
+  #Articles {
+    left: -8rem;
+    top: 0.1rem;
+  }
+  
+}

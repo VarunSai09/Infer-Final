@@ -64,3 +64,15 @@
     padding-left: 0;
   }
 }
+@media screen and (min-width:441px) and (max-width: 800px) {
+  #Settings-Nav{
+    border-left:none;
+  }
+  #Settings-Nav-Content{
+    position: relative;
+    right: 8rem;
+    top: 1;
+    height: 35px;
+    font-weight: 600;
+  }
+}
