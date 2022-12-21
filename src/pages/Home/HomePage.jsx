@@ -33,7 +33,7 @@ export default function HomePage({ setSearch }) {
           src="https://www.infersol.com/wp-content/uploads/2020/02/logo.png"
           alt="Logo"
         />
-        <p id="Library">Library Search</p>
+        <p className="Library-mobile Library">Library Search</p>
 
         <form className="d-flex" id="Search" onSubmit={handleSubmit}>
           <input

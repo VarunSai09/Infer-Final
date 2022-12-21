@@ -106,7 +106,7 @@ input {
     width: 100%;
   }
 }
-@media screen and (max-width: 800px){
+@media screen and (min-width:441px) and (max-width: 800px){
 .Profile-Avatar {
     /* padding-left: 32%; */
     padding-right: 50%;

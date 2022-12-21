@@ -120,7 +120,7 @@ search {
     margin-left: 0px;
     left: 13rem;
   }
-  #Library {
+  .Library-mobile {
     position: absolute;
     left: 6rem;
     right: 0;
@@ -157,7 +157,7 @@ search {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (min-width:441px) and (max-width: 800px) {
   .Logo-Home {
     left: 28px;
   }
@@ -166,7 +166,7 @@ search {
     margin-left: 0px;
     left: 7rem;
   }
-  #Library {
+  .Library {
     position: absolute;
     left: 7rem;
   }

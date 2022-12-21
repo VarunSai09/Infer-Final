@@ -209,6 +209,9 @@ flex-grow: 0;
 }
 
 @media screen and (max-width:440px) {
+    #theme{
+        
+    }
     .theme-headings{
         left: 50px;
         top: 200px;
@@ -249,7 +252,7 @@ flex-grow: 0;
         top: 331px;
     }
 }
-@media screen and (max-width:800px) {
+@media screen and (min-width:441px) and (max-width: 800px){
     #theme{
             position: absolute;
     right: 60rem;

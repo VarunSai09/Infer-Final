@@ -67,7 +67,7 @@
     padding-left: 0;
   }
 }
-@media screen and (max-width: 800px){
+@media screen and (min-width:441px) and (max-width: 800px){
   #Profile-Nav {
     border-left:none;
   }
