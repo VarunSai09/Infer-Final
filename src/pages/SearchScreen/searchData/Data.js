@@ -7,7 +7,7 @@ const Data = ({ data, searchTerm }) => {
       <div className="SearcContent">
         <div className="note">
           <div className="search-title-header">
-            <a href="{data.htmlFormattedUrl}" id="Search-Title">
+            <a href="" id="Search-Title">
               {data.title}
             </a>
             <label
