@@ -330,41 +330,41 @@ input::placeholder {
     margin-top: 145px;
   }
   .Login-Page {
-    padding-bottom: 31.4%;
+    padding-bottom: -webkit-fill-available;
   }
   #headerTitle {
     font-size: 20px;
     margin-top: 1%;
     line-height: 30px;
   }
-  #version{
+  #version {
     margin-bottom: 0;
     font-size: 20px;
     margin-top: 0;
   }
-  .desc{
-    margin-top:1%;
+  .desc {
+    margin-top: 1%;
     height: 52px;
     line-height: 20px;
   }
-  .row .password{
+  .row .password {
     margin-bottom: 1%;
   }
-  #box{
+  #box {
     margin-bottom: 5px;
   }
-  .remember-label{
+  .remember-label {
     width: 226px;
   }
-  #forgot{
+  #forgot {
     width: 253px;
     line-height: 27px;
   }
-  .copyright{
+  .copyright {
     font-size: 12px;
     line-height: 4;
   }
-  .row button{
-    top:46px;
+  .row button {
+    top: 46px;
   }
 }
