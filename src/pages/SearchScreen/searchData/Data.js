@@ -7,8 +7,8 @@ const Data = ({ data, searchTerm }) => {
       <div className="SearcContent">
         <div className="note">
           <div className="search-title-header">
-            <a href="" id="Search-Title">
-              {data.title}
+            <a href={data.Links} target="_blank" id="Search-Title">
+              {data.Title}
             </a>
             <label
               for="Search-Title"
@@ -47,10 +47,10 @@ const Data = ({ data, searchTerm }) => {
             </label>
           </div>
           <div className="TagFrame">
-            <p id="Tags">Tags : </p>
-            <p className="Tags">{searchTerm}</p>
+            <p id="Tags">Author : </p>
+            <p className="Tags">{data.Author}</p>
           </div>
-          <p>{data.snippet}</p>
+          <p>{data.Context}</p>
         </div>
       </div>
     </>
