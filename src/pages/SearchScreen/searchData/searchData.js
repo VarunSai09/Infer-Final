@@ -5,10 +5,10 @@ const SearchData = ({ googleData, searchTerm }) => {
     <div>
       <p className="results-count" id="results-count">
         Showing top
-        <span className="google-count">{googleData?.items.length} </span> search
+        <span className="google-count">{googleData.length} </span> search
         results for <span className="google-count">"{searchTerm}"</span>
       </p>
-      {googleData?.items.map((data, id) => (
+      {googleData?.map((data, id) => (
         <Data data={data} key={id} searchTerm={searchTerm} />
       ))}
     </div>

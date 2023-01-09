@@ -10,15 +10,15 @@
 import axios from 'axios';
 
 export const searchData = async (term) => {
-  const { data } = await axios.get(
-    'https://www.googleapis.com/customsearch/v1',
-    {
-      params: {
-        key: "AIzaSyAIMBuNrGNeX1F1nznzo5A20PBhnG1rrFU",
-        cx: "041aa1aa643a74e35",
-        q: term,
-      },
-    }
+  const { data } = await axios.post(
+    'https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/mediumquery'
+    // {
+    //   params: {
+    //     key: "AIzaSyAIMBuNrGNeX1F1nznzo5A20PBhnG1rrFU",
+    //     cx: "041aa1aa643a74e35",
+    //     q: term,
+    //   },
+    // }
   );
 
   return data;

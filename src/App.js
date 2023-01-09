@@ -21,6 +21,7 @@ export default function App(props) {
   const setSearch = async (term) => {
     setSearchTerm(term);
     const data = await searchData(term);
+    console.log(data);
     setGoogleData(data);
     history.push("/search");
   };
@@ -38,7 +39,7 @@ export default function App(props) {
           exact
           path="/search"
           component={() => (
-            <Search searchTerm={searchTerm} googleData={googleData} />
+            <Search  searchTerm={searchTerm} googleData={googleData} />
           )}
         />
         <Route exact path="/saved" component={Saved} />
