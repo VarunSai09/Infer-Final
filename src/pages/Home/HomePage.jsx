@@ -22,7 +22,7 @@ export default function HomePage({ setSearch }) {
       /^[a-zA-Z0-9]+[" "]/.test(term) ||
       /^[" "]+[a-zA-Z0-9]/.test(term)
     ) {
-      setSearch(term);
+      setSearch(term.toLowerCase());
     }
   };
   return (
