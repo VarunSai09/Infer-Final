@@ -7,11 +7,12 @@
 //     return result;
 // }
 
-import axios from 'axios';
+import axios from "axios";
 
 export const searchData = async (term) => {
   const { data } = await axios.post(
-    'https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/mediumquery'
+    "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/mediumquery",
+    { term }
     // {
     //   params: {
     //     key: "AIzaSyAIMBuNrGNeX1F1nznzo5A20PBhnG1rrFU",
