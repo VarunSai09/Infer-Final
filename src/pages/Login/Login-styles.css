@@ -256,10 +256,10 @@ input::placeholder {
 }
 
 .row button {
-  border-radius: 25px;
+  border-radius: 8px;
   width: 75%;
   height: 40px;
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: white;
   font-weight: 700;
   background: #305ba5;
@@ -268,6 +268,7 @@ input::placeholder {
   position: relative;
   top: 40px;
   right: 10%;
+  text-align: center;
 }
 
 .row .button:hover {
@@ -280,8 +281,11 @@ input::placeholder {
 .copyright {
   /* margin-top: 1rem;
     margin-top: 1rem; */
-  position: relative;
-  top: 85%;
+  position: absolute;
+  width: 80%;
+  font-size: 16px;
+  left: 50px;
+  bottom: 17px;
 }
 .symbol {
   position: relative;

@@ -24,6 +24,7 @@
   margin-bottom: 0px;
   width: 157px;
   height: 33px;
+  font-family: "Avenir Next";
   /* font-family: "Avenir Next LT Pro"; */
   margin-right: 10px;
   font-style: normal;
@@ -112,7 +113,7 @@
     padding-top: 30px;
   }
 }
-@media screen and (min-width:441px) and (max-width: 800px) {
+@media screen and (min-width: 441px) and (max-width: 800px) {
   .Logo {
     left: 28px;
   }
