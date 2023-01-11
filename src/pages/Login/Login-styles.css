@@ -3,7 +3,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js");
 
 .Login-Page {
-  font-family: "Avenir";
+  font-family: "Avenir Next";
   background-image: url("./images/login-background.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -36,16 +36,21 @@ html {
 }
 
 img {
-  /* position: absolute; */
-  display: inline-flex;
-  width: 156px;
-  height: 43px;
-  /* margin: 3% auto; */
-  margin: 1% auto 1% 2%;
-  order: 0;
+  position: relative;
+  left: 9%;
+  /* top: 18px; */
+  width: 119px;
+  height: 33px;
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  display: inline-block;
+  margin-top: 24px;
+  margin-bottom: 24px;
+
   float: left;
-  top: 11.73%;
-  left: 36.5%;
 }
 
 #version {
@@ -53,7 +58,7 @@ img {
   left: 12%;
   width: 119px;
   height: 33px;
-  font-family: "Avenir";
+  font-family: "Avenir Next";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -83,7 +88,7 @@ img {
   left: 1%;
   width: 180px;
   height: 40px;
-  font-family: "Avenir";
+  font-family: "Avenir Next";
   font-style: normal;
   font-weight: 800;
 
@@ -115,7 +120,7 @@ img {
   /* margin-right: auto; */
   width: 75%;
   height: 44px;
-  font-family: "Avenir";
+  font-family: "Avenir Next";
   font-style: normal;
   font-weight: 500;
   /* font-size: 16px; */
@@ -140,7 +145,7 @@ img {
   /* margin-left:auto;
     margin-right:auto;
     margin-top: 20%; */
-  font-family: "Avenir";
+  font-family: "Avenir Next";
   width: 81%;
   box-sizing: border-box;
   /* border: 5px; */
@@ -159,7 +164,7 @@ img {
   /* margin-left:auto;
     margin-right:auto;
     margin-top: 20%; */
-  font-family: "Avenir";
+  font-family: "Avenir Next";
   width: 81%;
   box-sizing: border-box;
   border: 5px;
@@ -189,7 +194,8 @@ input::placeholder {
 #box {
   position: relative;
   left: 2.5rem;
-  bottom: 64px;
+  bottom: 62px;
+  margin-top: 6px;
   /* bottom: 50.5%; */
   background: #a7a7a7;
 }
@@ -219,9 +225,10 @@ input::placeholder {
   width: 370px;
   height: 0;
   left: 5%;
+  margin-top: 6px;
   /* right: 32.5rem; */
   bottom: 76px;
-  font-family: "Avenir";
+  font-family: "Avenir Next";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -239,7 +246,7 @@ input::placeholder {
   height: 0;
   bottom: 100px;
   left: 58.5%;
-  font-family: "Avenir";
+  font-family: "Avenir Next";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
