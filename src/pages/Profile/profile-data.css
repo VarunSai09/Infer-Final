@@ -8,8 +8,10 @@
   font-family: "Avenir Next";
 }
 .Profile-Avatar {
+  left: 20px;
   width: 126px;
   height: 126px;
+  bottom: 5px;
 }
 .profile-pic-options {
   font-size: 16px;
@@ -35,7 +37,7 @@ a {
 }
 .row-data {
   position: relative;
-  top: 9rem;
+  top: 7rem;
   left: 16.5rem;
   width: 600px;
   padding-left: 2rem;
