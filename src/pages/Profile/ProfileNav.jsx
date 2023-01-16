@@ -12,6 +12,7 @@ function ProfileNav() {
       <div id="Profile-Nav">
         <p id="Profile-Nav-Content">Profile</p>
       </div>
+      
     </Navbar>
   );
 }
