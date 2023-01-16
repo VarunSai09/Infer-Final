@@ -21,6 +21,7 @@ export const SidebarData = [
         />
       </svg>
     ),
+    pageName: "home",
     cName: "nav-text",
   },
   {
@@ -40,6 +41,7 @@ export const SidebarData = [
         />
       </svg>
     ),
+    pageName: "saved",
     cName: "nav-text",
   },
   {
@@ -59,6 +61,7 @@ export const SidebarData = [
         />
       </svg>
     ),
+    pageName: "profile",
     cName: "nav-text",
   },
   {
@@ -78,6 +81,7 @@ export const SidebarData = [
         />
       </svg>
     ),
+    pageName: "settings",
     cName: "nav-text",
   },
   {
@@ -97,6 +101,12 @@ export const SidebarData = [
         />
       </svg>
     ),
+    pageName: "",
     cName: "nav-text",
   },
+  {
+    "SideLine": <svg width="4" height="36" viewBox="0 0 4 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 0V0C1.79086 0 0 1.79086 0 4V32C0 34.2091 1.79086 36 4 36V36V0Z" fill="#305BA5"/>
+    </svg>
+  }
 ];
