@@ -252,14 +252,27 @@ span {
 @media screen and (max-width: 440px) {
   .menu-close {
     display: flex;
-    right: 7rem;
-    top: 26px;
+    right: 1rem;
+    top: 6px;
   }
   .menu-bars {
     display: flex;
   }
   .navbar-search {
     width: 100%;
+  }
+  .Avatar {
+    width: 125px;
+    height: 125px;
+    left: 23rem;
+  }
+  .welcome-frame {
+    right: 15px;
+    top: -34px;
+  }
+  .nav-menu-items {
+    right: 12rem;
+    bottom: 25px;
   }
   .home {
     padding-left: 0;
@@ -292,8 +305,17 @@ span {
   }
   .menu-close {
     display: flex;
-    right: 10rem;
-    top: 13px;
+    right: 1rem;
+    top: 12px;
+  }
+  .welcome-frame {
+    right: 40px;
+  }
+  .Avatar {
+    left: 22.6rem;
+  }
+  .nav-menu-items {
+    right: 13.3rem;
   }
   .home {
     padding-left: 15%;
