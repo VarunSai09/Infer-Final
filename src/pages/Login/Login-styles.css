@@ -224,6 +224,7 @@ input::placeholder {
   position: relative;
   width: 370px;
   height: 0;
+  top: -65px;
   left: 5%;
   margin-top: 6px;
   /* right: 32.5rem; */
@@ -237,11 +238,11 @@ input::placeholder {
   align-items: center;
   text-align: center;
   color: #a7a7a7;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
 }
 #forgot {
   margin: 0;
-  padding-top: 1rem;
+  padding-top: 10px;
   position: relative;
   height: 0;
   bottom: 100px;
@@ -250,7 +251,7 @@ input::placeholder {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 32px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -293,34 +294,103 @@ input::placeholder {
   top: 59.034%;
   right: 18%;
 }
-@media screen and (max-width: 880px) {
+@media screen and (min-width: 2500px) {
+  .remember-label {
+    line-height: 32px;
+    left: -243px;
+  }
+  #box {
+    left: 3.5rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1500px) {
+  .remember-label {
+    top: -73px;
+    left: 15%;
+  }
+  #box {
+    bottom: 56px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .loginform {
+    width: 35%;
+  }
+  #version {
+    left: 26px;
+  }
   .desc {
-    font-size: 12px;
+    margin-bottom: 5%;
+  }
+  img {
+    height: 28px;
+  }
+  #headerTitle {
+    bottom: 10px;
+    font-weight: 600;
+    height: 30px;
+  }
+  .remember {
+    flex-wrap: nowrap;
+    font-size: 15px;
+  }
+  .remember-label {
+    top: -65px;
+    left: 5%;
+  }
+  #box {
+    left: 0.9rem;
+    margin-bottom: 4px;
+    height: 12px;
+    width: 12px;
+  }
+  #forgot {
+    font-size: 15px;
+    padding-top: 11px;
+  }
+  .copyright {
+    font-size: 14px;
+    left: 0px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 880px) {
+  .loginform {
+    width: 50%;
+    left: 25%;
+  }
+  .desc {
+    font-size: 15px;
   }
   #forgot {
     display: block;
-    bottom: 77px;
-    left: 5%;
+    left: 18%;
   }
   .remember-label {
-    display: block;
-    left: 0px;
+    display: flex;
+    left: 36px;
+  }
+  .remember {
+    display: flex;
   }
   #box {
-    bottom: 69px;
-    left: 80px;
+    bottom: 63px;
+    left: 36px;
   }
   #version {
     margin-bottom: 10px;
     margin-top: 10px;
     left: 0%;
+    bottom: 15px;
   }
   img {
-    /* right: 9%; */
+    left: 8px;
     float: none;
     margin-left: 0%;
     margin-bottom: 10px;
-    margin-right: 53px;
+    margin-right: 108px;
+  }
+  .copyright {
   }
 }
 /* @media screen and (min-width: 769px) {
@@ -337,9 +407,9 @@ input::placeholder {
  } 
 } */
 
-@media screen and (min-width: 300px) and (max-width: 480px) {
+@media screen and (min-width: 390px) and (max-width: 480px) {
   .loginform {
-    width: 70%;
+    width: 71%;
     left: 15%;
     margin-top: 145px;
   }
@@ -347,17 +417,18 @@ input::placeholder {
     padding-bottom: -webkit-fill-available;
   }
   img {
+    margin-right: 37px;
   }
   #headerTitle {
     font-size: 20px;
-    margin-top: 1%;
+    margin-top: 2%;
     line-height: 30px;
   }
   #version {
     margin-bottom: 0;
     font-size: 20px;
-    margin-top: 0;
-    margin-right: 25px;
+    margin-top: 10px;
+    margin-right: 0;
   }
   .desc {
     margin-top: 1%;
@@ -368,21 +439,80 @@ input::placeholder {
     margin-bottom: 1%;
   }
   #box {
-    margin-bottom: 5px;
+    margin-bottom: 4px;
+    left: 12px;
   }
   .remember-label {
-    width: 226px;
+    width: 250px;
+    left: 12px;
   }
   #forgot {
     width: 253px;
-    line-height: 27px;
+    left: 91px;
+    line-height: 23px;
   }
   .copyright {
-    font-size: 12px;
+    font-size: 14px;
     /* line-height: 4; */
     height: 18px;
-    width: 260px;
-    left: 1px;
+    width: max-content;
+    left: px;
+    bottom: 10px;
+  }
+  .row button {
+    top: 46px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .loginform {
+    width: 75%;
+    left: 15%;
+    margin-top: 145px;
+  }
+  .Login-Page {
+    width: 405.2px;
+  }
+  img {
+    margin-right: 37px;
+  }
+  #headerTitle {
+    font-size: 20px;
+    margin-top: 2%;
+    line-height: 30px;
+  }
+  #version {
+    margin-bottom: 0;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 0;
+  }
+  .desc {
+    margin-top: 1%;
+    height: 52px;
+    line-height: 20px;
+  }
+  .row .password {
+    margin-bottom: 1%;
+  }
+  #box {
+    margin-bottom: 4px;
+    left: 58px;
+  }
+  .remember-label {
+    width: 250px;
+    left: 58px;
+  }
+  #forgot {
+    width: 253px;
+    left: 20px;
+    line-height: 60px;
+  }
+  .copyright {
+    font-size: 14px;
+    /* line-height: 4; */
+    height: 18px;
+    width: max-content;
+    left: px;
     bottom: 10px;
   }
   .row button {
