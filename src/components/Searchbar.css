@@ -6,7 +6,7 @@
   position: relative;
   right: 0;
   left: 16rem;
-  padding-left: 57px;
+  padding-left: 55px;
   margin-top: 0px;
   margin-bottom: 0px;
   width: 157px;
@@ -107,7 +107,7 @@ search {
   position: absolute;
   left: 14rem;
 }
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 480px) {
   .Logo-Home {
     width: 78.075;
     height: 17;
@@ -157,7 +157,7 @@ search {
   }
 }
 
-@media screen and (min-width:441px) and (max-width: 800px) {
+@media screen and (min-width: 441px) and (max-width: 800px) {
   .Logo-Home {
     left: 28px;
   }
@@ -175,5 +175,15 @@ search {
   }
   #Search-Logo {
     left: 14.1rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1500px) {
+  .Library {
+    left: 15rem;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .Library {
+    left: 15rem;
   }
 }
