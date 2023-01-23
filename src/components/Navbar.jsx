@@ -98,9 +98,33 @@ export default function Navbar() {
                     <li key={index} className={item.cName}>
                       <Link to={item.path}>
                         {item.icon}
-                        <span>{item.title}</span>
+                        {item.pageName == window.location.pathname.slice(1) ? (
+                          <>
+                            <div className="selectedItem">
+                              <span>{item.title}</span>
+                            </div>
+                            <svg
+                              className="side-line"
+                              width="4"
+                              height="36"
+                              viewBox="0 0 4 36"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              // style="top: 16.8;"
+                            >
+                              <path
+                                d="M4 0V0C1.79086 0 0 1.79086 0 4V32C0 34.2091 1.79086 36 4 36V36V0Z"
+                                fill="#305BA5"
+                              />
+                            </svg>
+                          </>
+                        ) : (
+                          <>
+                            <span>{item.title}</span>
+                          </>
+                        )}
                       </Link>
-                      {item.pageName == window.location.pathname.slice(1) ? (
+                      {/* {item.pageName == window.location.pathname.slice(1) ? (
                         <div className="side-line">
                           <svg
                             width="4"
@@ -117,7 +141,7 @@ export default function Navbar() {
                         </div>
                       ) : (
                         <></>
-                      )}
+                      )} */}
                     </li>
                   </>
                 );
