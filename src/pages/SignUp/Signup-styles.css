@@ -2,7 +2,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js");
 
-.Login-Page {
+.Signup-Page {
   font-family: "Avenir Next";
   background-image: url("./images/login-background.png");
   background-repeat: no-repeat;
@@ -15,12 +15,12 @@ html {
   font-size: 100%;
 }
 
-.loginform {
+.signupform {
   display: inline-block;
   position: relative;
   left: 35%;
   width: 30%;
-  height: 32.2rem;
+  height: 36.2rem;
   margin: 100px auto;
 
   background-color: #ffffff;
@@ -82,20 +82,24 @@ img {
     margin: 5% auto;
     color: #DEDEDE; */
 }
-
+.input-fields {
+  bottom: 23px;
+  position: relative;
+}
 #headerTitle {
   position: relative;
   left: 1%;
-  width: 180px;
+  width: max-content;
   height: 40px;
   font-family: "Avenir Next";
   font-style: normal;
   font-weight: 800;
 
   line-height: 55px;
+  bottom: 20px;
 
   color: #222222;
-  margin: 3% auto 0 auto;
+  margin: 0 auto 0 auto;
   justify-content: center;
   /* position:relative;
     left:0;
@@ -156,6 +160,31 @@ img {
   border: 1px solid rgba(149, 13, 13, 0.3);
   border-radius: 5px;
 }
+.row .username {
+  font-family: "Avenir Next";
+  width: 81%;
+  box-sizing: border-box;
+  border: 5px;
+  font-size: 1.3rem;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-bottom: 2rem;
+  border: 1px solid rgba(149, 13, 13, 0.3);
+  border-radius: 5px;
+}
+.row .phone-number {
+  font-family: "Avenir Next";
+  width: 81%;
+  box-sizing: border-box;
+  border: 5px;
+  font-size: 1.3rem;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-bottom: 2rem;
+  border: 1px solid rgba(149, 13, 13, 0.3);
+  border-radius: 5px;
+}
+
 .row .password {
   /* position: absolute;
     left:0;
@@ -164,6 +193,18 @@ img {
   /* margin-left:auto;
     margin-right:auto;
     margin-top: 20%; */
+  font-family: "Avenir Next";
+  width: 81%;
+  box-sizing: border-box;
+  border: 5px;
+  font-size: 1.3rem;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-bottom: 2rem;
+  border: 1px solid rgba(149, 13, 13, 0.3);
+  border-radius: 5px;
+}
+.row .retype-password {
   font-family: "Avenir Next";
   width: 81%;
   box-sizing: border-box;
@@ -255,19 +296,26 @@ input::placeholder {
   display: flex;
   flex-wrap: wrap;
 }
-#register-user {
+#registerd-user {
   display: flex;
   align-items: baseline;
   position: relative;
-  left: 35%;
-  bottom: 10px;
+  left: 27%;
+  bottom: 16px;
 }
-.register-user-link {
+.registerd-user-login {
   padding-left: 10px;
   cursor: pointer;
   text-decoration: underline;
 }
-.row button {
+.row-button {
+  display: block;
+  /* flex-direction: column; */
+  align-items: center;
+  padding-top: 15px;
+  padding-left: 17%;
+}
+.row-button button {
   border-radius: 8px;
   width: 75%;
   height: 40px;
@@ -278,7 +326,7 @@ input::placeholder {
   border: 0px;
   cursor: pointer;
   position: relative;
-  top: 40px;
+  top: 0px;
   right: 10%;
   text-align: center;
 }
@@ -286,7 +334,9 @@ input::placeholder {
 .row .button:hover {
   opacity: 0.8;
 }
-
+input {
+  font-family: "Avenir Next";
+}
 #button {
   /* padding-bottom: 1.5rem; */
 }
@@ -297,7 +347,7 @@ input::placeholder {
   width: 80%;
   font-size: 16px;
   left: 50px;
-  bottom: 17px;
+  top: 96%;
 }
 .symbol {
   position: relative;
@@ -339,7 +389,7 @@ input::placeholder {
   #headerTitle {
     bottom: 10px;
     font-weight: 600;
-    height: 30px;
+    height: 10px;
   }
   .remember {
     flex-wrap: nowrap;

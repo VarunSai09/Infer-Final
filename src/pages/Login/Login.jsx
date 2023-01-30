@@ -21,6 +21,9 @@ const Login = () => {
   const handlePass = (e) => {
     setPassword(e.target.value);
   };
+  const handleSignup = (e) => {
+    history.push("/signup");
+  };
   const handleApi = () => {
     axios
       .post("https://reqres.in/api/login", {
@@ -90,6 +93,12 @@ const Login = () => {
               <p id="forgot">
                 <a href="/">Forgot Password</a>
               </p>
+              <div id="register-user">
+                <p>New User?</p>
+                <a onClick={handleSignup} className="register-user-link">
+                  Register here
+                </a>
+              </div>
             </div>
           </div>
           <label className="copyright">
