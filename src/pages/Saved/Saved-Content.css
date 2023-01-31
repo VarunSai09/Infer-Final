@@ -66,6 +66,23 @@ a:hover + .add-delete {
   font-size: 0.7em;
   cursor: pointer;
 }
+#rate-note {
+  padding-top: 5px;
+  line-height: 1;
+  font-size: 19px;
+}
+.rate-note-span {
+  margin-right: 16px;
+  margin-left: 2px;
+  margin-bottom: 1px;
+}
+.rate-note-icon{
+  margin-top:1px;
+}
+#rate-note-saved {
+  /* margin: 5px 5px 0 30px; */
+  color: #305ba5;
+}
 #delete-note {
   padding-top: 5px;
   line-height: 1;
@@ -192,7 +209,7 @@ a:hover + .add-delete {
     font-size: 15px;
   }
 }
-@media screen and (min-width:441px) and (max-width: 800px){
+@media screen and (min-width: 441px) and (max-width: 800px) {
   .saved-note {
   }
   #Saved-Nav {
@@ -202,5 +219,4 @@ a:hover + .add-delete {
     left: -8rem;
     top: 0.1rem;
   }
-  
 }

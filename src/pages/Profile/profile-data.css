@@ -67,6 +67,37 @@ a {
   align-items: center;
   color: #222222;
 }
+.row-creds {
+  position: relative;
+  bottom: 8rem;
+  left: 46.5rem;
+  width: 600px;
+  padding-left: 2rem;
+}
+.creds-site {
+  width: fit-content;
+  height: 12px;
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 149.1%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.355em;
+  color: #bebebe;
+  padding: 10px 0;
+}
+.creds-values {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  color: #222222;
+}
 input {
   box-sizing: border-box;
   width: 400px;
