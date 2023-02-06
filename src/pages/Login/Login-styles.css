@@ -305,7 +305,7 @@ input::placeholder {
   top: 59.034%;
   right: 18%;
 }
-@media screen and (min-width: 2500px) {
+/* @media screen and (min-width: 2500px) {
   .remember-label {
     line-height: 32px;
     left: -243px;
@@ -313,7 +313,7 @@ input::placeholder {
   #box {
     left: 3.5rem;
   }
-}
+} */
 @media screen and (min-width: 1280px) and (max-width: 1500px) {
   .remember-label {
     top: -73px;
