@@ -1,4 +1,4 @@
-.add-note-popup {
+.rate-popup {
   box-sizing: border-box;
   position: fixed;
   width: 473px;
@@ -13,7 +13,7 @@
 .body {
   position: fixed;
   width: 1519px;
-  height: -webkit-fill-available;
+  height: 1024px;
   z-index: 110;
   left: 0px;
   top: 0px;
@@ -21,19 +21,17 @@
   background: rgba(207, 206, 206, 0.61);
   backdrop-filter: blur(8px);
 }
-.add-note-popup {
+.ratepopup {
   /* background: rgba(207, 206, 206, 0.61); */
   backdrop-filter: blur(50px);
 }
-.add-note-popup {
-  /* background: rgba(207, 206, 206, 0.61); */
-}
-.header-title {
+
+h4 {
   position: absolute;
-  width: 128px;
+  width: 239px;
   height: 33px;
-  left: 32px;
-  top: 7px;
+  left: 38px;
+  top: 50px;
   font-family: "Avenir Next";
   font-style: normal;
   font-weight: 500;
@@ -43,32 +41,66 @@
   align-items: center;
   color: #000000;
 }
-.note-title {
-  position: absolute;
-  width: fit-content;
-  height: 66px;
-  left: 32px;
-  top: 72px;
-  font-family: "Avenir Next";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 33px;
+
+.rate {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  color: #222222;
+  padding: 0px;
+  gap: 20px;
+  position: absolute;
+  width: 235px;
+  height: 31px;
+  left: 30px;
+  top: 130px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.rate:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: rgb(241, 241, 241);
+}
+.rate:not(:checked) > label:before {
+  content: "★ ";
+}
+.rate > input:checked ~ label {
+  color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
 }
 
-#add-note-input {
+.review-note-header {
+  top: 165px;
+  font-family: "Avenir Next";
+}
+/* #add-note-input {
   width: 409px;
   height: 402px;
-}
+} */
 .input-box {
   box-sizing: border-box;
   position: absolute;
 
   left: 32px;
-  top: 220px;
+  top: 250px;
   background: #f6f6f6;
   border: 1px solid #d8d8d8;
   border-radius: 8px;
@@ -94,7 +126,7 @@
   color: #a6a6a6;
 }
 
-.buttons-addNote {
+.buttons {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -104,10 +136,10 @@
   position: absolute;
   width: 324px;
   height: 48px;
-  left: 35px;
-  top: 675px;
+  left: 70px;
+  top: 600px;
 }
-.save-button {
+.save-button-rate {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -124,7 +156,7 @@
   flex-grow: 0;
   color: #ffffff;
 }
-.cancel-button {
+.cancel-button-rate {
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
@@ -141,113 +173,51 @@
   order: 0;
   flex-grow: 0;
 }
-
 @media screen and (max-width: 440px) {
-  .add-note-popup {
+  .rate-popup {
     width: 300;
     height: 550px;
     left: 50px;
     right: 50px;
     margin-top: 50px;
   }
-  .body {
-    width: 550px;
-    height: -webkit-fill-available;
-  }
-  .note-title {
-    font-size: 18px;
-    font-family: "Avenir Next";
-    line-height: 1;
-    height: 0;
-    width: 300;
-    top: 39px;
-    display: flex;
-    /* justify-content: space-evenly; */
-    align-items: baseline;
-    flex-wrap: nowrap;
-  }
-  .header-title {
-    height: 0;
-  }
-  .save-button {
-    width: 0px;
-  }
-  .cancel-button {
-    width: 0px;
-  }
-  #add-note-input {
-    width: 250px;
-    height: 300px;
-    left: 21;
-    top: 140;
-  }
   h4 {
-    height: 0;
-    top: 353px;
+    top: 2px;
   }
   .rate {
-    height: 0;
-    top: 420px;
+    top: 80px;
   }
-  .buttons-addNote {
-    width: 276px;
-    left: 14px;
-    top: 480;
+  .review-note-header {
+    top: 95;
   }
-  .save-button {
-    width: 121px;
+  .input-box {
+    top: 175px;
+    width: 250px;
+    height: 250;
+  }
+  .buttons {
+    left: 0px;
+    top: 475px;
+  }
+  .save-button-rate {
+    width: 100px;
+  }
+  .cancel-button-rate {
+    width: 100px;
   }
 }
-
-/* .save-button {
-    width: 121px;
-  } */
 @media screen and (min-width: 441px) and (max-width: 800px) {
-  .add-note-popup {
+  .rate-popup {
     width: 600px;
     height: 770px;
-    left: 100px;
-    right: 100px;
+    left: 250px;
+    right: 250px;
     margin-top: 50px;
-  }
-  .body {
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
-  }
-  .header-title {
-    left: 13%;
-  }
-  .note-title {
-    left: 13%;
-    top: 50px;
-  }
-  #add-note-input {
-    width: 550px;
-    height: 400px;
-    left: 13%;
-    top: 20%;
-  }
-  .buttons-addNote {
-    width: 276px;
-    left: 22%;
-    top: 79%;
-  }
-  .save-button {
-    width: 220px;
-  }
-  .cancel-button {
-    width: 220px;
   }
 }
 @media screen and (min-width: 805px) and (max-width: 1500px) {
-  .add-note-popup {
+  .rate-popup {
+    left: 996px;
     height: -webkit-fill-available;
-    left: 980px;
-  }
-  #add-note-input {
-    top: 220px;
-  }
-  .buttons-addNote {
-    top: 640px;
   }
 }

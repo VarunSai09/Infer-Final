@@ -6,7 +6,6 @@ export default function ProfileData() {
   var [phone, setPhone] = useState("+91 9576248020");
   return (
     <>
-      
       <div className="profile">
         <div className="profile-pic">
           <img
@@ -57,6 +56,36 @@ export default function ProfileData() {
               className="profile-number profile-values"
               onChange={(e) => setPhone(e.target.value)}
               value={phone}
+            ></input>
+          </div>
+        </div>
+        <div className="user-credentials">
+          <div className="row-creds">
+            <label className="creds-site">Medium Username</label>
+            <input
+              type="text"
+              contentEditable="true"
+              className="medium-username creds-values"
+            ></input>
+            <label className="creds-site">Medium Password</label>
+            <input
+              type="text"
+              contentEditable="true"
+              className="medium-password creds-values"
+            ></input>
+          </div>
+          <div className="row-creds">
+            <label className="creds-site">Quora Username</label>
+            <input
+              type="text"
+              contentEditable="true"
+              className="medium-username creds-values"
+            ></input>
+            <label className="creds-site">Quora Password</label>
+            <input
+              type="text"
+              contentEditable="true"
+              className="medium-password creds-values"
             ></input>
           </div>
         </div>

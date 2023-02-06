@@ -3,7 +3,8 @@ import "../src/Styles.css";
 import { Switch, Route } from "react-router-dom";
 import Login from "./pages/Login/Login";
 
-// PAGES
+// PAGES'
+import Signup from "./pages/SignUp/Signup";
 import Home from "./pages/Home/Home";
 import Profile from "./pages/Profile/Profile";
 import Saved from "./pages/Saved/Saved";
@@ -30,6 +31,7 @@ export default function App(props) {
       {/* <Login /> */}
       <Switch>
         <Route exact path="/" component={Login} />
+        <Route exact path="/signup" component={Signup} />
         <Route
           exact
           path="/home"
@@ -39,7 +41,7 @@ export default function App(props) {
           exact
           path="/search"
           component={() => (
-            <Search  searchTerm={searchTerm} googleData={googleData} />
+            <Search searchTerm={searchTerm} googleData={googleData} />
           )}
         />
         <Route exact path="/saved" component={Saved} />

@@ -3,8 +3,10 @@ import "./Saved-Content.css";
 import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
 import AddNote from "./addNote/addNote";
+import RateNote from "./rateNote/rateNote";
 const Post = ({ post }) => {
   const [openAddNote, setOpenAddNote] = useState(false);
+  const [openRateNote, setOpenRateNote] = useState(false);
   // const history=useHistory('')
   //   function handleSubmit(e){
   //     e.preventDefault();
@@ -17,7 +19,9 @@ const Post = ({ post }) => {
       <div className="saved">
         <div className="saved-note">
           <div className="note-header">
-            <a classname="saved-title" href="/saved">{post.title}</a>
+            <a id="saved-title" href="/saved">
+              {post.title}
+            </a>
             <div className="add-delete" id="add-delete">
               <a
                 className="add-delete-saved"
@@ -26,6 +30,14 @@ const Post = ({ post }) => {
               >
                 <FaIcons.FaRegStickyNote />
                 <span className="add-note-span">Add a note</span>
+              </a>
+              <a
+                className="add-delete-saved"
+                id="rate-note-saved"
+                onClick={() => setOpenRateNote(true)}
+              >
+                <MdIcons.MdOutlineStarRate className="rate-note-icon" />
+                <span className="rate-note-span">Rate Article</span>
               </a>
               <a className="add-delete-saved" id="delete-note">
                 <MdIcons.MdDeleteForever className="delete-icon" />
@@ -40,7 +52,12 @@ const Post = ({ post }) => {
           </div>
           <p>{post.body}</p>
         </div>
-        <AddNote open={openAddNote} onClose={() => setOpenAddNote(false)} />
+        <AddNote
+          open={openAddNote}
+          post={post}
+          onClose={() => setOpenAddNote(false)}
+        />
+        <RateNote open={openRateNote} onClose={() => setOpenRateNote(false)} />
       </div>
     </>
   );
