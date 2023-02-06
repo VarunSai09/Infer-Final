@@ -53,13 +53,15 @@
     line-height: 28px;
     margin-top: 29px;
     padding-left: 0px;
-    font-weight:600;
+    font-weight: 600;
   }
   .navbar-saved {
     height: 85px;
   }
   .SavedContent-Display {
     padding-top: 150px;
-    
+  }
+  #Saved-Nav {
+    border-left: 0;
   }
 }

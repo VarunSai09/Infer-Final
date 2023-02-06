@@ -48,8 +48,8 @@ export default function AddNote({ open, onClose }) {
         </div>
 
         <div className="buttons">
-          <button className="save-button">Submit Rating</button>
-          <button className="cancel-button" onClick={onClose}>
+          <button className="save-button-rate">Submit Rating</button>
+          <button className="cancel-button-rate" onClick={onClose}>
             Cancel
           </button>
         </div>

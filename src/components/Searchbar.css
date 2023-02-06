@@ -182,7 +182,7 @@ search {
     left: 15rem;
   }
 }
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 805px) and (max-width: 1280px) {
   .Library {
     left: 15rem;
   }

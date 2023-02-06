@@ -111,10 +111,13 @@ input {
 }
 
 @media screen and (max-width: 440px) {
+  .profile-pic {
+    left: 5%;
+  }
   .Profile-Avatar {
     padding-left: 32%;
     padding-right: 50%;
-    padding-top: 22%;
+    padding-top: -10%;
   }
   .profile-values {
     font-size: 20px;
@@ -125,16 +128,21 @@ input {
   .profile-pic-options {
     width: 180px;
     font-size: 20px;
-    top: 109%;
-    left: 30%;
+    top: 97%;
+    left: 38%;
     right: 67%;
   }
   .row-data {
-    top: 14rem;
-    left: 9%;
+    top: 12rem;
+    left: 2%;
     right: 67%;
     width: 328px;
     padding-left: 0;
+  }
+  .row-creds {
+    bottom: -14rem;
+    left: -22px;
+    width: 328px;
   }
   input {
     width: 100%;
@@ -159,8 +167,34 @@ input {
     width: 550px;
     padding-left: 0;
   }
+  .row-creds {
+    bottom: 4.3rem;
+    left: 37.5rem;
+  }
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 380px) {
+  .profile-pic {
+    left: 0;
+  }
+  .row-data {
+    left: -7%;
+  }
+  .row-creds {
+    left: -57px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .profile-pic {
+    left: -24px;
+  }
+  .row-creds {
+    width: 300;
+    left: -77px;
+  }
+  .row-data {
+    width: 300;
+    left: -15%;
+  }
 }
 @media screen and (min-width: 1280px) and (max-width: 1500px) {
 }

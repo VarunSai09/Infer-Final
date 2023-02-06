@@ -19,7 +19,7 @@ const Post = ({ post }) => {
       <div className="saved">
         <div className="saved-note">
           <div className="note-header">
-            <a classname="saved-title" href="/saved">
+            <a id="saved-title" href="/saved">
               {post.title}
             </a>
             <div className="add-delete" id="add-delete">
@@ -52,7 +52,11 @@ const Post = ({ post }) => {
           </div>
           <p>{post.body}</p>
         </div>
-        <AddNote open={openAddNote} onClose={() => setOpenAddNote(false)} />
+        <AddNote
+          open={openAddNote}
+          post={post}
+          onClose={() => setOpenAddNote(false)}
+        />
         <RateNote open={openRateNote} onClose={() => setOpenRateNote(false)} />
       </div>
     </>

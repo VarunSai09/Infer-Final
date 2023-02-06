@@ -54,7 +54,7 @@ const Login = () => {
           />
           <p id="version">Version 1.0</p>
           <FormHeader />
-          <div className="input-fields">
+          <div className="input-fields-login">
             <form onSubmit={handleSubmit}>
               <div className="row">
                 <input

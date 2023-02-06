@@ -86,7 +86,7 @@ img {
   bottom: 23px;
   position: relative;
 }
-#headerTitle {
+#headerTitleSignUp {
   position: relative;
   left: 1%;
   width: max-content;
@@ -281,21 +281,7 @@ input::placeholder {
   color: #a7a7a7;
   flex-wrap: no-wrap;
 }
-#forgot {
-  margin: 0;
-  padding-top: 10px;
-  position: relative;
-  height: 0;
-  bottom: 100px;
-  left: 58.5%;
-  font-family: "Avenir Next";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 32px;
-  display: flex;
-  flex-wrap: wrap;
-}
+
 #registerd-user {
   display: flex;
   align-items: baseline;
@@ -374,7 +360,7 @@ input {
   }
 }
 @media screen and (max-width: 1280px) {
-  .loginform {
+  .signupform {
     width: 35%;
   }
   #version {
@@ -386,29 +372,19 @@ input {
   img {
     height: 28px;
   }
-  #headerTitle {
-    bottom: 10px;
+  #headerTitleSignUp {
+    bottom: 25px;
     font-weight: 600;
     height: 10px;
   }
-  .remember {
-    flex-wrap: nowrap;
-    font-size: 15px;
+  .input-fields {
+    bottom: 0px;
+    top: 5px;
   }
-  .remember-label {
-    top: -65px;
-    left: 5%;
+  #registerd-user {
+    left: 18%;
   }
-  #box {
-    left: 0.9rem;
-    margin-bottom: 4px;
-    height: 12px;
-    width: 12px;
-  }
-  #forgot {
-    font-size: 15px;
-    padding-top: 11px;
-  }
+
   .copyright {
     font-size: 14px;
     left: 0px;
@@ -416,17 +392,14 @@ input {
   }
 }
 @media screen and (max-width: 880px) {
-  .loginform {
+  .signupform {
     width: 50%;
     left: 25%;
   }
   .desc {
     font-size: 15px;
   }
-  #forgot {
-    display: block;
-    left: 18%;
-  }
+
   .remember-label {
     display: flex;
     left: 36px;
@@ -469,10 +442,10 @@ input {
 } */
 
 @media screen and (min-width: 390px) and (max-width: 480px) {
-  .loginform {
+  .signupform {
     width: 71%;
     left: 15%;
-    margin-top: 145px;
+    margin-top: 75px;
   }
   .Login-Page {
     padding-bottom: -webkit-fill-available;
@@ -480,7 +453,7 @@ input {
   img {
     margin-right: 37px;
   }
-  #headerTitle {
+  #headerTitleSignUp {
     font-size: 20px;
     margin-top: 2%;
     line-height: 30px;
@@ -507,11 +480,7 @@ input {
     width: 250px;
     left: 12px;
   }
-  #forgot {
-    width: 253px;
-    left: 91px;
-    line-height: 23px;
-  }
+
   .copyright {
     font-size: 14px;
     /* line-height: 4; */
@@ -525,10 +494,10 @@ input {
   }
 }
 @media screen and (max-width: 390px) {
-  .loginform {
-    width: 75%;
+  .signupform {
+    width: 80%;
     left: 15%;
-    margin-top: 145px;
+    margin-top: 75px;
   }
   .Login-Page {
     width: 405.2px;
@@ -536,7 +505,7 @@ input {
   img {
     margin-right: 37px;
   }
-  #headerTitle {
+  #headerTitleSignUp {
     font-size: 20px;
     margin-top: 2%;
     line-height: 30px;
@@ -563,11 +532,7 @@ input {
     width: 250px;
     left: 58px;
   }
-  #forgot {
-    width: 253px;
-    left: 20px;
-    line-height: 60px;
-  }
+
   .copyright {
     font-size: 14px;
     /* line-height: 4; */
@@ -578,5 +543,18 @@ input {
   }
   .row button {
     top: 46px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .input-fields {
+    top: -17px;
+  }
+  #registerd-user {
+    left: 13%;
+    top: -24px;
+  }
+  .copyright {
+    font-size: 11px;
+    left: 13px;
   }
 }
