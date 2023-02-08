@@ -8,42 +8,37 @@ import "./Signup-styles.css";
 const Login = () => {
   // const Navigate=useNavigate('');
   const history = useHistory("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [error, setError] = useState("");
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handlePasswordConfirmChange = (event) => {
+    setPasswordConfirm(event.target.value);
+  };
+
   useEffect(() => {
     if (localStorage.getItem("token")) {
       localStorage.removeItem("token");
     }
   });
-  //   const handleEmail = (e) => {
-  //     setEmail(e.target.value);
-  //   };
-  //   const handlePass = (e) => {
-  //     setPassword(e.target.value);
-  //   };
+
   const handleApi = () => {
-    // axios
-    //   .post("https://reqres.in/api/login", {
-    //     email: email,
-    //     password: password,
-    //   })
-    //   .then((result) => {
-    //     console.log(result.data);
-
-    //     // Navigate("/home")
-    //     localStorage.setItem("token", result.data.token);
-    //     history.push("/home");
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-
-    // Navigate("/home")
-
     history.push("/");
   };
   function handleSubmit(e) {
     e.preventDefault();
+    if (password !== passwordConfirm) {
+      setError("Passwords do not match");
+    } else if (password === passwordConfirm) {
+      history.push("/");
+      // Submit the form
+    } else {
+      setError("");
+    }
   }
   return (
     <div className="Signup-Page">
@@ -94,6 +89,8 @@ const Login = () => {
                   type="password"
                   id="password"
                   className="password"
+                  value={password}
+                  onChange={handlePasswordChange}
                   placeholder="Enter your password"
                 />
               </div>
@@ -104,11 +101,14 @@ const Login = () => {
                   type="password"
                   id="retype-password"
                   className="retype-password"
+                  value={passwordConfirm}
+                  onChange={handlePasswordConfirmChange}
                   placeholder="Retype your Password"
                 />
               </div>
+              {error && <div style={{ color: "red" }}>{error}</div>}
               <div className="row-button" id="button">
-                <button onClick={handleApi}>Signup</button>
+                <button>Signup</button>
               </div>
             </form>
 
