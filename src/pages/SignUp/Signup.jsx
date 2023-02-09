@@ -5,12 +5,17 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "./Signup-styles.css";
 
-const Login = () => {
+const Login = ({ setUserRegister }) => {
   // const Navigate=useNavigate('');
   const history = useHistory("");
+
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
   const [error, setError] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+  // const [userData, setUserData] = useState("");
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -33,13 +38,22 @@ const Login = () => {
     e.preventDefault();
     if (password !== passwordConfirm) {
       setError("Passwords do not match");
+      console.log("error");
     } else if (password === passwordConfirm) {
-      history.push("/");
-      // Submit the form
+      // console.log(userData);
+      // history.push("/");
+      // setUserData({
+      //   name: name,
+      //   email: email,
+      //   passwordConfirm: passwordConfirm,
+      //   mobileNumber: mobileNumber,
+      // });
+      setUserRegister(name, email, passwordConfirm, mobileNumber);
     } else {
       setError("");
     }
   }
+
   return (
     <div className="Signup-Page">
       <div id="signupform" className="signupform">
@@ -54,8 +68,8 @@ const Login = () => {
             <form onSubmit={handleSubmit}>
               <div className="row">
                 <input
-                  //   value={email}
-                  //   onChange={handleEmail}
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
                   type="text"
                   id="username"
                   className="username"
@@ -64,8 +78,8 @@ const Login = () => {
               </div>
               <div className="row">
                 <input
-                  //   value={email}
-                  //   onChange={handleEmail}
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
                   type="text"
                   id="email"
                   className="email"
@@ -76,6 +90,8 @@ const Login = () => {
                 <input
                   //   value={email}
                   //   onChange={handleEmail}
+                  value={mobileNumber}
+                  onChange={(event) => setMobileNumber(event.target.value)}
                   type="text"
                   id="phone-number"
                   className="phone-number"
@@ -98,6 +114,7 @@ const Login = () => {
                 <input
                   //   value={password}
                   //   onChange={handlePass}
+
                   type="password"
                   id="retype-password"
                   className="retype-password"
