@@ -5,46 +5,55 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "./Signup-styles.css";
 
-const Login = () => {
+const Login = ({ setUserRegister }) => {
   // const Navigate=useNavigate('');
   const history = useHistory("");
-  const [email, setEmail] = useState("");
+
   const [password, setPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [error, setError] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+  // const [userData, setUserData] = useState("");
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handlePasswordConfirmChange = (event) => {
+    setPasswordConfirm(event.target.value);
+  };
+
   useEffect(() => {
     if (localStorage.getItem("token")) {
       localStorage.removeItem("token");
     }
   });
-  //   const handleEmail = (e) => {
-  //     setEmail(e.target.value);
-  //   };
-  //   const handlePass = (e) => {
-  //     setPassword(e.target.value);
-  //   };
+
   const handleApi = () => {
-    // axios
-    //   .post("https://reqres.in/api/login", {
-    //     email: email,
-    //     password: password,
-    //   })
-    //   .then((result) => {
-    //     console.log(result.data);
-
-    //     // Navigate("/home")
-    //     localStorage.setItem("token", result.data.token);
-    //     history.push("/home");
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-
-    // Navigate("/home")
-
     history.push("/");
   };
   function handleSubmit(e) {
     e.preventDefault();
+    if (password !== passwordConfirm) {
+      setError("Passwords do not match");
+      console.log("error");
+    } else if (password === passwordConfirm) {
+      // console.log(userData);
+      // history.push("/");
+      // setUserData({
+      //   name: name,
+      //   email: email,
+      //   passwordConfirm: passwordConfirm,
+      //   mobileNumber: mobileNumber,
+      // });
+      setUserRegister(name, email, passwordConfirm, mobileNumber);
+    } else {
+      setError("");
+    }
   }
+
   return (
     <div className="Signup-Page">
       <div id="signupform" className="signupform">
@@ -59,8 +68,8 @@ const Login = () => {
             <form onSubmit={handleSubmit}>
               <div className="row">
                 <input
-                  //   value={email}
-                  //   onChange={handleEmail}
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
                   type="text"
                   id="username"
                   className="username"
@@ -69,8 +78,8 @@ const Login = () => {
               </div>
               <div className="row">
                 <input
-                  //   value={email}
-                  //   onChange={handleEmail}
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
                   type="text"
                   id="email"
                   className="email"
@@ -81,6 +90,8 @@ const Login = () => {
                 <input
                   //   value={email}
                   //   onChange={handleEmail}
+                  value={mobileNumber}
+                  onChange={(event) => setMobileNumber(event.target.value)}
                   type="text"
                   id="phone-number"
                   className="phone-number"
@@ -94,6 +105,8 @@ const Login = () => {
                   type="password"
                   id="password"
                   className="password"
+                  value={password}
+                  onChange={handlePasswordChange}
                   placeholder="Enter your password"
                 />
               </div>
@@ -101,14 +114,18 @@ const Login = () => {
                 <input
                   //   value={password}
                   //   onChange={handlePass}
+
                   type="password"
                   id="retype-password"
                   className="retype-password"
+                  value={passwordConfirm}
+                  onChange={handlePasswordConfirmChange}
                   placeholder="Retype your Password"
                 />
               </div>
+              {error && <div style={{ color: "red" }}>{error}</div>}
               <div className="row-button" id="button">
-                <button onClick={handleApi}>Signup</button>
+                <button>Signup</button>
               </div>
             </form>
 

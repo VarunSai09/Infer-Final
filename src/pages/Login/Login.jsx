@@ -10,6 +10,7 @@ const Login = () => {
   const history = useHistory("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   useEffect(() => {
     if (localStorage.getItem("token")) {
       localStorage.removeItem("token");
@@ -26,16 +27,29 @@ const Login = () => {
   };
   const handleApi = () => {
     axios
-      .post("https://reqres.in/api/login", {
-        email: email,
-        password: password,
-      })
+      .post(
+        "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/login",
+        {
+          email: email,
+          password: password,
+        }
+      )
       .then((result) => {
-        console.log(result.data);
+        console.log(result.data.statusCode);
+        if (result.data.statusCode == 200) {
+          history.push("/home");
+        } else if (result.data.statusCode == 400) {
+          // result.preventDefault();
+          setError("Ener both email and password");
+        } else if (result.data.statusCode == 401) {
+          // result.preventDefault();
+          setError("Enterd details are incorrect");
+        } else {
+          setError("");
+        }
 
         // Navigate("/home")
         localStorage.setItem("token", result.data.token);
-        history.push("/home");
       })
       .catch((error) => {
         console.log(error);
@@ -76,6 +90,7 @@ const Login = () => {
                   placeholder="Password"
                 />
               </div>
+              {error && <div style={{ color: "red" }}>{error}</div>}
               <div className="row" id="button">
                 <button onClick={handleApi}>Login</button>
               </div>

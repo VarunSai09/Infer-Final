@@ -11,7 +11,7 @@ import axios from "axios";
 
 export const searchData = async (term) => {
   const { data } = await axios.post(
-    "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/mediumquery",
+    "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/search",
     { term }
     // {
     //   params: {
