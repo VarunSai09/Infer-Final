@@ -1,15 +1,64 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IconContext } from "react-icons";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
-
+import axios from "axios";
 import { SidebarData } from "./SlidebarData";
 import "./Navbar.css";
 
 export default function Navbar() {
   const [mobileBar, setMobileBar] = useState(false);
   const [mobileBarVisible, setMobileBarVisible] = useState(false);
+  const [userId, setUserID] = useState();
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // axios.post(
+    //   "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/login",
+    //   { UserId: userId }
+    // );
+
+    const id = localStorage.getItem("UserId");
+    // const ID = JSON.stringify(id);
+    setUserID(id);
+    //   const fetchData = async () => {
+    //     const response = await fetch(
+    //       "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/userdetails",
+    //       { UserId: id }
+    //     );
+    //     const result = await response.json();
+    //     setData(result);
+    //   };
+
+    //   fetchData();
+  }, []);
+
+  useEffect(() => {
+    console.log(userId);
+    if (userId !== undefined) {
+      axios
+        .post(
+          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/userdetails",
+          { UserId: userId }
+        )
+        .then((result) => {
+          console.log(result.data.body[0].Name);
+          setData(result.data.body[0].Name);
+          
+        });
+      // console.log(response);
+      // const result = response;
+      // const update = result;
+      // console.log("1" + update);
+      // setData(result);
+      // console.log("2" + data);
+    }
+  }, [userId]);
+
+  // if (!data) {
+  //   return <div>Loading...</div>;
+  // }
 
   function myFunction(x) {
     if (x.matches != mobileBar) {
@@ -88,7 +137,7 @@ export default function Navbar() {
             </div>
             <div className="welcome-frame">
               <p className="welcome">Welcome Back,</p>
-              <p className="name">Varun Darwai</p>
+              <p className="name">{data}</p>
             </div>
 
             <ul className="nav-menu-items">
