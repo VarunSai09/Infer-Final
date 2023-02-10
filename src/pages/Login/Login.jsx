@@ -39,7 +39,9 @@ const Login = (props) => {
         console.log(result.data.statusCode);
         if (result.data.statusCode == 200) {
           const user_data = result.data.body[0];
-          console.log(user_data);
+          console.log(user_data.UserId);
+
+          localStorage.setItem("UserId", user_data.UserId);
           history.push("/home");
         } else if (result.data.statusCode == 400) {
           // result.preventDefault();
@@ -52,7 +54,6 @@ const Login = (props) => {
         }
 
         // Navigate("/home")
-        localStorage.setItem("token", result.data.token);
       })
       .catch((error) => {
         console.log(error);

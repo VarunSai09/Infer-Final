@@ -10,7 +10,7 @@ import "../../components/Searchbar.css";
 export default function HomePage({ setSearch }) {
   const history = useHistory("");
   useEffect(() => {
-    if (!localStorage.getItem("token")) {
+    if (!localStorage.getItem("UserId")) {
       history.push("/");
     }
   });
