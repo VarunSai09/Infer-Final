@@ -101,7 +101,7 @@ export default function Navbar() {
             </div>
             <div className="welcome-frame">
               <p className="welcome">Welcome Back,</p>
-              <p className="name">Varun Darwai</p>
+              <p className="name">{data}</p>
             </div>
 
             <ul className="nav-menu-items">
