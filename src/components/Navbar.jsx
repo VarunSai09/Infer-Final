@@ -45,7 +45,6 @@ export default function Navbar() {
         .then((result) => {
           console.log(result.data.body[0].Name);
           setData(result.data.body[0].Name);
-          
         });
       // console.log(response);
       // const result = response;
@@ -137,7 +136,9 @@ export default function Navbar() {
             </div>
             <div className="welcome-frame">
               <p className="welcome">Welcome Back,</p>
-              <p className="name">{data}</p>
+              <p className="name">
+                <span id="UserName_Nav">{data}</span>
+              </p>
             </div>
 
             <ul className="nav-menu-items">
