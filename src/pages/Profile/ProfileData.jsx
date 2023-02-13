@@ -3,8 +3,8 @@ import axios from "axios";
 import "./profile-data.css";
 export default function ProfileData() {
   var [name, setName] = useState();
-  var [email, setEmail] = useState("varunkumard10@gmail.com");
-  var [phone, setPhone] = useState("+91 9576248020");
+  var [email, setEmail] = useState();
+  var [phone, setPhone] = useState();
   const [userId, setUserID] = useState();
   const [data, setData] = useState(null);
 
