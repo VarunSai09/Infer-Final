@@ -13,7 +13,7 @@ export default function Home() {
 
   const history = useHistory("");
   useEffect(() => {
-    if (!localStorage.getItem("token")) {
+    if (!localStorage.getItem("UserId")) {
       history.push("/");
     }
   });

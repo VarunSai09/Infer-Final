@@ -68,7 +68,7 @@ body {
   position: relative;
   width: 150px;
   height: 150px;
-  left: 21.6rem;
+  left: 20.6rem;
   top: -1rem;
   border-radius: 358.343px;
 }
@@ -95,7 +95,7 @@ body {
   position: relative;
   top: 12rem;
   /* bottom: 4.8rem; */
-  right: 21rem;
+  right: 22rem;
   width: 85px;
   height: 16px;
   padding-top: 0;
@@ -120,11 +120,11 @@ body {
   top: 10.5rem;
   /* bottom: 6rem; */
   right: 22.2rem;
-  width: 113px;
+  width: fit-content;
   height: 25px;
   padding: 0;
   margin-top: 25px;
-  margin-bottom: 0px;
+  margin-bottom: 25px;
   font-family: "Avenir Next";
   font-style: normal;
   font-weight: 600;
@@ -136,6 +136,12 @@ body {
   flex: none;
   order: 1;
   flex-grow: 0;
+}
+#UserName_Nav {
+  position: relative;
+  width: 79px;
+  margin-left: 6px;
+  font-size: 16px;
 }
 .menu-bars {
   margin-left: 2rem;
@@ -213,7 +219,7 @@ body {
 }
 .nav-menu-items {
   position: relative;
-  right: 11.3rem;
+  right: 12.3rem;
   width: 100%;
   padding-left: 31.25rem;
   margin-top: 15.5rem;
@@ -273,14 +279,14 @@ span {
   .Avatar {
     width: 125px;
     height: 125px;
-    left: 23rem;
+    left: 21rem;
   }
   .welcome-frame {
     right: 15px;
     top: -34px;
   }
   .nav-menu-items {
-    right: 12rem;
+    right: 13rem;
     bottom: 25px;
   }
   .home {
@@ -322,10 +328,10 @@ span {
     right: 58px;
   }
   .Avatar {
-    left: 24.6rem;
+    left: 23.6rem;
   }
   .nav-menu-items {
-    right: 14.6rem;
+    right: 15.6rem;
   }
   .home {
     padding-left: 15%;

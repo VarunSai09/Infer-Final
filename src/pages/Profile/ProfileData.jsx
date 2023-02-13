@@ -1,9 +1,63 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./profile-data.css";
 export default function ProfileData() {
-  var [name, setName] = useState("Varun Darwai");
-  var [email, setEmail] = useState("varunkumard10@gmail.com");
-  var [phone, setPhone] = useState("+91 9576248020");
+  var [name, setName] = useState();
+  var [email, setEmail] = useState();
+  var [phone, setPhone] = useState();
+  const [userId, setUserID] = useState();
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // axios.post(
+    //   "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/login",
+    //   { UserId: userId }
+    // );
+
+    const id = localStorage.getItem("UserId");
+    // const ID = JSON.stringify(id);
+    setUserID(id);
+    //   const fetchData = async () => {
+    //     const response = await fetch(
+    //       "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/userdetails",
+    //       { UserId: id }
+    //     );
+    //     const result = await response.json();
+    //     setData(result);
+    //   };
+
+    //   fetchData();
+  }, []);
+
+  useEffect(() => {
+    console.log(userId);
+    if (userId !== undefined) {
+      axios
+        .post(
+          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/userdetails",
+          { UserId: userId }
+        )
+        .then((result) => {
+          console.log(result.data.body[0]);
+          setData(result.data.body[0]);
+          setName(result.data.body[0].Name);
+          setEmail(result.data.body[0].Email);
+          setPhone(result.data.body[0].MobileNumber);
+        });
+        
+      // console.log(response);
+      // const result = response;
+      // const update = result;
+      // console.log("1" + update);
+      // setData(result);
+      // console.log("2" + data);
+    }
+  }, [userId]);
+
+  // useEffect(() => {
+        
+  //    }, [name]);
+
   return (
     <>
       <div className="profile">

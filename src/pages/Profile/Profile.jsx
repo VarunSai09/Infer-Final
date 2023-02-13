@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 export default function Profile() {
   const history=useHistory('')
   useEffect(() => {
-    if(!localStorage.getItem('token')){
+    if(!localStorage.getItem('UserId')){
       history.push('/')
     }
   })
