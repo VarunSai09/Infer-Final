@@ -4,7 +4,7 @@ import ProfileData from "./ProfileData";
 import Navbar from "../../components/Navbar";
 import {  useEffect } from "react";
 import { useHistory } from "react-router-dom";
-export default function Profile() {
+export default function Profile({setupdateDataUser}) {
   const history=useHistory('')
   useEffect(() => {
     if(!localStorage.getItem('UserId')){
@@ -15,7 +15,7 @@ export default function Profile() {
     <>
       <Navbar />
       <ProfileNav />
-      <ProfileData />
+      <ProfileData setupdateDataUser={setupdateDataUser} />
     </>
   );
 }
