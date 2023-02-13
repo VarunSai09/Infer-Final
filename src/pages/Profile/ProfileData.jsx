@@ -1,32 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./profile-data.css";
-export default function ProfileData() {
+
+const ProfileData = ({ setupdateDataUser }) => {
   var [name, setName] = useState();
   var [email, setEmail] = useState();
-  var [phone, setPhone] = useState();
+  var [mobileNumber, setMobileNumber] = useState();
   const [userId, setUserID] = useState();
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    // axios.post(
-    //   "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/login",
-    //   { UserId: userId }
-    // );
-
     const id = localStorage.getItem("UserId");
-    // const ID = JSON.stringify(id);
     setUserID(id);
-    //   const fetchData = async () => {
-    //     const response = await fetch(
-    //       "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/userdetails",
-    //       { UserId: id }
-    //     );
-    //     const result = await response.json();
-    //     setData(result);
-    //   };
-
-    //   fetchData();
   }, []);
 
   useEffect(() => {
@@ -38,25 +23,20 @@ export default function ProfileData() {
           { UserId: userId }
         )
         .then((result) => {
-          console.log(result.data.body[0]);
           setData(result.data.body[0]);
           setName(result.data.body[0].Name);
           setEmail(result.data.body[0].Email);
-          setPhone(result.data.body[0].MobileNumber);
+          setMobileNumber(result.data.body[0].MobileNumber);
         });
-        
-      // console.log(response);
-      // const result = response;
-      // const update = result;
-      // console.log("1" + update);
-      // setData(result);
-      // console.log("2" + data);
     }
   }, [userId]);
 
-  // useEffect(() => {
-        
-  //    }, [name]);
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(name, email, mobileNumber, userId);
+
+    setupdateDataUser(name, email, mobileNumber, userId);
+  }
 
   return (
     <>
@@ -78,72 +58,79 @@ export default function ProfileData() {
             <br />
           </div>
         </div>
-        <div className="profile-details">
-          <div className="row-data">
-            <label for="profile-name" className="profile-headings">
-              Full Name
-            </label>
-            <input
-              type="text"
-              contenteditable="true"
-              className="profile-name profile-values"
-              onChange={(e) => setName(e.target.value)}
-              id="profile-name"
-              value={name}
-            ></input>
+        <form onSubmit={handleSubmit}>
+          <div className="profile-details">
+            <div className="row-data">
+              <label for="profile-name" className="profile-headings">
+                Full Name
+              </label>
+              <input
+                type="text"
+                contenteditable="true"
+                className="profile-name profile-values"
+                onChange={(event) => setName(event.target.value)}
+                id="profile-name"
+                value={name}
+              ></input>
+            </div>
+            <div className="row-data">
+              <label className="profile-headings">Email</label>
+              <input
+                type="text"
+                contenteditable="true"
+                className="profile-email profile-values"
+                onChange={(event) => setEmail(event.target.value)}
+                value={email}
+              ></input>
+            </div>
+            <div className="row-data">
+              <label className="profile-headings">Phone Number</label>
+              <input
+                type="text"
+                contenteditable="true"
+                className="profile-number profile-values"
+               onChange={(event) => setMobileNumber(event.target.value)}
+                value={mobileNumber}
+              ></input>
+            </div>
           </div>
-          <div className="row-data">
-            <label className="profile-headings">Email</label>
-            <input
-              type="text"
-              contenteditable="true"
-              className="profile-email profile-values"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-            ></input>
+          <div className="user-credentials">
+            <div className="row-creds">
+              <label className="creds-site">Medium Username</label>
+              <input
+                type="text"
+                contentEditable="true"
+                className="medium-username creds-values"
+              ></input>
+              <label className="creds-site">Medium Password</label>
+              <input
+                type="text"
+                contentEditable="true"
+                className="medium-password creds-values"
+              ></input>
+            </div>
+            <div className="row-creds">
+              <label className="creds-site">Quora Username</label>
+              <input
+                type="text"
+                contentEditable="true"
+                className="medium-username creds-values"
+              ></input>
+              <label className="creds-site">Quora Password</label>
+              <input
+                type="text"
+                contentEditable="true"
+                className="medium-password creds-values"
+              ></input>
+            </div>
           </div>
-          <div className="row-data">
-            <label className="profile-headings">Phone Number</label>
-            <input
-              type="text"
-              contenteditable="true"
-              className="profile-number profile-values"
-              onChange={(e) => setPhone(e.target.value)}
-              value={phone}
-            ></input>
+
+          <div>
+            <button className="profile-submit">Submit</button>
           </div>
-        </div>
-        <div className="user-credentials">
-          <div className="row-creds">
-            <label className="creds-site">Medium Username</label>
-            <input
-              type="text"
-              contentEditable="true"
-              className="medium-username creds-values"
-            ></input>
-            <label className="creds-site">Medium Password</label>
-            <input
-              type="text"
-              contentEditable="true"
-              className="medium-password creds-values"
-            ></input>
-          </div>
-          <div className="row-creds">
-            <label className="creds-site">Quora Username</label>
-            <input
-              type="text"
-              contentEditable="true"
-              className="medium-username creds-values"
-            ></input>
-            <label className="creds-site">Quora Password</label>
-            <input
-              type="text"
-              contentEditable="true"
-              className="medium-password creds-values"
-            ></input>
-          </div>
-        </div>
+        </form>
       </div>
     </>
   );
-}
+};
+export default ProfileData;

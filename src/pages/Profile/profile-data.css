@@ -109,7 +109,21 @@ input {
   flex-grow: 0;
   padding: 15px auto;
 }
-
+.profile-submit {
+  border-radius: 8px;
+  width: 10%;
+  height: 40px;
+  font-size: 1rem;
+  color: white;
+  font-weight: 700;
+  background: #305ba5;
+  border: 0px;
+  cursor: pointer;
+  position: relative;
+  bottom: 80px;
+  left: 45%;
+  text-align: center;
+}
 @media screen and (max-width: 440px) {
   .profile-pic {
     left: 5%;

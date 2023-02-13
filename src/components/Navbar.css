@@ -138,10 +138,13 @@ body {
   flex-grow: 0;
 }
 #UserName_Nav {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
   position: relative;
   width: 79px;
   margin-left: 6px;
-  font-size: 16px;
 }
 .menu-bars {
   margin-left: 2rem;
