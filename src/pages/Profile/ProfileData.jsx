@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./profile-data.css";
-
+import { useHistory } from "react-router-dom";
+import AddProfilePic from "./fileUpload/addProfilePic";
 const ProfileData = ({ setupdateDataUser }) => {
+  const history = useHistory();
   var [name, setName] = useState();
   var [email, setEmail] = useState();
   var [mobileNumber, setMobileNumber] = useState();
   const [userId, setUserID] = useState();
   const [data, setData] = useState(null);
+  const [ProfileImage, setProfielImage] = useState();
+  const [openAddProfilePic, setopenAddProfilePic] = useState(false);
 
   useEffect(() => {
     const id = localStorage.getItem("UserId");
@@ -48,7 +52,7 @@ const ProfileData = ({ setupdateDataUser }) => {
             alt="Avatr"
           />
           <div className="profile-pic-options">
-            <a className="edit-pic" href="/profile">
+            <a className="edit-pic" onClick={() => setopenAddProfilePic(true)}>
               Edit profile photo
             </a>
             <br />
@@ -89,7 +93,7 @@ const ProfileData = ({ setupdateDataUser }) => {
                 type="text"
                 contenteditable="true"
                 className="profile-number profile-values"
-               onChange={(event) => setMobileNumber(event.target.value)}
+                onChange={(event) => setMobileNumber(event.target.value)}
                 value={mobileNumber}
               ></input>
             </div>
@@ -129,6 +133,10 @@ const ProfileData = ({ setupdateDataUser }) => {
             <button className="profile-submit">Submit</button>
           </div>
         </form>
+        <AddProfilePic
+          open={openAddProfilePic}
+          onClose={() => setopenAddProfilePic(false)}
+        />
       </div>
     </>
   );
