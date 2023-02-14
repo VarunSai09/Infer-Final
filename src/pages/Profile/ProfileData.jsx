@@ -12,7 +12,7 @@ const ProfileData = ({ setupdateDataUser }) => {
   const [data, setData] = useState(null);
   const [ProfileImage, setProfielImage] = useState();
   const [openAddProfilePic, setopenAddProfilePic] = useState(false);
-
+  // console.log(profileImage);
   useEffect(() => {
     const id = localStorage.getItem("UserId");
     setUserID(id);
