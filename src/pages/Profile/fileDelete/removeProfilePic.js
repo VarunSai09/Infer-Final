@@ -1,6 +1,6 @@
 import "./removeProfilePic.css";
 import { useState } from "react";
-import axios from "axios"
+import axios from "axios";
 import React from "react";
 export default function RemoveProfilePic({ open, onClose }) {
   if (!open) {
@@ -9,7 +9,10 @@ export default function RemoveProfilePic({ open, onClose }) {
   const handleSubmit = () => {
     const id = localStorage.getItem("UserId");
     console.log(id);
-    axios.post("https://c5rbbler50.execute-api.us-east-1.amazonaws.com/v4/delete-profile-picture",{userId:id})
+    axios.post(
+      "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/v4/delete-profile-picture",
+      { userId: id }
+    );
     // fetch(
     //   "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/delete-profile-picture",
     //   {
