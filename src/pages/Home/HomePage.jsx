@@ -9,12 +9,18 @@ import "../../components/Searchbar.css";
 
 export default function HomePage({ setSearch }) {
   const history = useHistory("");
+   const [userid,setUserId]=useState("");
   useEffect(() => {
     if (!localStorage.getItem("UserId")) {
       history.push("/");
     }
+    const id = localStorage.getItem("UserId");
+    setUserId(id);
   });
   const [term, setTerm] = useState("");
+ 
+ 
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -22,7 +28,8 @@ export default function HomePage({ setSearch }) {
       /^[a-zA-Z0-9]+[" "]/.test(term) ||
       /^[" "]+[a-zA-Z0-9]/.test(term)
     ) {
-      setSearch(term.toLowerCase());
+      setSearch(term.toLowerCase(),userid);
+      
     }
   };
   return (
