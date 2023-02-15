@@ -29,6 +29,7 @@ a {
   position: relative;
   bottom: 0;
   color: #c73000;
+  cursor: pointer;
 }
 .edit-pic {
   margin-bottom: 15px;

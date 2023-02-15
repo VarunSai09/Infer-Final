@@ -44,6 +44,7 @@ export default function Navbar() {
           { UserId: userId }
         )
         .then((result) => {
+           console.log(result.data.body[0]);
           console.log(result.data.body[0].Name);
           setData(result.data.body[0].Name);
           if(result.data.body[0].ProfileImage){

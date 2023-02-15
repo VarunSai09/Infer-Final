@@ -24,7 +24,7 @@ export default function AddProfilePic({ open, onClose }) {
           /^data:image\/[a-z]+;base64,/,
           ""
         );
-        console.log(imageData);
+        // console.log(imageData);
         setProfileImage(imageData);
 
         fetch(
@@ -33,8 +33,12 @@ export default function AddProfilePic({ open, onClose }) {
             method: "POST",
             body: JSON.stringify({ image: imageData, UserId: id }),
           }
-        ).then((response) => response.json());
-        window.location.reload();
+        ).then((result) => {
+          console.log(result);
+          console.log(result.body[0]);
+        })
+        // onClose();
+
       };
       alert("Image Updated and Profile picture will update soon");
     }
