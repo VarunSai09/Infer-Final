@@ -2,25 +2,43 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import * as BsIcons from "react-icons/bs";
-
+import axios from "axios";
 // import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import "../../components/Searchbar.css";
+import search from "../SearchScreen/search";
 
 export default function HomePage({ setSearch }) {
   const history = useHistory("");
-   const [userid,setUserId]=useState("");
+  const [userid, setUserId] = useState("");
+  var [searchHistory, setSearchHistory] = useState(null);
+
   useEffect(() => {
     if (!localStorage.getItem("UserId")) {
       history.push("/");
     }
     const id = localStorage.getItem("UserId");
     setUserId(id);
-  });
+  }, []);
+
+  useEffect(() => {
+    if (userid !== undefined) {
+      axios.post(
+          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/userdetails",
+          { UserId: userid }
+        )
+        .then((result) => {
+          console.log(result.data.body[0].SearchList);
+           setSearchHistory(result.data.body[0].SearchList);
+        });
+    }
+  }, [userid]);
+
+  var data = [searchHistory];
+
+  console.log(data);
   const [term, setTerm] = useState("");
- 
- 
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -28,8 +46,7 @@ export default function HomePage({ setSearch }) {
       /^[a-zA-Z0-9]+[" "]/.test(term) ||
       /^[" "]+[a-zA-Z0-9]/.test(term)
     ) {
-      setSearch(term.toLowerCase(),userid);
-      
+      setSearch(term.toLowerCase(), userid);
     }
   };
   return (
@@ -43,17 +60,38 @@ export default function HomePage({ setSearch }) {
         <p className="Library-mobile Library">Library Search</p>
 
         <form className="d-flex" id="Search" onSubmit={handleSubmit}>
-          <input
-            placeholder="Search"
-            type="text"
-            value={term}
-            className="Search"
-            aria-label="Search"
-            onChange={(event) => setTerm(event.target.value)}
-          ></input>
-          <p id="Search-Logo">
-            <BsIcons.BsSearch />
-          </p>
+          <div className="Search">
+            {" "}
+            <input
+              placeholder="Search"
+              type="text"
+              value={term}
+              aria-label="Search"
+              onChange={(event) => setTerm(event.target.value)}
+            ></input>
+            <p id="Search-Logo">
+              <BsIcons.BsSearch />
+            </p>
+            <div className="dropdown">
+              {data
+                .filter((item) => {
+                  const searchTerm = term;
+                  const searchList = item;
+                  // console.log(searchList)
+                  return searchTerm && searchList && searchList !== searchTerm;
+                })
+                .slice(0, 10)
+                .map((item) => (
+                  <div
+                    onClick={() => setTerm(item)}
+                    className="dropdown-row"
+                    key={item}
+                  >
+                    {item}
+                  </div>
+                ))}
+            </div>
+          </div>
         </form>
       </Navbar>
       <div className="home">

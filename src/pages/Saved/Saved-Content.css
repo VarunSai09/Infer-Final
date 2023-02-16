@@ -147,7 +147,7 @@ a:hover + .add-delete {
   align-items: center;
   padding: 2px 16px;
   gap: 8px;
-  width: 46px;
+  width: fit-content;
   height: 23px;
   border: 1px solid #a6a6a6;
   border-radius: 1000px;
