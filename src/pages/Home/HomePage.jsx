@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import * as BsIcons from "react-icons/bs";
+import {retreiveUser} from "../../api/retreiveDetails"
 import axios from "axios";
 // import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
@@ -11,7 +12,7 @@ import search from "../SearchScreen/search";
 export default function HomePage({ setSearch }) {
   const history = useHistory("");
   const [userid, setUserId] = useState("");
-  var [searchHistory, setSearchHistory] = useState(null);
+  var [searchHistory, setSearchHistory] = useState([]);
 
   useEffect(() => {
     if (!localStorage.getItem("UserId")) {
@@ -19,24 +20,24 @@ export default function HomePage({ setSearch }) {
     }
     const id = localStorage.getItem("UserId");
     setUserId(id);
+    setUserDetails(id)
   }, []);
+  
+   const setUserDetails=async()=>{
+    const id = localStorage.getItem("UserId");
+    const retreivedDetails = await retreiveUser(id);
+    const retreivedDe=retreivedDetails.data.body[0].SearchList
+    const Ret=JSON.parse(retreivedDe);
+    console.log(typeof(retreivedDetails.data.body[0].SearchList))
+    setSearchHistory(Ret)
+    console.log(searchHistory)
+    console.log(typeof(searchHistory))
+    console.log(Ret)
+  }
 
-  useEffect(() => {
-    if (userid !== undefined) {
-      axios.post(
-          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/userdetails",
-          { UserId: userid }
-        )
-        .then((result) => {
-          console.log(result.data.body[0].SearchList);
-           setSearchHistory(result.data.body[0].SearchList);
-        });
-    }
-  }, [userid]);
+  var data = [];
 
-  var data = [searchHistory];
-
-  console.log(data);
+  // console.log(data);
   const [term, setTerm] = useState("");
 
   const handleSubmit = (e) => {
@@ -51,7 +52,7 @@ export default function HomePage({ setSearch }) {
   };
   return (
     <>
-      <Navbar className="navbar-search" bg="light" expand="lg">
+      <Navbar className="navbar-search" bg="light" expand="lg" onSubmit={handleSubmit}>
         <img
           className="Logo-Home"
           src="https://www.infersol.com/wp-content/uploads/2020/02/logo.png"
@@ -61,24 +62,25 @@ export default function HomePage({ setSearch }) {
 
         <form className="d-flex" id="Search" onSubmit={handleSubmit}>
           <div className="Search">
-            {" "}
+            
             <input
               placeholder="Search"
               type="text"
               value={term}
               aria-label="Search"
+              // onClick={handleClick}
               onChange={(event) => setTerm(event.target.value)}
             ></input>
             <p id="Search-Logo">
               <BsIcons.BsSearch />
             </p>
             <div className="dropdown">
-              {data
+              {searchHistory
                 .filter((item) => {
                   const searchTerm = term;
                   const searchList = item;
                   // console.log(searchList)
-                  return searchTerm && searchList && searchList !== searchTerm;
+                  return searchTerm && searchList ;
                 })
                 .slice(0, 10)
                 .map((item) => (
@@ -86,6 +88,7 @@ export default function HomePage({ setSearch }) {
                     onClick={() => setTerm(item)}
                     className="dropdown-row"
                     key={item}
+                    onDoubleClick={handleSubmit}
                   >
                     {item}
                   </div>

@@ -15,6 +15,7 @@ import { useHistory } from "react-router-dom";
 import { searchData } from "./api/googleSearch";
 import { registerUser } from "./api/userRegister";
 import { updateUser } from "./api/updateUserData";
+import {retreiveUser} from "./api/retreiveDetails"
 // import addNote from "./pages/Saved/addNote/addNote";
 
 export default function App(props) {
@@ -22,6 +23,7 @@ export default function App(props) {
   const [searchTerm, setSearchTerm] = useState("");
   const [userID, setUserID] = useState("");
   const [googleData, setGoogleData] = useState({});
+  const [searchHistory,setSearchHistory]=useState(null);
   const [userDataSignup, setuserDataSignup] = useState("");
   const [userDataUpdate, setUserDataUpdate] = useState("");
    useEffect(() => {
@@ -39,6 +41,22 @@ export default function App(props) {
     setGoogleData(data);
     history.push("/search");
   };
+  //-----User DATA Retreival---//
+  
+  const setUserDetails=async()=>{
+    const id = localStorage.getItem("UserId");
+    const retreivedDetails = await retreiveUser(id);
+    const retreivedDe=retreivedDetails.data.body[0].SearchList
+    const Ret=retreivedDe.split(',');
+    console.log(typeof(retreivedDetails.data.body[0].SearchList))
+    setSearchHistory(Ret)
+    console.log(searchHistory)
+    console.log(typeof(searchHistory))
+    console.log(Ret)
+  }
+  
+  
+  
   //------USER REGISTRATION-------//
   const setUserRegister = async (
     name,
@@ -97,7 +115,7 @@ export default function App(props) {
         <Route
           exact
           path="/home"
-          component={() => <Home setSearch={setSearch} />}
+          component={() => <Home setSearch={setSearch} searchHistory={searchHistory} setUserDetails={setUserDetails} />}
         />
         <Route
           exact
