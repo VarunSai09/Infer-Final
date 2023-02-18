@@ -135,7 +135,7 @@ img {
   /* flex-direction: column; */
   align-items: center;
   padding-top: 15px;
-  padding-left: 17%;
+  padding-left: 0;
 }
 .row .email {
   /* position: absolute;
@@ -191,9 +191,13 @@ input::placeholder {
   opacity: 0;
 }
 
+.remembrer-links {
+  position: relative;
+  top: 50;
+}
 #box {
   position: relative;
-  left: 2.5rem;
+  left: 3.5rem;
   bottom: 62px;
   margin-top: 6px;
   /* bottom: 50.5%; */
@@ -209,7 +213,7 @@ input::placeholder {
 }
 .remember {
   /* padding-right:10%; */
-  padding-left: 10%;
+  /* padding-left: 10%; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -224,11 +228,10 @@ input::placeholder {
   position: relative;
   width: 370px;
   height: 0;
-  top: -65px;
-  left: 5%;
+  right: 11;
   margin-top: 6px;
   /* right: 32.5rem; */
-  bottom: 76px;
+  bottom: 63.5px;
   font-family: "Avenir Next";
   font-style: normal;
   font-weight: 400;
@@ -242,11 +245,11 @@ input::placeholder {
 }
 #forgot {
   margin: 0;
-  padding-top: 10px;
+  /* padding-top: 10px; */
   position: relative;
   height: 0;
-  bottom: 100px;
-  left: 58.5%;
+  bottom: 89px;
+  left: 64.5%;
   font-family: "Avenir Next";
   font-style: normal;
   font-weight: 400;
@@ -260,14 +263,20 @@ input::placeholder {
   align-items: baseline;
   position: relative;
   left: 35%;
-  bottom: 10px;
+  top: 15px;
 }
 .register-user-link {
   padding-left: 10px;
   cursor: pointer;
   text-decoration: underline;
 }
-.row button {
+.Login-Button {
+  position: relative;
+  left: 45px;
+
+  display: block;
+}
+.Login-Button button {
   border-radius: 8px;
   width: 75%;
   height: 40px;
@@ -278,7 +287,7 @@ input::placeholder {
   border: 0px;
   cursor: pointer;
   position: relative;
-  top: 40px;
+  top: 20px;
   right: 10%;
   text-align: center;
 }
@@ -290,7 +299,7 @@ input::placeholder {
 #button {
   /* padding-bottom: 1.5rem; */
 }
-.copyright {
+.copyright-Login {
   /* margin-top: 1rem;
     margin-top: 1rem; */
   position: absolute;
@@ -316,8 +325,11 @@ input::placeholder {
 } */
 @media screen and (min-width: 1280px) and (max-width: 1500px) {
   .remember-label {
-    top: -73px;
-    left: 15%;
+    top: -58px;
+    left: 3%;
+  }
+  #forgot {
+    bottom: 84px;
   }
   #box {
     bottom: 56px;
@@ -351,7 +363,11 @@ input::placeholder {
   .remember {
     flex-wrap: nowrap;
     font-size: 15px;
+
+    position: relative;
+    left: 25px;
   }
+
   .remember-label {
     top: -65px;
     left: 5%;
@@ -364,12 +380,13 @@ input::placeholder {
   }
   #forgot {
     font-size: 15px;
-    padding-top: 11px;
+    padding-top: 0px;
+    left: 60.5%;
   }
   #register-user {
     left: 25%;
   }
-  .copyright {
+  .copyright-Login {
     font-size: 14px;
     left: 0px;
     width: 100%;
@@ -411,7 +428,7 @@ input::placeholder {
     margin-bottom: 10px;
     margin-right: 108px;
   }
-  .copyright {
+  .copyright-Login {
   }
 }
 /* @media screen and (min-width: 769px) {
@@ -429,13 +446,15 @@ input::placeholder {
 } */
 
 @media screen and (min-width: 390px) and (max-width: 480px) {
+  
   .loginform {
     width: 71%;
-    left: 15%;
+    left: 19%;
     margin-top: 145px;
   }
   .Login-Page {
     padding-bottom: -webkit-fill-available;
+    padding-right: 15px;
   }
   img {
     margin-right: 37px;
@@ -461,23 +480,28 @@ input::placeholder {
   }
   #box {
     margin-bottom: 4px;
-    left: 12px;
+    left: 2px;
+    bottom: 62px;
   }
   .remember-label {
     width: 250px;
-    left: 12px;
+    left: -22px;
   }
   #forgot {
     width: 253px;
-    left: 91px;
+        left: 83px;
+    bottom: 90px;
     line-height: 32px;
   }
-  .copyright {
-    font-size: 14px;
+  #button {
+    left: 30px;
+  }
+  .copyright-Login {
+    font-size: 13px;
     /* line-height: 4; */
     height: 18px;
     width: max-content;
-    left: px;
+    left: 9px;
     bottom: 10px;
   }
   .row button {
@@ -492,6 +516,7 @@ input::placeholder {
   }
   .Login-Page {
     width: 405.2px;
+        padding-right: 26px;
   }
   img {
     margin-right: 37px;
@@ -517,19 +542,29 @@ input::placeholder {
   }
   #box {
     margin-bottom: 4px;
-    left: 58px;
+    left: 5px;
   }
   .remember-label {
     width: 250px;
-    left: 58px;
+    
+    left: -29px;
+    top: -66px;
+
   }
   #forgot {
-    width: 253px;
-    left: 20px;
+       width: 253px;
+    left: 92px;
     line-height: 60px;
-    margin-top: 5px;
+    /* margin-top: 0px; */
+    bottom: 105px;
   }
-  .copyright {
+  .Login-Button{
+    left:33px
+  }
+  #register-user {
+    left:22%
+  }
+  .copyright-Login {
     font-size: 14px;
     /* line-height: 4; */
     height: 18px;

@@ -95,9 +95,6 @@ const Login = (props) => {
                 />
               </div>
               {error && <div style={{ color: "red" }}>{error}</div>}
-              <div className="row" id="button">
-                <button onClick={handleApi}>Login</button>
-              </div>
             </form>
 
             <div className="remembrer-links">
@@ -109,18 +106,23 @@ const Login = (props) => {
                   Remember Me
                 </label>
               </div>
+               
               <p id="forgot">
                 <a href="/">Forgot Password</a>
               </p>
+              </div>
+              <div className="Login-Button" id="button">
+                <button onClick={handleApi}>Login</button>
+              </div>
               <div id="register-user">
                 <p>New User?</p>
                 <a onClick={handleSignup} className="register-user-link">
                   Register here
                 </a>
               </div>
-            </div>
+           
           </div>
-          <label className="copyright">
+          <label className="copyright-Login">
             ©Copyright Infer Solutions, Inc. All Rights Reserved
           </label>
         </div>

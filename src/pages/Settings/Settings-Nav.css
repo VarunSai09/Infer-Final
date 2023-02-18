@@ -15,7 +15,7 @@
   align-items: center;
   color: #222222;
 }
-.Logo {
+.Settings-Logo {
   position: inherit;
   width: 130.6px;
   height: 36px;
@@ -64,15 +64,33 @@
     padding-left: 0;
   }
 }
-@media screen and (min-width:441px) and (max-width: 800px) {
-  #Settings-Nav{
-    border-left:none;
+@media screen and (min-width: 441px) and (max-width: 800px) {
+  #Settings-Nav {
+    border-left: none;
   }
-  #Settings-Nav-Content{
+  #Settings-Nav-Content {
     position: relative;
-    right: 8rem;
+    right: 4rem;
     top: 1;
     height: 35px;
     font-weight: 600;
   }
+}
+@media screen and (min-width: 390px) and (max-width: 480px) {
+  .Settings-Logo {
+    left: 40px;
+    top: 24px;
+  }
+  #Settings-Nav-Content {
+    left: 12rem;
+  }
+}
+@media screen and (max-width: 380px){
+    .Settings-Logo {
+      left: 30px;
+    top: 25px;
+    }
+     #Settings-Nav-Content {
+       left:12rem;
+     }
 }

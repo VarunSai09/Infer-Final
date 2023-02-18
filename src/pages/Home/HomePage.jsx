@@ -75,7 +75,7 @@ export default function HomePage({ setSearch }) {
               <BsIcons.BsSearch />
             </p>
             <div className="dropdown">
-              {searchHistory
+              {searchHistory?searchHistory
                 .filter((item) => {
                   const searchTerm = term;
                   const searchList = item;
@@ -92,7 +92,7 @@ export default function HomePage({ setSearch }) {
                   >
                     {item}
                   </div>
-                ))}
+                )):<></>}
             </div>
           </div>
         </form>

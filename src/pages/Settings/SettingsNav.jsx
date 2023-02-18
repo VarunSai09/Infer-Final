@@ -5,7 +5,7 @@ function SettingsNav() {
   return (
     <Navbar className="navbar-settings" bg="light" expand="lg">
       <img
-        className="Logo"
+        className="Settings-Logo"
         src="https://www.infersol.com/wp-content/uploads/2020/02/logo.png"
         alt="Logo"
       />
