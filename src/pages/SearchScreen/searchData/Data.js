@@ -1,7 +1,22 @@
 import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
+import axios from "axios";
 const Data = ({ data, searchTerm }) => {
   const [active, setActive] = useState(false);
+  const handleSavePost=()=>{
+    setActive(!active)
+    const id = localStorage.getItem("UserId");
+    if(active===false){
+      axios
+        .post(
+          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/v1/savedposts",
+          { UserId: id,URL: data.Links }
+        )
+    }
+    else{
+      
+    }
+  }
   return (
     <>
       <div className="SearcContent">
@@ -14,7 +29,7 @@ const Data = ({ data, searchTerm }) => {
               for="Search-Title"
               href=""
               className="save-post"
-              onClick={() => setActive(!active)}
+              onClick={handleSavePost}
             >
               {active !== true && (
                 <svg
