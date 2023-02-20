@@ -8,14 +8,13 @@ export default function AddNote({ open, onClose, post }) {
   // console.log(DocumentID)
   if (!open) return null;
   const handleSubmit=(e)=>{
-    setNewNotes(notes)
     const userId=localStorage.getItem("UserId")
     
   if (userId !== undefined) {
       axios
         .post(
           "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/articlenotes",
-          { DocumentId: DocumentID, note:newNotes }
+          { DocumentId: DocumentID, note:notes }
         ).then((result) => {
           
           

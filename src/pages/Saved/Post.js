@@ -19,7 +19,7 @@ const Post = ({ post }) => {
       <div className="saved">
         <div className="saved-note">
           <div className="note-header" key={post.DocumentID}>
-            <a id="saved-title" href="/saved">
+            <a id="saved-title" href={post.UrlId} target="_blank" >
               {post.Title}
             </a>
             <div className="add-delete" id="add-delete">
