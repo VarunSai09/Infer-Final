@@ -9,7 +9,7 @@ const Data = ({ data, searchTerm }) => {
     if(active===false){
       axios
         .post(
-          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/v1/savedposts",
+          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/savedposts",
           { UserId: id,URL: data.Links }
         )
     }

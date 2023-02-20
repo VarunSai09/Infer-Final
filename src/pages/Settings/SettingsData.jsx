@@ -16,7 +16,7 @@ export default function Settings() {
     const id = localStorage.getItem("UserId");
     // console.log(id);
     axios.post(
-      "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/v4/delete-searchlist",
+      "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/delete-searchlist",
       { UserId: id }
     );
   }

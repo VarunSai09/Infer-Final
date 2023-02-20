@@ -1,13 +1,17 @@
 import "./rateNote.css";
-import React from "react";
+import React, { useState, useDebugValue } from "react";
 export default function AddNote({ open, onClose }) {
   // const history=useHistory('')
   // function handleSubmit(e){
   //   e.preventDefault();
   //   history.push('/saved')
   // }
+  const [rated,setRated]=useState("")
   if (!open) return null;
-
+  const rateClicked =()=>{
+    // setRated()
+    console.log()
+  }
   return (
     <>
       <div className="body"> </div>
@@ -33,7 +37,7 @@ export default function AddNote({ open, onClose }) {
           <label for="star3" title="3 star" />
           <input type="radio" id="star2" name="rate" value="2" />
           <label for="star2" title="2 star" />
-          <input type="radio" id="star1" name="rate" value="1" />
+          <input type="radio" id="star1" name="rate" value="1" onClick={rateClicked}/>
           <label for="star1" title="1 star" />
         </div>
         <div className="review-note">

@@ -11,7 +11,7 @@ import axios from "axios";
 
 export const searchData = async (term,id) => {
   const { data } = await axios.post(
-    "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/search",
+    "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/search",
     { term ,id}
     // {
     //   params: {

@@ -10,7 +10,7 @@ export default function RemoveProfilePic({ open, onClose }) {
     const id = localStorage.getItem("UserId");
     console.log(id);
     axios.post(
-      "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/v4/delete-profile-picture",
+      "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/delete-profile-picture",
       { userId: id }
     );
     // fetch(

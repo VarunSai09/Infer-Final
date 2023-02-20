@@ -28,7 +28,7 @@ export default function AddProfilePic({ open, onClose }) {
         setProfileImage(imageData);
 
         fetch(
-          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/v4/save-profile-inno",
+          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/save-profile-inno",
           {
             method: "POST",
             body: JSON.stringify({ image: imageData, UserId: id }),
