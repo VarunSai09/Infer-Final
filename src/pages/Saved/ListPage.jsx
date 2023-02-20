@@ -1,8 +1,8 @@
 import React from "react";
 import Post from "./Post";
 
-const ListPage = ({ savedPosts }) => {
-  const results = savedPosts.map((post) => <Post key={post.id} post={post} />);
+const ListPage = ({ posts }) => {
+  const results = posts.map((post) => <Post key={post.DocumentID} post={post} />);
 
   return <main>{results}</main>;
 };

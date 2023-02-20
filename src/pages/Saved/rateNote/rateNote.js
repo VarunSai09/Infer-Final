@@ -1,44 +1,54 @@
 import "./rateNote.css";
-import React, { useState, useDebugValue } from "react";
-export default function AddNote({ open, onClose }) {
-  // const history=useHistory('')
-  // function handleSubmit(e){
-  //   e.preventDefault();
-  //   history.push('/saved')
-  // }
-  const [rated,setRated]=useState("")
-  if (!open) return null;
-  const rateClicked =()=>{
-    // setRated()
-    console.log()
+import React, { useState } from "react";
+import axios from "axios"
+
+import StarIcon from '@material-ui/icons/Star';
+export default function AddNote({ open, onClose,post }) {
+  const [rating, setRating] = useState();
+  const DocumentID=post.DocumentID
+  
+  console.log(rating)
+  if(!open) {
+    return null
+    };
+  const handleClick = (num) => {
+    setRating(num);
+    const userId=localStorage.getItem("UserId")
+    
+    if (userId !== undefined) {
+      axios
+        .post(
+          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/ratearticlehttps://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/ratearticle",
+          { DocumentId: DocumentID, Rating:rating }
+        ).then((result) => {
+          
+          
+        })
+   }
   }
-  return (
+
+  const renderStars = () => {
+    const stars = [];
+    for (let i = 0; i <= 5; i++) {
+      stars.push(
+        <StarIcon 
+          key={i} 
+          onClick={() => handleClick(i)} 
+          style={{ color: i <= rating ? 'gold' : 'grey', cursor: 'pointer' }}
+        />
+      );
+    }
+    return stars;
+  }
+
+return (
     <>
       <div className="body"> </div>
-      {/* <div className="add-note-popup">
-        <h3 className="header-title">Add a Note</h3>
-        <h3 className="note-title">Note title</h3>
-        <div>
-          <input
-            id="add-note-input"
-            type="text"
-            className="input-box"
-            placeholder="start typing here"
-          />
-        </div> */}
+      
       <div className="rate-popup">
         <h4>Rate this article </h4>
         <div class="rate">
-          <input type="radio" id="star5" name="rate" value="5" />
-          <label for="star5" title="5 star" />
-          <input type="radio" id="star4" name="rate" value="4" />
-          <label for="star4" title="4 star" />
-          <input type="radio" id="star3" name="rate" value="3" />
-          <label for="star3" title="3 star" />
-          <input type="radio" id="star2" name="rate" value="2" />
-          <label for="star2" title="2 star" />
-          <input type="radio" id="star1" name="rate" value="1" onClick={rateClicked}/>
-          <label for="star1" title="1 star" />
+          {renderStars()}
         </div>
         <div className="review-note">
           <h4 className="review-note-header">Write a review</h4>
@@ -61,3 +71,65 @@ export default function AddNote({ open, onClose }) {
     </>
   );
 }
+
+
+
+
+
+//   return (
+//     <div>
+//       <h2>Rate this article:</h2>
+//       {renderStars()}
+//       <p>You rated this article {rating} out of 5.</p>
+//     </div>
+//   );
+// }
+
+
+   
+  
+//   const [rated,setRated]=useState("")
+//   if (!open) return null;
+//   const rateClicked =(e)=>{
+    
+//   }
+//   console.log(rated)
+//   return (
+//     <>
+//       <div className="body"> </div>
+      
+//       <div className="rate-popup">
+//         <h4>Rate this article </h4>
+//         <div class="rate">
+//           <input type="radio" id="star5" name="rate" value="5" onClick={() => setRated(5)}/>
+//           <label for="star5" title="5 star" />
+//           <input type="radio" id="star4" name="rate" value="4" onClick={() => setRated(4)}/>
+//           <label for="star4" title="4 star" />
+//           <input type="radio" id="star3" name="rate" value="3" onClick={() => setRated(3)}/>
+//           <label for="star3" title="3 star" />
+//           <input type="radio" id="star2" name="rate" value="2" onClick={() => setRated(2)}/>
+//           <label for="star2" title="2 star" />
+//           <input type="radio" id="star1" name="rate" value="1" onClick={() => setRated(1)}/>
+//           <label for="star1" title="1 star" />
+//         </div>
+//         <div className="review-note">
+//           <h4 className="review-note-header">Write a review</h4>
+//           <input
+//             id="review-note-input"
+//             type="text"
+//             className="input-box"
+//             placeholder="start typing here"
+//           />
+//           <div></div>
+//         </div>
+
+//         <div className="buttons">
+//           <button className="save-button-rate">Submit Rating</button>
+//           <button className="cancel-button-rate" onClick={onClose}>
+//             Cancel
+//           </button>
+//         </div>
+//       </div>
+//     </>
+//   );
+// }

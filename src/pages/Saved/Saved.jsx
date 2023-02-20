@@ -1,7 +1,8 @@
 import React from "react";
 
 import SavedNav from "./Saved-Nav";
-import { getPosts } from "./axios";
+
+import {retreiveSavedPosts} from "../../api/retreiveSavedPosts"
 import { useState, useEffect } from "react";
 import ListPage from "./ListPage";
 import Navbar from "../../components/Navbar";
@@ -13,15 +14,18 @@ export default function Home() {
 
   const history = useHistory("");
   useEffect(() => {
+    
     if (!localStorage.getItem("UserId")) {
       history.push("/");
     }
   });
 
   useEffect(() => {
-    getPosts().then((json) => {
-      setPosts(json);
-      setSearchResults(json);
+    const id=localStorage.getItem("UserId")
+    retreiveSavedPosts(id).then((result) => {
+
+      setPosts(result.data.body[0]);
+      setSearchResults(result.data.body[0]);
     });
   }, []);
   return (
@@ -29,7 +33,7 @@ export default function Home() {
       <Navbar />
       <SavedNav />
       <div className="SavedContent-Display">
-        <ListPage savedPosts={savedPosts} />
+        <ListPage posts={posts} />
       </div>
     </>
   );

@@ -18,9 +18,9 @@ const Post = ({ post }) => {
     <>
       <div className="saved">
         <div className="saved-note">
-          <div className="note-header">
+          <div className="note-header" key={post.DocumentID}>
             <a id="saved-title" href="/saved">
-              {post.title}
+              {post.Title}
             </a>
             <div className="add-delete" id="add-delete">
               <a
@@ -48,16 +48,17 @@ const Post = ({ post }) => {
           </div>
           <div className="TagFrame-Saved">
             <p id="Tags">Tags : </p>
-            <label className="Tags">{post.id}</label>
+            <label className="Tags">{post.Tag}</label>
           </div>
-          <p>{post.body}</p>
+          <p>{post.Context}</p>
         </div>
         <AddNote
+        
           open={openAddNote}
           post={post}
           onClose={() => setOpenAddNote(false)}
         />
-        <RateNote open={openRateNote} onClose={() => setOpenRateNote(false)} />
+        <RateNote open={openRateNote} post={post} onClose={() => setOpenRateNote(false)} />
       </div>
     </>
   );
