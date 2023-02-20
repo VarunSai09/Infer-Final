@@ -4,21 +4,23 @@ import axios from "axios"
 
 import StarIcon from '@material-ui/icons/Star';
 export default function AddNote({ open, onClose,post }) {
-  const [rating, setRating] = useState();
+  const [rating, setRating] = useState(post.Rating);
   const DocumentID=post.DocumentID
-  
+  // setRating=post.Rating
+  // console.log(retreivedRating)
+  // const retreivedRating=post.Rating
   console.log(rating)
   if(!open) {
     return null
     };
-  const handleClick = (num) => {
-    setRating(num);
+  const handleClick = () => {
+    // setRating(num);
     const userId=localStorage.getItem("UserId")
     
     if (userId !== undefined) {
       axios
         .post(
-          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/ratearticlehttps://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/ratearticle",
+          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/ratearticle",
           { DocumentId: DocumentID, Rating:rating }
         ).then((result) => {
           
@@ -29,11 +31,11 @@ export default function AddNote({ open, onClose,post }) {
 
   const renderStars = () => {
     const stars = [];
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 1; i <= 5; i++) {
       stars.push(
         <StarIcon 
           key={i} 
-          onClick={() => handleClick(i)} 
+          onClick={() => setRating(i)} 
           style={{ color: i <= rating ? 'gold' : 'grey', cursor: 'pointer' }}
         />
       );
@@ -62,7 +64,7 @@ return (
         </div>
 
         <div className="buttons">
-          <button className="save-button-rate">Submit Rating</button>
+          <button className="save-button-rate" onClick={handleClick}>Submit Rating</button>
           <button className="cancel-button-rate" onClick={onClose}>
             Cancel
           </button>
