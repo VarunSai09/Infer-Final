@@ -55,6 +55,16 @@ body {
   flex-direction: column;
   z-index: -1;
 }
+.saved {
+  display: flex;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  width: 1475px;
+  flex-direction: column;
+  z-index: -1;
+}
 .sidebar {
   background: #ffffff;
   height: 80px;
@@ -66,10 +76,10 @@ body {
 
 .Avatar {
   position: relative;
-  width: 150px;
-  height: 150px;
-  left: 20.6rem;
-  top: -1rem;
+  width: 125;
+  height: 125;
+  left: 20rem;
+  top: 0rem;
   border-radius: 358.343px;
 }
 .Avatar-frame {
@@ -222,7 +232,7 @@ body {
 }
 .nav-menu-items {
   position: relative;
-  right: 12.3rem;
+  right: 11.5rem;
   width: 100%;
   padding-left: 31.25rem;
   margin-top: 15.5rem;

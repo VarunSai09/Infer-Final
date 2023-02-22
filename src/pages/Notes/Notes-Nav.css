@@ -1,7 +1,7 @@
-#Settings-Nav-Content {
+#Articles {
   position: relative;
   padding-left: 57px;
-  /* left:16.05rem; */
+  /* left: 16.05rem; */
   margin-top: 35px;
   margin-bottom: 0px;
   width: auto;
@@ -15,7 +15,7 @@
   align-items: center;
   color: #222222;
 }
-.Settings-Logo {
+.Logo {
   position: inherit;
   width: 130.6px;
   height: 36px;
@@ -25,10 +25,10 @@
   margin-left: 0px;
   right: 0px;
 }
-.navbar-settings {
+.navbar-saved {
   border-right-width: 0px;
   padding-right: 0px;
-  width: 20700px;
+  width: 2070px;
   position: fixed;
   padding-left: rem;
   width: 2070px;
@@ -40,57 +40,28 @@
   border-left: 2px solid #f7f7f7;
   border-bottom: 2px solid #f7f7f7;
 }
-#Settings-Nav {
+#Saved-Nav {
   height: 104px;
   margin-left: 15.88rem;
   border-left: 2px solid #f7f7f7;
 }
-
 @media screen and (max-width: 440px) {
-  .navbar-settings {
-    height: 85px;
-    width: 100%;
-  }
-  #Settings-Nav {
-    height: 0;
-  }
-  #Settings-Nav-Content {
+  #Articles {
     position: absolute;
     left: 7rem;
-    top: 0px;
-    font-weight: 600;
-    bottom: 0px;
-    margin-top: 27px;
-    padding-left: 0;
-  }
-}
-@media screen and (min-width: 441px) and (max-width: 800px) {
-  #Settings-Nav {
-    border-left: none;
-  }
-  #Settings-Nav-Content {
-    position: relative;
-    right: 4rem;
-    top: 1;
-    height: 35px;
+    font-size: 17px;
+    line-height: 28px;
+    margin-top: 29px;
+    padding-left: 0px;
     font-weight: 600;
   }
-}
-@media screen and (min-width: 390px) and (max-width: 480px) {
-  .Settings-Logo {
-    left: 40px;
-    top: 24px;
+  .navbar-saved {
+    height: 85px;
   }
-  #Settings-Nav-Content {
-    left: 12rem;
+  .SavedContent-Display {
+    padding-top: 150px;
   }
-}
-@media screen and (max-width: 380px){
-    .Settings-Logo {
-      left: 30px;
-    top: 25px;
-    }
-     #Settings-Nav-Content {
-       left:12rem;
-     }
+  #Saved-Nav {
+    border-left: 0;
+  }
 }

@@ -15,7 +15,7 @@
   align-items: center;
   color: #222222;
 }
-.Logo {
+.Profile-Logo {
   position: inherit;
   width: 130.6px;
   height: 36px;
@@ -50,6 +50,10 @@
 }
 
 @media screen and (max-width: 440px) {
+  .Profile-Logo{
+        left: 30px;
+    top: 25px;
+  }
   .navbar-profile {
     height: 85px;
     width: 100%;
@@ -58,11 +62,11 @@
     height: 0;
   }
   #Profile-Nav-Content{
-    position: absolute;
-    left: 7rem;
-    top: 0px;
+       position: relative;
+    left: 0rem;
+    /* top: -10px; */
     font-weight: 600;
-    bottom: 0px;
+    bottom: 35px;
     margin-top: 27px;
     padding-left: 0;
   }
@@ -72,7 +76,7 @@
     border-left:none;
   }
   #Profile-Nav-Content{
-    position: absolute;
+    position: relative;
     left: 12rem;
     top: 7px;
     font-weight: 600;

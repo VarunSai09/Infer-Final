@@ -31,23 +31,29 @@ const SearchScreen = ({ searchTerm, setSearch, googleData }) => {
   // };
   return (
     <>
-      <Navbar className="navbar-search" bg="light" expand="lg">
-         <img
-            className="Logo"
-            src="https://www.infersol.com/wp-content/uploads/2020/02/logo.png"
-            alt="Logo"
-          />
-        <p id="Library-Search">Library Search</p>
-        <form className="d-flex" id="Search" /*onSubmit={handleSubmit}*/>
-          <input
-            placeholder={searchTerm}
-            type="text"
-            value={term}
-            className="Search"
-            aria-label="Search"
-            onChange={(event) => setTerm(event.target.value)}
-          />
-           <p id="search-logo"><BsIcons.BsSearch/></p>
+      <Navbar className="navbar-search" bg="light" expand="lg" >
+        <img
+          className="Logo-Home"
+          src="https://www.infersol.com/wp-content/uploads/2020/02/logo.png"
+          alt="Logo"
+        />
+        <p className="Library-mobile Library">Library Search</p>
+
+        <form className="d-flex" id="Search" >
+          <div className="Search">
+            
+            <input
+              placeholder="Search"
+              type="text"
+              value={term}
+              aria-label="Search"
+              // onClick={handleClick}
+              onChange={(event) => setTerm(event.target.value)}
+            ></input>
+            <p id="Search-Logo">
+              <BsIcons.BsSearch />
+            </p>
+          </div>
         </form>
       </Navbar>
       <div className="SearchPage">
@@ -57,3 +63,50 @@ const SearchScreen = ({ searchTerm, setSearch, googleData }) => {
   );
 };
 export default SearchScreen;
+
+
+//  <Navbar className="navbar-search" bg="light" expand="lg" onSubmit={handleSubmit}>
+//         <img
+//           className="Logo-Home"
+//           src="https://www.infersol.com/wp-content/uploads/2020/02/logo.png"
+//           alt="Logo"
+//         />
+//         <p className="Library-mobile Library">Library Search</p>
+
+//         <form className="d-flex" id="Search" onSubmit={handleSubmit}>
+//           <div className="Search">
+            
+//             <input
+//               placeholder="Search"
+//               type="text"
+//               value={term}
+//               aria-label="Search"
+//               // onClick={handleClick}
+//               onChange={(event) => setTerm(event.target.value)}
+//             ></input>
+//             <p id="Search-Logo">
+//               <BsIcons.BsSearch />
+//             </p>
+//             <div className="dropdown">
+//               {searchHistory
+//                 .filter((item) => {
+//                   const searchTerm = term;
+//                   const searchList = item;
+//                   // console.log(searchList)
+//                   return searchTerm && searchList ;
+//                 })
+//                 .slice(0, 5)
+//                 .map((item) => (
+//                   <div
+//                     onClick={() => setTerm(item)}
+//                     className="dropdown-row"
+//                     key={item}
+//                     onDoubleClick={handleSubmit}
+//                   >
+//                     {item}
+//                   </div>
+//                 ))}
+//             </div>
+//           </div>
+//         </form>
+//       </Navbar>

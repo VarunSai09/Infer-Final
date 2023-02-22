@@ -7,6 +7,7 @@
   background-image: url("./images/login-background.png");
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 
   padding-bottom: 3.6rem;
 }
@@ -139,7 +140,7 @@ img {
   /* flex-direction: column; */
   align-items: center;
   padding-top: 15px;
-  padding-left: 17%;
+  padding-left: 0;
 }
 .row .email {
   /* position: absolute;
@@ -233,42 +234,42 @@ input::placeholder {
 }
 
 #box {
-  position: relative;
+  /* position: relative;
   left: 2.5rem;
   bottom: 62px;
   margin-top: 6px;
   /* bottom: 50.5%; */
-  background: #a7a7a7;
+  /* background: #a7a7a7; */
 }
 .check-box {
-  display: inline-block;
+  /* display: inline-block;
   width: 13px;
-  height: 13px;
+  height: 13px; */
 
   /* bottom: 10px;
     padding-top: 0; */
 }
-.remember {
-  /* padding-right:10%; */
+/* .remember {
+
   padding-left: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-}
+} */
 
 .remember-inside {
   /* display:flex;
     padding-top: 1rem; */
 }
-.remember-label {
+/* .remember-label {
   position: relative;
   width: 370px;
   height: 0;
   top: -65px;
   left: 5%;
   margin-top: 6px;
-  /* right: 32.5rem; */
+
   bottom: 76px;
   font-family: "Avenir Next";
   font-style: normal;
@@ -280,14 +281,14 @@ input::placeholder {
   text-align: center;
   color: #a7a7a7;
   flex-wrap: no-wrap;
-}
+} */
 
 #registerd-user {
   display: flex;
   align-items: baseline;
   position: relative;
   left: 27%;
-  bottom: 16px;
+  bottom: 60px;
 }
 .registerd-user-login {
   padding-left: 10px;
@@ -342,22 +343,22 @@ input {
   right: 18%;
 }
 @media screen and (min-width: 2500px) {
-  .remember-label {
+  /* .remember-label {
     line-height: 32px;
     left: -243px;
-  }
-  #box {
+  } */
+  /* #box {
     left: 3.5rem;
-  }
+  } */
 }
 @media screen and (min-width: 1280px) and (max-width: 1500px) {
-  .remember-label {
+  /* .remember-label {
     top: -73px;
     left: 15%;
-  }
-  #box {
+  } */
+  /* #box {
     bottom: 56px;
-  }
+  } */
 }
 @media screen and (max-width: 1280px) {
   .signupform {
@@ -400,17 +401,17 @@ input {
     font-size: 15px;
   }
 
-  .remember-label {
+  /* .remember-label {
     display: flex;
     left: 36px;
-  }
+  } */
   .remember {
     display: flex;
   }
-  #box {
+  /* #box {
     bottom: 63px;
     left: 36px;
-  }
+  } */
   #version {
     margin-bottom: 10px;
     margin-top: 10px;
@@ -472,14 +473,11 @@ input {
   .row .password {
     margin-bottom: 1%;
   }
-  #box {
+  /* #box {
     margin-bottom: 4px;
     left: 12px;
-  }
-  .remember-label {
-    width: 250px;
-    left: 12px;
-  }
+  } */
+
 
   .copyright {
     font-size: 14px;
@@ -494,6 +492,9 @@ input {
   }
 }
 @media screen and (max-width: 390px) {
+  .Signup-Page {
+    padding-right: 32px;
+  }
   .signupform {
     width: 80%;
     left: 15%;
@@ -502,6 +503,7 @@ input {
   .Login-Page {
     width: 405.2px;
   }
+
   img {
     margin-right: 37px;
   }
@@ -521,24 +523,23 @@ input {
     height: 52px;
     line-height: 20px;
   }
+  .input-boxes {
+    top: -20px;
+  }
   .row .password {
     margin-bottom: 1%;
   }
-  #box {
-    margin-bottom: 4px;
-    left: 58px;
-  }
-  .remember-label {
-    width: 250px;
-    left: 58px;
-  }
+  #registerd-user {
+    bottom: 70px;
+    left: 13%;
+}
 
   .copyright {
-    font-size: 14px;
+    font-size: 12px;
     /* line-height: 4; */
     height: 18px;
     width: max-content;
-    left: px;
+    left: 9px;
     bottom: 10px;
   }
   .row button {
@@ -546,15 +547,18 @@ input {
   }
 }
 @media screen and (max-width: 350px) {
+  .Signup-Page {
+    padding-right: 17px;
+  }
   .input-fields {
     top: -17px;
   }
   #registerd-user {
-    left: 13%;
-    top: -24px;
+    left: 9%;
+    bottom: 72px;
   }
   .copyright {
     font-size: 11px;
-    left: 13px;
+    left: 5px;
   }
 }

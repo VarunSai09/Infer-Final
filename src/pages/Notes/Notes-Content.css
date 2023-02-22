@@ -174,7 +174,7 @@ a:hover + .add-delete {
   left: 0px;
   top: 45px;
 }
-.SavedContent-Display {
+.Notes-Display {
   padding-top: 120px;
   background-color: #fcffff;
 }
@@ -190,7 +190,7 @@ a:hover + .add-delete {
     width: -webkit-fill-available;
     padding-left: 0;
   }
-  .SavedContent-Display {
+  .Notes-Display {
     padding-top: 150px;
   }
   .saved-note a {

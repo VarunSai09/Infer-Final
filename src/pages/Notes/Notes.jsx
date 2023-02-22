@@ -1,6 +1,6 @@
 import React from "react";
 
-import SavedNav from "./Saved-Nav";
+import NotesNav from "./Notes-Nav";
 
 import {retreiveSavedPosts} from "../../api/retreiveSavedPosts"
 import { useState, useEffect } from "react";
@@ -34,8 +34,8 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <SavedNav />
-      <div className="SavedContent-Display">
+      <NotesNav />
+      <div className="Notes-Display">
         <ListPage posts={posts} />
       </div>
     </>
