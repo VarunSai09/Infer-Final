@@ -23,9 +23,12 @@ export default function Home() {
   useEffect(() => {
     const id=localStorage.getItem("UserId")
     retreiveSavedPosts(id).then((result) => {
-
+      console.log(result.data)
+      if(result.data.statusCode==200){
       setPosts(result.data.body[0]);
       setSearchResults(result.data.body[0]);
+      }
+      
     });
   }, []);
   return (
