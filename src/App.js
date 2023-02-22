@@ -10,6 +10,7 @@ import Profile from "./pages/Profile/Profile";
 import Saved from "./pages/Saved/Saved";
 import Settings from "./pages/Settings/Settings";
 import Search from "./pages/SearchScreen/search";
+import Notes from "./pages/Notes/Notes"
 import { useState,useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { searchData } from "./api/googleSearch";
@@ -105,6 +106,7 @@ export default function App(props) {
           )}
         />
         <Route exact path="/saved" component={Saved} />
+        {/* <Route exact path="/notes" component={Notes} /> */}
         {/* <Route exact path="/saved/add-note" component={addNote} /> */}
         <Route
           exact

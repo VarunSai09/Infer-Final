@@ -1,0 +1,67 @@
+#Articles {
+  position: relative;
+  padding-left: 57px;
+  /* left: 16.05rem; */
+  margin-top: 35px;
+  margin-bottom: 0px;
+  width: auto;
+  height: 33px;
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  color: #222222;
+}
+.Logo {
+  position: inherit;
+  width: 130.6px;
+  height: 36px;
+  left: 67px;
+  top: 32px;
+  margin-top: 0px;
+  margin-left: 0px;
+  right: 0px;
+}
+.navbar-saved {
+  border-right-width: 0px;
+  padding-right: 0px;
+  width: 2070px;
+  position: fixed;
+  padding-left: rem;
+  width: 2070px;
+  background-color: #ffffff;
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-left: 2px solid #f7f7f7;
+  border-bottom: 2px solid #f7f7f7;
+}
+#Saved-Nav {
+  height: 104px;
+  margin-left: 15.88rem;
+  border-left: 2px solid #f7f7f7;
+}
+@media screen and (max-width: 440px) {
+  #Articles {
+    position: absolute;
+    left: 7rem;
+    font-size: 17px;
+    line-height: 28px;
+    margin-top: 29px;
+    padding-left: 0px;
+    font-weight: 600;
+  }
+  .navbar-saved {
+    height: 85px;
+  }
+  .SavedContent-Display {
+    padding-top: 150px;
+  }
+  #Saved-Nav {
+    border-left: 0;
+  }
+}
