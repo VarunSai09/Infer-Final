@@ -64,7 +64,7 @@ const Login = ({ setUserRegister }) => {
           />
           <p id="version">Version 1.0</p>
           <FormHeader />
-          <div className="input-fields">
+          <div className="input-fields input-boxes">
             <form onSubmit={handleSubmit}>
               <div className="row">
                 <input

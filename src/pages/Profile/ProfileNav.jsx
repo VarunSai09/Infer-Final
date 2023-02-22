@@ -5,7 +5,7 @@ function ProfileNav() {
   return (
     <Navbar className="navbar-profile" bg="light" expand="lg">
       <img
-        className="Logo"
+        className="Profile-Logo"
         src="https://www.infersol.com/wp-content/uploads/2020/02/logo.png"
         alt="Logo"
       />

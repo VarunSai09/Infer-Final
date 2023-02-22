@@ -9,10 +9,10 @@
 
 import axios from "axios";
 
-export const searchData = async (term) => {
+export const searchData = async (term,id) => {
   const { data } = await axios.post(
-    "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/search",
-    { term }
+    "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/search",
+    { term ,id}
     // {
     //   params: {
     //     key: "AIzaSyAIMBuNrGNeX1F1nznzo5A20PBhnG1rrFU",

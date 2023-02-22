@@ -6,7 +6,7 @@ export const updateUser = async (
   userId
 ) => {
   const data = await axios.post(
-    "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/v4/updateuser",
+    "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/updateuser",
     {
       name,
        email,

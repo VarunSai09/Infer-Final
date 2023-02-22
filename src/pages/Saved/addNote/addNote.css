@@ -58,7 +58,9 @@
   align-items: center;
   color: #222222;
 }
-
+.input-div{
+  
+}
 #add-note-input {
   width: 409px;
   height: 402px;

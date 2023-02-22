@@ -2,7 +2,7 @@ import React from "react";
 import "../src/Styles.css";
 import { Switch, Route } from "react-router-dom";
 import Login from "./pages/Login/Login";
-
+import Navbar from "./components/Navbar";
 // PAGES'
 import Signup from "./pages/SignUp/Signup";
 import Home from "./pages/Home/Home";
@@ -10,26 +10,53 @@ import Profile from "./pages/Profile/Profile";
 import Saved from "./pages/Saved/Saved";
 import Settings from "./pages/Settings/Settings";
 import Search from "./pages/SearchScreen/search";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { searchData } from "./api/googleSearch";
 import { registerUser } from "./api/userRegister";
 import { updateUser } from "./api/updateUserData";
+import {retreiveUser} from "./api/retreiveDetails"
 // import addNote from "./pages/Saved/addNote/addNote";
 
 export default function App(props) {
   const history = useHistory();
   const [searchTerm, setSearchTerm] = useState("");
+  const [userID, setUserID] = useState("");
   const [googleData, setGoogleData] = useState({});
+  const [searchHistory,setSearchHistory]=useState(null);
   const [userDataSignup, setuserDataSignup] = useState("");
   const [userDataUpdate, setUserDataUpdate] = useState("");
+   useEffect(() => {
+     const id = localStorage.getItem("UserId");
+      setUserID(id);
+  })
   const setSearch = async (term) => {
     setSearchTerm(term);
-    const data = await searchData(term);
+    const id = localStorage.getItem("UserId");
+    
+    console.log("------------")
+    console.log(userID)
+    const data = await searchData(term, id);
     console.log(data);
     setGoogleData(data);
     history.push("/search");
   };
+  //-----User DATA Retreival---//
+  
+  const setUserDetails=async()=>{
+    const id = localStorage.getItem("UserId");
+    const retreivedDetails = await retreiveUser(id);
+    const retreivedDe=retreivedDetails.data.body[0].SearchList
+    const Ret=retreivedDe.split(',');
+    console.log(typeof(retreivedDetails.data.body[0].SearchList))
+    setSearchHistory(Ret)
+    console.log(searchHistory)
+    console.log(typeof(searchHistory))
+    console.log(Ret)
+  }
+  
+  
+  
   //------USER REGISTRATION-------//
   const setUserRegister = async (
     name,
@@ -76,6 +103,7 @@ export default function App(props) {
 
   return (
     <div className="App">
+      
       {/* <Login /> */}
       <Switch>
         <Route exact path="/" component={Login} />
@@ -87,13 +115,17 @@ export default function App(props) {
         <Route
           exact
           path="/home"
-          component={() => <Home setSearch={setSearch} />}
+          component={() => <Home setSearch={setSearch} searchHistory={searchHistory} setUserDetails={setUserDetails} />}
         />
         <Route
           exact
           path="/search"
           component={() => (
-            <Search searchTerm={searchTerm} googleData={googleData} />
+            <Search
+              searchTerm={searchTerm}
+              // userID={userID}
+              googleData={googleData}
+            />
           )}
         />
         <Route exact path="/saved" component={Saved} />

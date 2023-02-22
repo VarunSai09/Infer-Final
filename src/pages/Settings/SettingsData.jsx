@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./SettingData.css"
 import * as BsIcons from "react-icons/bs"
 import * as AiIcons from "react-icons/ai"
+import axios from "axios"
 export default function Settings() {
   const [lightTheme,setLightTheme]=useState('false');
   const [darkTheme,setDarkTheme]=useState('false');
@@ -10,6 +11,14 @@ export default function Settings() {
   }
   const darkThemeSelect=()=>{
     setDarkTheme('true');
+  }
+  const deleteHistory=()=>{
+    const id = localStorage.getItem("UserId");
+    // console.log(id);
+    axios.post(
+      "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/delete-searchlist",
+      { UserId: id }
+    );
   }
   return (
     <div className="settings">
@@ -31,9 +40,9 @@ export default function Settings() {
       <div id="history">
         <label className="history-headings">SEARCH HISTORY</label>
         <p className="history-subhead">Clear History</p>
-        <button className="history-options">
+        <button className="history-options" onClick={deleteHistory}>
         <span className="history-clear-icon"><AiIcons.AiOutlineCloseCircle /></span>
-              <span className="history-clear">Clear HIstory</span>
+              <span className="history-clear" >Clear HIstory</span>
        </button>
       </div>
     </div>

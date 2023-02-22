@@ -8,17 +8,18 @@
   font-family: "Avenir Next";
 }
 .Profile-Avatar {
-  left: 20px;
-  width: 126px;
-  height: 126px;
+  left: 16px;
+  width: 125px;
+  height: 125px;
   bottom: 5px;
+  border-radius: 65px;
 }
 .profile-pic-options {
   font-size: 16px;
   display: block;
   top: 35%;
-  left: 25%;
-  position: absolute;
+  left: 7%;
+  position: relative;
 }
 a {
   /* text-decoration: none; */
@@ -26,14 +27,16 @@ a {
 .remove-pic {
   margin-bottom: 15px;
   position: relative;
-  bottom: 0;
+  top: 60px;
   color: #c73000;
+  cursor: pointer;
 }
 .edit-pic {
   margin-bottom: 15px;
   position: relative;
-  bottom: 10px;
   color: #0067c7;
+  top: 50px;
+  cursor: pointer;
 }
 .row-data {
   position: relative;
@@ -126,11 +129,17 @@ input {
 }
 @media screen and (max-width: 440px) {
   .profile-pic {
-    left: 5%;
+    left: 23%;
+  }
+  .edit-pic{
+    top:0px;
+  }
+  .remove-pic{
+    top:10px;
   }
   .Profile-Avatar {
-    padding-left: 32%;
-    padding-right: 50%;
+    /* padding-left: 32%;
+    padding-right: 50%; */
     padding-top: -10%;
   }
   .profile-values {
@@ -143,7 +152,7 @@ input {
     width: 180px;
     font-size: 20px;
     top: 97%;
-    left: 38%;
+    left: 7%;
     right: 67%;
   }
   .row-data {
@@ -165,7 +174,7 @@ input {
 @media screen and (min-width: 441px) and (max-width: 800px) {
   .Profile-Avatar {
     /* padding-left: 32%; */
-    padding-right: 50%;
+    /* padding-right: 50%; */
     padding-top: 22%;
   }
   .profile-pic-options {
@@ -173,6 +182,16 @@ input {
     top: 52%;
     left: 45%;
     right: 64%;
+  }
+  .edit-pic{
+        top: -100px;
+    left: 30px;
+
+  }
+  .remove-pic{
+        top: -90px;
+    left: 30px;
+
   }
   .row-data {
     top: 11rem;
@@ -188,14 +207,20 @@ input {
 }
 @media screen and (max-width: 380px) {
   .profile-pic {
-    left: 0;
+    left: 70px;
   }
   .row-data {
     left: -7%;
+    top:10rem;
   }
   .row-creds {
     left: -57px;
   }
+  .profile-submit {
+    width: 25%;
+    bottom: 142px;
+    left: 27%;
+    }
 }
 @media screen and (max-width: 330px) {
   .profile-pic {

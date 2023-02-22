@@ -7,7 +7,7 @@ function search({ searchTerm, googleData }) {
     <>
       <Navbar />
       {searchTerm !== "" ? (
-        <SearchPage searchTerm={searchTerm} googleData={googleData} />
+        <SearchPage searchTerm={searchTerm}  googleData={googleData} />
       ) : (
         <Redirect to={"/home"} />
       )}

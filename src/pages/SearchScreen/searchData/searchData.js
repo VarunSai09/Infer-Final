@@ -8,9 +8,9 @@ const SearchData = ({ googleData, searchTerm }) => {
         <span className="google-count">{googleData.length} </span> search
         results for <span className="google-count">"{searchTerm}"</span>
       </p>
-      {googleData?.map((data, id) => (
+      {googleData?googleData.map((data, id) => (
         <Data data={data} key={id} searchTerm={searchTerm} />
-      ))}
+      )):<></>}
     </div>
   );
 };

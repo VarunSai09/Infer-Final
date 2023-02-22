@@ -46,9 +46,10 @@
   right: 0px;
 }
 #search-logo {
-  position: absolute;
-  top: 45px;
-  left: 14rem;
+  position: relative;
+    right: 2rem;
+    bottom: 57px;
+    width: 16px;
 }
 @media screen and (max-width: 935px) {
   .SearchPage {
