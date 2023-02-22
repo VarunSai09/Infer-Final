@@ -95,7 +95,7 @@ const Login = (props) => {
                 />
               </div>
               {error && <div style={{ color: "red" }}>{error}</div>}
-            </form>
+            
 
             <div className="remembrer-links">
               <div className="remember">
@@ -120,7 +120,7 @@ const Login = (props) => {
                   Register here
                 </a>
               </div>
-           
+           </form>
           </div>
           <label className="copyright-Login">
             ©Copyright Infer Solutions, Inc. All Rights Reserved
