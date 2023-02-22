@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Data from "./Data";
 const SearchData = ({ googleData, searchTerm }) => {
+  
   return (
     <div>
       <p className="results-count" id="results-count">
@@ -8,7 +9,7 @@ const SearchData = ({ googleData, searchTerm }) => {
         <span className="google-count">{googleData.length} </span> search
         results for <span className="google-count">"{searchTerm}"</span>
       </p>
-      {googleData?googleData.map((data, id) => (
+      {googleData ? googleData.map((data, id) => (
         <Data data={data} key={id} searchTerm={searchTerm} />
       )):<></>}
     </div>

@@ -12,7 +12,10 @@ export default function RemoveProfilePic({ open, onClose }) {
     axios.post(
       "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/delete-profile-picture",
       { userId: id }
-    );
+    ).then((result) => {
+          
+          window.location.reload()
+        });
     // fetch(
     //   "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/Deploy/delete-profile-picture",
     //   {
@@ -21,7 +24,7 @@ export default function RemoveProfilePic({ open, onClose }) {
     //   }
     // )
     // window.location.reload();
-    onClose();
+    // onClose();
   };
 
   return (

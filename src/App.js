@@ -10,10 +10,10 @@ import Profile from "./pages/Profile/Profile";
 import Saved from "./pages/Saved/Saved";
 import Settings from "./pages/Settings/Settings";
 import Search from "./pages/SearchScreen/search";
+import Notes from "./pages/Notes/Notes"
 import { useState,useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { searchData } from "./api/googleSearch";
-import { registerUser } from "./api/userRegister";
 import { updateUser } from "./api/updateUserData";
 import {retreiveUser} from "./api/retreiveDetails"
 // import addNote from "./pages/Saved/addNote/addNote";
@@ -54,30 +54,7 @@ export default function App(props) {
     console.log(typeof(searchHistory))
     console.log(Ret)
   }
-  
-  
-  
-  //------USER REGISTRATION-------//
-  const setUserRegister = async (
-    name,
-    email,
-    passwordConfirm,
-    mobileNumber
-  ) => {
-    setuserDataSignup({
-      name: name,
-      email: email,
-      passwordConfirm: passwordConfirm,
-      mobileNumber: mobileNumber,
-    });
-    const result_1 = await registerUser(
-      name,
-      email,
-      passwordConfirm,
-      mobileNumber
-    );
-    console.log(result_1);
-  };
+
 
   //-------User Data Update------//
   const setupdateDataUser = async (name, email, userId, mobileNumber) => {
@@ -110,7 +87,7 @@ export default function App(props) {
         <Route
           exact
           path="/signup"
-          component={() => <Signup setUserRegister={setUserRegister} />}
+          component={() => <Signup  />}
         />
         <Route
           exact
@@ -129,6 +106,7 @@ export default function App(props) {
           )}
         />
         <Route exact path="/saved" component={Saved} />
+        {/* <Route exact path="/notes" component={Notes} /> */}
         {/* <Route exact path="/saved/add-note" component={addNote} /> */}
         <Route
           exact

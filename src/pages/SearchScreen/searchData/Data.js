@@ -12,9 +12,13 @@ const Data = ({ data, searchTerm }) => {
           "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/savedposts",
           { UserId: id,URL: data.Links, Title: data.Title,Tag: data.Author,Context:data.Context }
         )
+
     }
     else{
-      
+       axios
+        .post("https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/unsavepost",
+        { UserId: id,URL: data.Links, Title: data.Title }
+        )
     }
   }
   return (

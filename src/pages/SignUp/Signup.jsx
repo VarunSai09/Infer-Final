@@ -4,8 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import axios from "axios";
 import "./Signup-styles.css";
-
-const Login = ({ setUserRegister }) => {
+const Login = () => {
   // const Navigate=useNavigate('');
   const history = useHistory("");
 
@@ -31,6 +30,7 @@ const Login = ({ setUserRegister }) => {
     }
   });
 
+
   const handleApi = () => {
     history.push("/");
   };
@@ -40,15 +40,33 @@ const Login = ({ setUserRegister }) => {
       setError("Passwords do not match");
       console.log("error");
     } else if (password === passwordConfirm) {
-      // console.log(userData);
-      // history.push("/");
-      // setUserData({
-      //   name: name,
-      //   email: email,
-      //   passwordConfirm: passwordConfirm,
-      //   mobileNumber: mobileNumber,
-      // });
-      setUserRegister(name, email, passwordConfirm, mobileNumber);
+      
+       axios
+      .post(
+        "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/userdb",
+        {
+            name: name,
+      email: email,
+      passwordConfirm: passwordConfirm,
+      mobileNumber: mobileNumber,
+        }
+      )
+      .then((result) => {
+        console.log(result.data)
+        if(result.data.statusCode==401){
+          setError(result.data.body)
+        }
+        else if(result.data.statusCode==200){
+          history.push("/")
+        }
+        
+      })
+      // setUserRegister(name, email, passwordConfirm, mobileNumber);
+      // if(response !== undefined){
+      //   console.log(response)
+      // }
+      // if(result_1.data.status)
+      //  const result_1 = await registerUser
     } else {
       setError("");
     }

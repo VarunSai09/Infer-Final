@@ -30,9 +30,7 @@ export default function HomePage({ setSearch }) {
     const Ret=JSON.parse(retreivedDe);
     console.log(typeof(retreivedDetails.data.body[0].SearchList))
     setSearchHistory(Ret)
-    console.log(searchHistory)
-    console.log(typeof(searchHistory))
-    console.log(Ret)
+ 
   }
 
   var data = [];
