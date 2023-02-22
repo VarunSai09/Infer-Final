@@ -24,7 +24,7 @@ export default function AddNote({ open, onClose,post }) {
           { DocumentId: DocumentID, Rating:rating }
         ).then((result) => {
           
-          
+          window.location.reload()
         })
    }
   }

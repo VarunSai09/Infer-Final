@@ -36,8 +36,12 @@ export default function AddProfilePic({ open, onClose }) {
         ).then((result) => {
           console.log(result);
           console.log(result.body[0]);
+       
+          
+          window.location.reload()
+      
         })
-        onClose();
+        
 
       };
       alert("Image Updated and Profile picture will update soon");
