@@ -3,6 +3,7 @@ import "../src/Styles.css";
 import { Switch, Route } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import Navbar from "./components/Navbar";
+import BounceLoader from "react-spinners/BounceLoader";
 // PAGES'
 import Signup from "./pages/SignUp/Signup";
 import Home from "./pages/Home/Home";
@@ -26,20 +27,19 @@ export default function App(props) {
   const [searchHistory,setSearchHistory]=useState(null);
   const [userDataSignup, setuserDataSignup] = useState("");
   const [userDataUpdate, setUserDataUpdate] = useState("");
+  const [loading,setLoading]=useState(false)
    useEffect(() => {
      const id = localStorage.getItem("UserId");
       setUserID(id);
   })
   const setSearch = async (term) => {
     setSearchTerm(term);
+    setLoading(true)
     const id = localStorage.getItem("UserId");
-    
-    console.log("------------")
-    console.log(userID)
     const data = await searchData(term, id);
-    console.log(data);
     setGoogleData(data);
     history.push("/search");
+    setLoading(false)
   };
   //-----User DATA Retreival---//
   
@@ -81,6 +81,7 @@ export default function App(props) {
   return (
     <div className="App">
       
+      
       {/* <Login /> */}
       <Switch>
         <Route exact path="/" component={Login} />
@@ -100,6 +101,7 @@ export default function App(props) {
           component={() => (
             <Search
               searchTerm={searchTerm}
+              setSearch={setSearch}
               // userID={userID}
               googleData={googleData}
             />
@@ -115,6 +117,7 @@ export default function App(props) {
         />
         <Route exact path="/settings" component={Settings} />
       </Switch>
+      {loading && <BounceLoader color="#787e83" size={70} className="spinner" />}
     </div>
   );
 }

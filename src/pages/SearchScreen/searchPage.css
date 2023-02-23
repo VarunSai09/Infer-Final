@@ -45,25 +45,25 @@
   margin-left: 0px;
   right: 0px;
 }
-#search-logo {
+#Search-Logo {
   position: relative;
     right: 2rem;
     bottom: 57px;
     width: 16px;
 }
-@media screen and (max-width: 935px) {
+@media screen and (min-width:801px) and (max-width: 935px) {
   .SearchPage {
     width: 880px;
     /* background-color: #1a83ff; */
   }
-  #search-logo {
+  #Search-Logo {
     left: 10.1rem;
   }
   .results-count {
   }
 }
 
-@media screen and (max-width: 440px) {
+@media screen and (min-width:391px) and (max-width: 440px) {
   .Logo {
     width: 78.075;
     height: 17;
@@ -74,7 +74,7 @@
   #Search {
     border: none;
     margin-left: 0px;
-    left: 12rem;
+    left: 0rem;
   }
   #Library-Search {
     position: absolute;
@@ -105,13 +105,22 @@
     margin-left: 0;
   }
   #Search-Logo {
-    left: 1.1rem;
+    left: -1.9rem;
+    bottom: 48px;
   }
   .SearchPage {
     width: fit-content;
   }
   .results-count {
     padding-top: 30px;
+  }
+}
+@media screen and (max-width: 390px){
+  #Search-Logo {
+    left: 10.1 rem;
+  }
+  .results-count{
+    padding-top: 35px;
   }
 }
 @media screen and (min-width: 441px) and (max-width: 800px) {

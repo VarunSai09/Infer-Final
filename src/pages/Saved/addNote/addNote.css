@@ -143,8 +143,42 @@
   order: 0;
   flex-grow: 0;
 }
-
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 390px) {
+    .add-note-popup {
+      width: 300;
+    height: 550px;;
+    
+    margin-top: 50px;
+      left: 40px;}
+}
+.note-title{
+  width: fit-content;
+  font-size: 18px;
+}
+ #add-note-input {
+    width: 250px;
+    height: 300px;
+    left: 21;
+    top: 180;
+  }
+.input-box{
+  top: 175px;
+    width: 250px;
+    height: 250;
+}
+.buttons-addNote{
+      width: 50;
+    height: 48px;
+    left: 117px;
+    top: 493px;
+}
+.save-button{
+  width: 110px;
+}
+.cancel-button{
+  width: 110px;
+}
+@media screen and (min-width:391px) and (max-width: 480px) {
   .add-note-popup {
     width: 300;
     height: 550px;
@@ -161,7 +195,7 @@
     font-family: "Avenir Next";
     line-height: 1;
     height: 0;
-    width: 300;
+    width: fit-content;
     top: 39px;
     display: flex;
     /* justify-content: space-evenly; */

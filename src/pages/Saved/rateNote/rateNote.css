@@ -173,7 +173,35 @@ h4 {
   order: 0;
   flex-grow: 0;
 }
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 390px) {
+  .rate-popup{
+    width: 300;
+    height: 550px;
+    left: 35px;
+    right: 50px;
+    margin-top: 50px;
+  }
+  .review-note-header{
+    top: 150px
+  }
+  .input-box{
+    left: 24px;
+    top: 227px;
+  }
+  .buttons{
+    width: 50;
+    height: 48px;
+    left: 120px;
+    top: 490px;
+  }
+  .save-button-rate{
+    width: 110px;
+  }
+  .cancel-button-rate{
+    width: 110px;
+  }
+}
+@media screen and (min-width: 390px) and (max-width: 440px) {
   .rate-popup {
     width: 300;
     height: 550px;

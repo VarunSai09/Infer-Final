@@ -66,8 +66,8 @@ const Data = ({ data, searchTerm }) => {
             </label>
           </div>
           <div className="TagFrame">
-            <p id="Tags">Author : </p>
-            <p className="Tags">{data.Author}</p>
+            <p id="Tags-SearchScreen">Author : </p>
+            <p className="Tags-SearchScreen">{data.Author}</p>
           </div>
           <p>{data.Context}</p>
         </div>

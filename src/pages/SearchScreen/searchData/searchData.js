@@ -11,7 +11,7 @@ const SearchData = ({ googleData, searchTerm }) => {
       </p>
       {googleData ? googleData.map((data, id) => (
         <Data data={data} key={id} searchTerm={searchTerm} />
-      )):<></>}
+      )):<div className="No-SearchResults"><h3>Sorry there are no results </h3></div>}
     </div>
   );
 };
