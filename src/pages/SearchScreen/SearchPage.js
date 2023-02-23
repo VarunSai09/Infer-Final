@@ -26,8 +26,8 @@ const SearchScreen = ({ searchTerm, setSearch, googleData }) => {
     setUserId(id);
   }, []);
   const [term, setTerm] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (
       /^[a-zA-Z0-9].*/.test(term) ||
       /^[a-zA-Z0-9]+[" "]/.test(term) ||

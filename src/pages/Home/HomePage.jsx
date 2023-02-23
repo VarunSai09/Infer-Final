@@ -8,7 +8,7 @@ import axios from "axios";
 import Navbar from "react-bootstrap/Navbar";
 import "../../components/Searchbar.css";
 import search from "../SearchScreen/search";
-
+import NavbarSide from "../../components/Navbar";
 export default function HomePage({ setSearch }) {
   const history = useHistory("");
   const [userid, setUserId] = useState("");
@@ -32,14 +32,9 @@ export default function HomePage({ setSearch }) {
     setSearchHistory(Ret)
  
   }
-
-  var data = [];
-
-  // console.log(data);
   const [term, setTerm] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault()
     if (
       /^[a-zA-Z0-9].*/.test(term) ||
       /^[a-zA-Z0-9]+[" "]/.test(term) ||
@@ -50,7 +45,8 @@ export default function HomePage({ setSearch }) {
   };
   return (
     <>
-      <Navbar className="navbar-search" bg="light" expand="lg" onSubmit={handleSubmit}>
+      <NavbarSide /> 
+      <Navbar className="navbar-search" bg="light" expand="lg">
         <img
           className="Logo-Home"
           src="https://www.infersol.com/wp-content/uploads/2020/02/logo.png"
@@ -66,7 +62,7 @@ export default function HomePage({ setSearch }) {
               type="text"
               value={term}
               aria-label="Search"
-              // onClick={handleClick}
+
               onChange={(event) => setTerm(event.target.value)}
             ></input>
             <p id="Search-Logo">
@@ -86,7 +82,7 @@ export default function HomePage({ setSearch }) {
                     onClick={() => setTerm(item)}
                     className="dropdown-row"
                     key={item}
-                    onDoubleClick={handleSubmit}
+
                   >
                     {item}
                   </div>
