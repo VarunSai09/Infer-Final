@@ -277,7 +277,7 @@ span {
     top: 85px;
   }
 }
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 480px) {
   .menu-close {
     display: flex;
     right: 1rem;
@@ -296,7 +296,7 @@ span {
   }
   .welcome-frame {
     right: 15px;
-    top: -34px;
+    top: -22px;
   }
   .nav-menu-items {
     right: 13rem;

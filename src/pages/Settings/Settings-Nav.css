@@ -45,8 +45,22 @@
   margin-left: 15.88rem;
   border-left: 2px solid #f7f7f7;
 }
-
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 390px) {
+  .Settings-Logo{
+    left: 6px;
+    top: 1px;
+  }
+  #Settings-Nav {
+    border-left: 0;
+  }
+  #Settings-Nav-Content {
+   top: 15px;
+    left: -18rem;
+    font-size: 24px;
+  }
+  
+}
+@media screen and (min-width: 391px) and (max-width: 440px) {
   .navbar-settings {
     height: 85px;
     width: 100%;
@@ -84,13 +98,4 @@
   #Settings-Nav-Content {
     left: 12rem;
   }
-}
-@media screen and (max-width: 380px){
-    .Settings-Logo {
-      left: 30px;
-    top: 25px;
-    }
-     #Settings-Nav-Content {
-       left:12rem;
-     }
 }

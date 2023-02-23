@@ -74,7 +74,7 @@
 search {
   right: 10px;
 }
-#Search-Logo {
+#Search-Logo-home {
       position: relative;
     right: 2rem;
     bottom: 57px;
@@ -139,24 +139,77 @@ search {
       position: relative;
     left: 2px;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 390px){
+  .navbar-search {
+  width: 100%;
+    height: 85px;
+  }
+  .Library-mobile{
+    position: absolute;
+    bottom: 4px;
+    left: 0rem;
+    right: 0;
+    font-size: 16px;
+    font-weight: 600;
+    width: fit-content;
+    display: inline-flex;
+    line-height: 10px;
+    padding-left: 8px;
+  }
   .Logo-Home {
-    width: 78.075;
-    height: 17;
+        width: 90px;
+    height: 29px;
     position: initial;
     padding-left: 10px;
+    margin-top: 3px;
+  }
+  #Search{
+        left: 0rem;
+        border-left:0;
+  }
+  .Search{
+    left: -40;
+    width: 15px;
+  }
+  .Search input{
+    width: 180px;
+  }
+  #Search-Logo-home {
+    left: -1.9rem;
+}
+.dropdown{
+  width: 180px;
+}
+.welcome-frame {
+  top: -24px;
+}
+}
+
+
+@media screen and (min-width:391px) and (max-width: 480px) {
+  .Logo-Home {
+       width: 85;
+    height: 25;
+    position: initial;
+    padding-left: 10px;
+    padding-bottom: 23px;
     margin-top: 3px;
   }
   #Search {
     border: none;
     margin-left: 0px;
-    left: 13rem;
+    left: 0rem;
+  }
+  .Search input{
+        width: 210px;
+    height: 50;
   }
   .Library-mobile {
     position: absolute;
-    left: 6rem;
+       left: 0;
+    bottom: 7px;
     right: 0;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
     width: fit-content;
     display: inline-flex;
@@ -166,7 +219,7 @@ search {
   .Search {
     position: relative;
     left: 0;
-    width: 180px;
+    width: 50px;
     height: 50px;
     background-color: #f6f6f6;
     border: 0;
@@ -180,8 +233,9 @@ search {
   form {
     margin-left: 0;
   }
-  #Search-Logo {
-    left: 1.1rem;
+  #Search-Logo-home {
+        left: -1.9rem;
+    bottom: 48px;
   }
   .navbar-search {
     width: 100%;
@@ -205,7 +259,7 @@ search {
   .Search {
     width: 400px;
   }
-  #Search-Logo {
+  #Search-Logo-home {
     left: 14.1rem;
   }
 }

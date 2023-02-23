@@ -5,7 +5,7 @@ import Navbar from "../../components/Navbar";
 const Home=({setSearch,searchHistory,setUserDetails})=> {
   return (
     <>
-      <Navbar /> 
+
      <HomePage setSearch={setSearch}  setUserDetails={setUserDetails}/>
     </>
   );
