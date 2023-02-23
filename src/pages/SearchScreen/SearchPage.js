@@ -10,25 +10,32 @@ import SearchData from "./searchData/searchData";
 
 const SearchScreen = ({ searchTerm, setSearch, googleData }) => {
   const history = useHistory("");
+    const [userid, setUserId] = useState("");
   
-  console.log(googleData);
-  useEffect(() => {
-    if (searchTerm === "") {
-      history.push("/home");
-    }
-    //eslint-disable-next-line
-  }, [searchTerm]);
-  const [term, setTerm] = useState("");
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (
-  //     /^[a-zA-Z0-9].*/.test(term) ||
-  //     /^[a-zA-Z0-9]+[" "]/.test(term) ||
-  //     /^[" "]+[a-zA-Z0-9]/.test(term)
-  //   ) {
-  //     setSearch(term);
+  // useEffect(() => {
+  //   if (searchTerm === "") {
+  //     history.push("/home");
   //   }
-  // };
+  //   //eslint-disable-next-line
+  // }, [searchTerm]);
+  useEffect(() => {
+    if (!localStorage.getItem("UserId")) {
+      history.push("/");
+    }
+    const id = localStorage.getItem("UserId");
+    setUserId(id);
+  }, []);
+  const [term, setTerm] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (
+      /^[a-zA-Z0-9].*/.test(term) ||
+      /^[a-zA-Z0-9]+[" "]/.test(term) ||
+      /^[" "]+[a-zA-Z0-9]/.test(term)
+    ) {
+      setSearch(term.toLocaleLowerCase(),userid);
+    }
+  };
   return (
     <>
       <Navbar className="navbar-search" bg="light" expand="lg" >
@@ -39,7 +46,7 @@ const SearchScreen = ({ searchTerm, setSearch, googleData }) => {
         />
         <p className="Library-mobile Library">Library Search</p>
 
-        <form className="d-flex" id="Search" >
+        <form className="d-flex" id="Search" onSubmit={handleSubmit}>
           <div className="Search">
             
             <input
@@ -57,7 +64,7 @@ const SearchScreen = ({ searchTerm, setSearch, googleData }) => {
         </form>
       </Navbar>
       <div className="SearchPage">
-        <SearchData googleData={googleData} searchTerm={searchTerm}/>
+        <SearchData googleData={googleData} setSearch={setSearch} searchTerm={searchTerm}/>
       </div>
     </>
   );
