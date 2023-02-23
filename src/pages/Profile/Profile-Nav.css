@@ -48,11 +48,24 @@
   margin-left: 15.88rem;
   border-left: 2px solid #f7f7f7;
 }
-
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 380px) {
   .Profile-Logo{
-        left: 30px;
-    top: 25px;
+    left: 6px;
+    top: 1px;
+  }
+  #Profile-Nav {
+    border-left: 0;
+  }
+  #Profile-Nav-Content {
+   top: 15px;
+    left: -18rem;
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 391px) and (max-width: 480px) {
+  .Profile-Logo{
+        left: 6px;
+    top: 5px;
   }
   .navbar-profile {
     height: 85px;
@@ -63,8 +76,8 @@
   }
   #Profile-Nav-Content{
        position: relative;
-    left: 0rem;
-    /* top: -10px; */
+    left: -14.5rem;
+    top: -22px;
     font-weight: 600;
     bottom: 35px;
     margin-top: 27px;

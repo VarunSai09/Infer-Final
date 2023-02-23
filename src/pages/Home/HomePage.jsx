@@ -65,7 +65,7 @@ export default function HomePage({ setSearch }) {
 
               onChange={(event) => setTerm(event.target.value)}
             ></input>
-            <p id="Search-Logo">
+            <p id="Search-Logo-home">
               <BsIcons.BsSearch />
             </p>
             <div className="dropdown">

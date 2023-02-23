@@ -449,12 +449,14 @@ input::placeholder {
   
   .loginform {
     width: 71%;
-    left: 19%;
-    margin-top: 145px;
+    left: 14%;
+        margin-top: 85px;
+    margin-bottom: 0px;
+        width: 292.587;
   }
   .Login-Page {
-    padding-bottom: -webkit-fill-available;
-    padding-right: 15px;
+    /* padding-bottom: -webkit-fill-available;
+    padding-right: 15px; */
   }
   img {
     margin-right: 37px;
@@ -510,13 +512,18 @@ input::placeholder {
 }
 @media screen and (max-width: 390px) {
   .loginform {
-    width: 75%;
-    left: 15%;
-    margin-top: 145px;
+        width: 85%;
+    top: 10%;
+    left: 8%;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;  
   }
   .Login-Page {
-    width: 405.2px;
-        padding-right: 26px;
+    position: absolute;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available ;
+        /* padding-right: 26px; */
   }
   img {
     margin-right: 37px;

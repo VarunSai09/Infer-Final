@@ -38,7 +38,7 @@ export default function AddNote({ open, onClose, post }) {
             className="input-box"
             placeholder={"start typing here"}
             value={post.SavedNotes}
-            style={{height: "337.7px"}}
+            // style={{height: "337.7px"}}
             onChange={(event) => setNotes(event.target.value)}
           />
         </div>

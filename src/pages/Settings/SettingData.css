@@ -204,8 +204,48 @@ cursor: pointer;
   order: 1;
   flex-grow: 0;
 }
-
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 390px) {
+  .theme-headings {
+    left: 35px;
+    top: 200px;
+  }
+  .theme-subhead {
+    left: 35px;
+    top: 220px;
+  }
+  .history-headings {
+    top: 295px;
+    left: 30px;
+  }
+  .history-subhead {
+    top: 315px;
+    left: 30px;
+  }
+  .Theme-Light {
+    left: 160px;
+    top: 233px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 85px;
+  }
+  .Theme-Dark {
+    left: 240px;
+    top: 231px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 90px;
+    height: 35px;
+  }
+  .history-options {
+    left: 160px;
+    top: 331px;
+  }
+}
+@media screen and (min-width: 391px)and (max-width: 440px) {
   #theme {
   }
   .theme-headings {
