@@ -1,4 +1,4 @@
-.saved-note {
+.NotesPage-Note {
   background: #fcffff;
   margin: 10px;
   margin-bottom: 0px;
@@ -19,7 +19,7 @@
 #saved-title {
   transition: width 0s;
 }
-.saved-note a {
+.NotesPage-Note a {
   font-size: 0.5em;
   margin-bottom: 10px;
   text-decoration: none;
@@ -35,10 +35,10 @@
 /* #add-delete{
   line-height: 20px;
 } */
-.note-header #add-note-saved {
+/* .note-header #add-note-saved {
   margin: 5px 5px 0 30px;
   color: #305ba5;
-}
+} */
 #delete-note {
   color: #305ba5;
 }
@@ -48,12 +48,12 @@
   color: #305ba5;
 }
 
-/* .saved-note a:hover{
+/* .NotesPage-Note a:hover{
 
   background-color: yellowgreen;
   
 } */
-/* .saved-note a:hover + .add-delete-saved{
+/* .NotesPage-Note a:hover + .add-delete-saved{
   display: inline-flex;
   
 } */
@@ -121,7 +121,7 @@ a:hover + .add-delete {
   padding-left: 1px;
   display: inline-flex;
 }
-.saved-note p {
+.NotesPage-Note p {
   font-size: 0.5em;
   margin: 5px 0px;
   font-style: normal;
@@ -130,7 +130,7 @@ a:hover + .add-delete {
   line-height: 22px;
   color: #222222;
 }
-.saved-note label {
+.NotesPage-Note label {
   font-size: 0.5em;
   margin: 5px 0px;
   font-style: normal;
@@ -179,26 +179,26 @@ a:hover + .add-delete {
   background-color: #fcffff;
 }
 @media screen and (max-width: 935px) {
-  .saved-note {
+  .NotesPage-Note {
     width: 609px;
     padding-left: 32%;
     /* font-size: .25em; */
   }
 }
 @media screen and (max-width: 440px) {
-  .saved-note {
+  .NotesPage-Note {
     width: -webkit-fill-available;
     padding-left: 0;
   }
   .Notes-Display {
     padding-top: 150px;
   }
-  .saved-note a {
+  .NotesPage-Note a {
     font-size: 18px;
     width: 305px;
     line-height: inherit;
   }
-  .saved-note p {
+  .NotesPage-Note p {
     font-size: 15px;
     width: 305px;
     line-height: inherit;
@@ -220,7 +220,7 @@ a:hover + .add-delete {
   }
 }
 @media screen and (min-width: 441px) and (max-width: 800px) {
-  .saved-note {
+  .NotesPage-Note {
   }
   #Saved-Nav {
     border-left: none;

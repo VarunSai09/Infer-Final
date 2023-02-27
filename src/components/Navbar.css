@@ -259,6 +259,11 @@ span {
     height: 150%;
   }
 }
+@media screen and (max-width: 1100px) {
+  .home{
+    width: 1190px;
+  }
+}
 @media screen and (max-width: 935px) {
   .home,
   .saved {
