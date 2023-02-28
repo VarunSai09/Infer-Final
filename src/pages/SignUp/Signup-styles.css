@@ -8,7 +8,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-
   padding-bottom: 3.6rem;
 }
 
@@ -23,7 +22,6 @@ html {
   width: 30%;
   height: 36.2rem;
   margin: 100px auto;
-
   background-color: #ffffff;
   border-radius: 12px;
   text-align: center;
@@ -352,13 +350,7 @@ input {
   } */
 }
 @media screen and (min-width: 1280px) and (max-width: 1500px) {
-  /* .remember-label {
-    top: -73px;
-    left: 15%;
-  } */
-  /* #box {
-    bottom: 56px;
-  } */
+  
 }
 @media screen and (max-width: 1280px) {
   .signupform {
