@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import Navbar from "./components/Navbar";
 import BounceLoader from "react-spinners/BounceLoader";
+
 // PAGES'
 import Signup from "./pages/SignUp/Signup";
 import Home from "./pages/Home/Home";
@@ -108,7 +109,7 @@ export default function App(props) {
           )}
         />
         <Route exact path="/saved" component={Saved} />
-        {/* <Route exact path="/notes" component={Notes} /> */}
+        <Route exact path="/notes" component={Notes} />
         {/* <Route exact path="/saved/add-note" component={addNote} /> */}
         <Route
           exact

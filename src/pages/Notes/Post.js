@@ -12,13 +12,12 @@ const Post = ({ post }) => {
             <a id="saved-title" href={post.UrlId} target="_blank" >
               {post.Title}
             </a>
-
           </div>
           <div className="TagFrame-Saved">
             <p id="Tags">Tags : </p>
             <label className="Tags">{post.Tag}</label>
           </div>
-          <p>{post.SavedNotes}</p>
+          {post.SavedNotes ? <p>Notes:  "{post.SavedNotes}"</p>:<p>Context:  "{post.Context}"</p>}
         </div>
 
       </div>
