@@ -185,6 +185,29 @@ a:hover + .add-delete {
     /* font-size: .25em; */
   }
 }
+
+@media screen and (max-width:1100px){
+ .saved-note {
+    width: 600px;
+    margin-right: 310px;
+ }
+ #saved-title {
+   width: 600px;
+ }
+ #saved-title {
+  transition: width 0s;
+}
+ a #saved-title:hover {
+   width: 300px;
+ }
+ #delete-note{
+   margin-right: 283px;
+ }
+ 
+ /* .note-header #add-note-saved {
+   margin-right: 230px;
+ } */
+}
 @media screen and (max-width: 440px) {
   .saved-note {
     width: -webkit-fill-available;

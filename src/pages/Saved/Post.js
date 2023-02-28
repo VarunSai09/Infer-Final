@@ -4,6 +4,7 @@ import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
 import AddNote from "./addNote/addNote";
 import RateNote from "./rateNote/rateNote";
+import axios from "axios";
 const Post = ({ post }) => {
   const [openAddNote, setOpenAddNote] = useState(false);
   const [openRateNote, setOpenRateNote] = useState(false);
@@ -13,7 +14,14 @@ const Post = ({ post }) => {
   //     history.push('/saved/add-note')
 
   // }
-
+  const handleRemove=()=>{
+    const id = localStorage.getItem("UserId");
+     axios
+        .post("https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/unsavepost",
+        { UserId: id,URL: post.UrlId, Title: post.Title }
+        )
+      window.location.reload();
+  }
   return (
     <>
       <div className="saved">
@@ -39,7 +47,7 @@ const Post = ({ post }) => {
                 <MdIcons.MdOutlineStarRate className="rate-note-icon" />
                 <span className="rate-note-span">Rate Article</span>
               </a>
-              <a className="add-delete-saved" id="delete-note">
+              <a className="add-delete-saved" id="delete-note" onClick={handleRemove}>
                 <MdIcons.MdDeleteForever className="delete-icon" />
                 <span className="delete-note-span" />
                 Remove
