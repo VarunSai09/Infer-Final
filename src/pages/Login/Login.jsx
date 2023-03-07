@@ -13,8 +13,8 @@ const Login = (props) => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (localStorage.getItem("token")) {
-      localStorage.removeItem("token");
+    if (localStorage.getItem("UserId")) {
+      localStorage.removeItem("UserId");
     }
   });
   const handleEmail = (e) => {
@@ -96,8 +96,8 @@ const Login = (props) => {
               </div>
               </form>
               </div>
-              {error && <div style={{ color: "red" }}>{error}</div>}
-            
+              {error && <div style={{ color: "red",position: "relative",bottom: "11px"}}>{error}</div>}
+
 
             <div className="remembrer-links">
               <div className="remember">

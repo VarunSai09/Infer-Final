@@ -152,7 +152,7 @@ const Login = () => {
               </div>
               </form>
               </div>
-              {error && <div style={{ color: "red" }}>{error}</div>}
+              {error && <div style={{ color: "red",position: "relative",bottom: "25px"}}>{error}</div>}
               <div className="row-button-Signup" id="button" >
                 <button onClick={handleSubmit} >Signup</button>
               </div>
