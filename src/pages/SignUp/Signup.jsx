@@ -74,8 +74,8 @@ const Login = () => {
 
   return (
     <div className="Signup-Page">
-      <div id="signupform" className="signupform">
-        <div className="frame">
+      <div id="signupform" >
+        <div className="signupform">
           <img
             alt="Infer-logo"
             src="https://www.infersol.com/wp-content/uploads/2020/02/logo.png"
@@ -141,21 +141,23 @@ const Login = () => {
                   placeholder="Retype your Password"
                 />
               </div>
+              </form>
+              </div>
               {error && <div style={{ color: "red" }}>{error}</div>}
-              <div className="row-button" id="button">
+              <div className="row-button-Signup" id="button">
                 <button>Signup</button>
               </div>
-            </form>
+            
 
-            <div className="remembrer-links">
+  
               <div id="registerd-user">
                 <p>Already have an account</p>
                 <a onClick={handleApi} className="registerd-user-login">
                   Login
                 </a>
-              </div>
+
             </div>
-          </div>
+          
           <label className="copyright">
             ©Copyright Infer Solutions, Inc. All Rights Reserved
           </label>
