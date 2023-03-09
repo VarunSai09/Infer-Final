@@ -36,11 +36,12 @@ const Login = () => {
   };
   function handleSubmit(e) {
     e.preventDefault();
+    console.log("Clicked")
     if (password !== passwordConfirm) {
       setError("Passwords do not match");
       console.log("error");
     } else if (password === passwordConfirm) {
-      
+      console.log("Registering.......")
        axios
       .post(
         "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/userdb",
@@ -57,7 +58,15 @@ const Login = () => {
           setError(result.data.body)
         }
         else if(result.data.statusCode==200){
-          history.push("/")
+          // localStorage.setItem("UserId", result.data.UserId);
+          // const UserId=localStorage.getItem(UserId)
+          // console.log(UserId)
+          console.log(result.data)
+          const user = result.data;
+          console.log(user.UserId);
+
+          localStorage.setItem("UserId", user.UserId);
+          history.push("/home")
         }
         
       })
@@ -74,8 +83,8 @@ const Login = () => {
 
   return (
     <div className="Signup-Page">
-      <div id="signupform" className="signupform">
-        <div className="frame">
+      <div id="signupform" >
+        <div className="signupform">
           <img
             alt="Infer-logo"
             src="https://www.infersol.com/wp-content/uploads/2020/02/logo.png"
@@ -141,21 +150,23 @@ const Login = () => {
                   placeholder="Retype your Password"
                 />
               </div>
-              {error && <div style={{ color: "red" }}>{error}</div>}
-              <div className="row-button" id="button">
-                <button>Signup</button>
+              </form>
               </div>
-            </form>
+              {error && <div style={{ color: "red",position: "relative",bottom: "25px"}}>{error}</div>}
+              <div className="row-button-Signup" id="button" >
+                <button onClick={handleSubmit} >Signup</button>
+              </div>
+            
 
-            <div className="remembrer-links">
+  
               <div id="registerd-user">
                 <p>Already have an account</p>
                 <a onClick={handleApi} className="registerd-user-login">
                   Login
                 </a>
-              </div>
+
             </div>
-          </div>
+          
           <label className="copyright">
             ©Copyright Infer Solutions, Inc. All Rights Reserved
           </label>

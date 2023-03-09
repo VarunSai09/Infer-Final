@@ -13,8 +13,8 @@ const Login = (props) => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (localStorage.getItem("token")) {
-      localStorage.removeItem("token");
+    if (localStorage.getItem("UserId")) {
+      localStorage.removeItem("UserId");
     }
   });
   const handleEmail = (e) => {
@@ -64,9 +64,9 @@ const Login = (props) => {
   }
   return (
     <div className="Login-Page">
-      <div id="loginform" className="loginform">
-        <div className="frame">
-          <img
+    
+        <div className="loginform">
+          <img className="infer-logo-Login"
             alt="Infer-logo"
             src="https://www.infersol.com/wp-content/uploads/2020/02/logo.png"
           />
@@ -94,8 +94,10 @@ const Login = (props) => {
                   placeholder="Password"
                 />
               </div>
-              {error && <div style={{ color: "red" }}>{error}</div>}
-            
+              </form>
+              </div>
+              {error && <div style={{ color: "red",position: "relative",bottom: "11px"}}>{error}</div>}
+
 
             <div className="remembrer-links">
               <div className="remember">
@@ -105,11 +107,10 @@ const Login = (props) => {
                 <label className="remember-label" for="box">
                   Remember Me
                 </label>
+                <a id="forgot" href="/">Forgot Password</a>
               </div>
                
-              <p id="forgot">
-                <a href="/">Forgot Password</a>
-              </p>
+              
               </div>
               <div className="Login-Button" id="button">
                 <button onClick={handleApi}>Login</button>
@@ -120,14 +121,14 @@ const Login = (props) => {
                   Register here
                 </a>
               </div>
-           </form>
-          </div>
+           
+          
           <label className="copyright-Login">
             ©Copyright Infer Solutions, Inc. All Rights Reserved
           </label>
         </div>
       </div>
-    </div>
+
   );
 };
 export default Login;
