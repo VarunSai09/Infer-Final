@@ -282,6 +282,15 @@ span {
     top: 85px;
   }
 }
+@media screen and (max-width: 885px){
+.Avatar {
+    /* left: 8px; */
+    /* float: none; */
+    /* margin-left: 0%; */
+    margin-right: 0px;
+    /* margin-right: 108px; */
+}
+}
 @media screen and (max-width: 480px) {
   .menu-close {
     display: flex;
@@ -353,6 +362,7 @@ span {
   }
   .home {
     padding-left: 15%;
+        padding-right: 20%;
   }
   .saved {
     padding-left: 1%;

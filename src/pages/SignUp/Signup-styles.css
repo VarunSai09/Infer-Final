@@ -286,21 +286,23 @@ input::placeholder {
   align-items: baseline;
   position: relative;
   left: 27%;
-  bottom: 60px;
+      bottom: 15px;
 }
 .registerd-user-login {
   padding-left: 10px;
   cursor: pointer;
   text-decoration: underline;
 }
-.row-button {
+.row-button-Signup {
   display: block;
   /* flex-direction: column; */
   align-items: center;
-  padding-top: 15px;
-  padding-left: 17%;
+     padding-top: 0;
+    padding-left: 17%;
+    position: relative;
+    bottom: 15px;
 }
-.row-button button {
+.row-button-Signup button {
   border-radius: 8px;
   width: 75%;
   height: 40px;
@@ -376,8 +378,11 @@ input {
   }
   #registerd-user {
     left: 18%;
+        bottom: 0px;
   }
-
+ .row-button-Signup button{
+    top:22px;
+  }
   .copyright {
     font-size: 14px;
     left: 0px;
@@ -489,7 +494,7 @@ input {
   }
   .signupform {
     width: 80%;
-    left: 15%;
+    left: 7%;
     margin-top: 75px;
   }
   .Signup-Page {
@@ -522,8 +527,8 @@ input {
     margin-bottom: 1%;
   }
   #registerd-user {
-    bottom: 70px;
-    left: 13%;
+    /* bottom: 70px; */
+    left: 18%;
 }
 
   .copyright {
@@ -531,7 +536,7 @@ input {
     /* line-height: 4; */
     height: 18px;
     width: max-content;
-    left: 9px;
+    left: 10%;
     bottom: 10px;
   }
   .row button {
@@ -546,11 +551,11 @@ input {
     top: -17px;
   }
   #registerd-user {
-    left: 9%;
-    bottom: 72px;
+    left: 18%;
+    /* bottom: 72px; */
   }
   .copyright {
     font-size: 11px;
-    left: 5px;
+    left: 45px;
   }
 }

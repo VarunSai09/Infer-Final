@@ -27,7 +27,6 @@ export default function Navbar() {
           { UserId: userId }
         )
         .then((result) => {
-       
           setData(result.data.body[0].Name);
           if(result.data.body[0].ProfileImage){
           setImageUrl(result.data.body[0].ProfileImage)

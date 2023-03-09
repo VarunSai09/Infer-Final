@@ -192,13 +192,13 @@ input::placeholder {
 }
 
 .remembrer-links {
-  position: relative;
-  top: 65px;
+    position: relative;
+    bottom: 9px;
 }
 #box {
   position: relative;
   left: 3.5rem;
-  bottom: 62px;
+  /* bottom: 62px; */
   margin-top: 6px;
   /* bottom: 50.5%; */
   background: #a7a7a7;
@@ -215,7 +215,7 @@ input::placeholder {
   /* padding-right:10%; */
   /* padding-left: 10%; */
   display: flex;
-  justify-content: space-between;
+  justify-content:start;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -226,12 +226,12 @@ input::placeholder {
 }
 .remember-label {
   position: relative;
-  width: 370px;
+  width: fit-content;
   height: 0;
-  right: 11;
-  margin-top: 6px;
+  left: 55px;
+  /* margin-top: 6px; */
   /* right: 32.5rem; */
-  bottom: 63.5px;
+  /* bottom: 63.5px; */
   font-family: "Avenir Next";
   font-style: normal;
   font-weight: 400;
@@ -245,18 +245,18 @@ input::placeholder {
 }
 #forgot {
   margin: 0;
-  /* padding-top: 10px; */
-  position: relative;
-  height: 0;
-  bottom: 89px;
-  left: 64.5%;
-  font-family: "Avenir Next";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 32px;
-  display: flex;
-  flex-wrap: wrap;
+    /* padding-top: 10px; */
+    position: relative;
+    height: 0;
+    bottom: 10px;
+    left: 38%;
+    font-family: "Avenir Next";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    /* line-height: 32px; */
+    display: flex;
+    flex-wrap: wrap;
 }
 #register-user {
   display: flex;
@@ -271,10 +271,10 @@ input::placeholder {
   text-decoration: underline;
 }
 .Login-Button {
-  position: relative;
-  left: 45px;
-
-  display: block;
+ position: relative;
+    left: 80px;
+    /* display: block; */
+    width: 368px;
 }
 .Login-Button button {
   border-radius: 8px;
@@ -323,19 +323,19 @@ input::placeholder {
     left: 3.5rem;
   }
 } */
-@media screen and (min-width: 1280px) and (max-width: 1500px) {
+@media screen and (min-width: 1281px) and (max-width: 1500px) {
   .remember-label {
-    top: -58px;
-    left: 3%;
+    /* top: -58px;
+    left: 3%; */
   }
   #forgot {
-    bottom: 84px;
+    /* bottom: 84px; */
   }
   #box {
-    bottom: 56px;
+    /* bottom: 56px; */
   }
 }
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 1101px) and (max-width: 1280px) {
   /* .Welcome-Note {
     height: 0px;
   } */
@@ -370,8 +370,8 @@ input::placeholder {
   }
 
   .remember-label {
-    top: -59px;
-    left: -10%;
+
+    left: 16;
   }
   #box {
     left: 0.9rem;
@@ -382,7 +382,7 @@ input::placeholder {
   #forgot {
     font-size: 15px;
     padding-top: 0px;
-    left: 60.5%;
+    left: 100;
   }
   #register-user {
     left: 25%;
@@ -395,14 +395,27 @@ input::placeholder {
 }
 @media screen and (max-width: 1100px) {
   #box {
-    left: -0.1rem;
+        left: 30px;
   }
   .remember-label {
-    top: -65px;
-    left: 0%;
+
+    left: 10%;
 }
+#forgot{
+      left: 16%;
 }
-@media screen and (max-width: 880px) {
+.Login-Button{
+  left: 5px;
+}
+#register-user {
+  left:70px;
+}
+ .copyright-Login {
+   left: 30px;
+ }
+ 
+}
+@media screen and (min-width: 692px)and (max-width: 880px) {
   .loginform {
     width: 50%;
     left: 25%;
@@ -412,8 +425,14 @@ input::placeholder {
   }
   #forgot {
     display: block;
-    left: 18%;
+    left: 30%;
   }
+  .Login-Button {
+    left: 43px;
+}
+#register-user {
+    left: 90px;
+}
   .remember-label {
     display: flex;
     left: 36px;
@@ -422,7 +441,6 @@ input::placeholder {
     display: flex;
   }
   #box {
-    bottom: 63px;
     left: 36px;
   }
   #version {
@@ -439,6 +457,8 @@ input::placeholder {
     margin-right: 108px;
   }
   .copyright-Login {
+        width: fit-content;
+    left: 5%;
   }
 }
 /* @media screen and (min-width: 769px) {
@@ -454,19 +474,69 @@ input::placeholder {
     
  } 
 } */
-
+@media screen and (min-width: 481px)and (max-width: 692px) {
+   .loginform {
+    width: 50%;
+    left: 25%;
+  }
+  .desc {
+    font-size: 15px;
+  }
+  #forgot {
+    display: block;
+    left: 30%;
+  }
+  .Login-Button {
+    left: 43px;
+}
+#register-user {
+    left: 90px;
+}
+  .remember-label {
+    display: flex;
+    left: 36px;
+  }
+  .remember {
+    display: flex;
+  }
+  #box {
+    left: 36px;
+  }
+  #version {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    left: 0%;
+    bottom: 15px;
+  }
+  img {
+    left: 8px;
+    float: none;
+    margin-left: 0%;
+    margin-bottom: 10px;
+    margin-right: 108px;
+  }
+  .copyright-Login {
+        width: fit-content;
+    left: 5%;
+  }
+}
 @media screen and (min-width: 390px) and (max-width: 480px) {
   
   .loginform {
     width: 71%;
     left: 14%;
-        margin-top: 85px;
-    margin-bottom: 0px;
+        margin-bottom: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+        /* margin-top: 85px;
+    margin-bottom: 0px; */
         width: 292.587;
   }
   .Login-Page {
     /* padding-bottom: -webkit-fill-available;
     padding-right: 15px; */
+        padding-top: 76;
+    padding-bottom: 76;
   }
   img {
     margin-right: 37px;
@@ -474,7 +544,7 @@ input::placeholder {
   #headerTitle {
     font-size: 20px;
     margin-top: 2%;
-    line-height: 80px;
+
   }
   #version {
     margin-bottom: 0;
@@ -492,22 +562,22 @@ input::placeholder {
   }
   #box {
     margin-bottom: 4px;
-    left: 2px;
-    bottom: 62px;
+
   }
   .remember-label {
     width: 250px;
-    left: -22px;
   }
   #forgot {
-    width: 253px;
-        left: 83px;
-    bottom: 90px;
-    line-height: 32px;
+        width: 253px;
+    bottom: 22px;
+  left: 52%;
   }
   #button {
-    left: 30px;
+    left: 0px;
   }
+  #register-user {
+    left: 65px;
+}
   .copyright-Login {
     font-size: 13px;
     /* line-height: 4; */
@@ -520,7 +590,7 @@ input::placeholder {
     top: 46px;
   }
 }
-@media screen and (max-width: 390px) {
+@media screen  and (max-width: 390px) {
   .loginform {
         width: 85%;
     top: 10%;
@@ -540,8 +610,8 @@ input::placeholder {
   }
   #headerTitle {
     font-size: 20px;
-    margin-top: 2%;
-    line-height: 80px;
+    margin-top: -7%;
+
   }
   #version {
     margin-bottom: 0;
@@ -559,24 +629,22 @@ input::placeholder {
   }
   #box {
     margin-bottom: 4px;
-    left: 5px;
+
   }
   .remember-label {
     width: 250px;
     
-    left: -29px;
-    top: -66px;
+
 
   }
   #forgot {
        width: 253px;
-    left: 92px;
-    line-height: 60px;
-    /* margin-top: 0px; */
-    bottom: 105px;
+  left: 53%;
+    bottom: 22px;
   }
   .Login-Button{
-    left:33px
+        width: 100%;
+    left: 30px;
   }
   #register-user {
     left:22%
@@ -585,11 +653,12 @@ input::placeholder {
     font-size: 14px;
     /* line-height: 4; */
     height: 18px;
-    width: max-content;
-    left: px;
-    bottom: 10px;
+        width: 90%;
+    left: 10px;
+    bottom: 29px;
   }
   .row button {
     top: 46px;
   }
+
 }

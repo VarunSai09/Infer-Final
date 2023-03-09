@@ -260,7 +260,7 @@ search {
     width: 400px;
   }
   #Search-Logo-home {
-    left: 14.1rem;
+    /* left: 14.1rem; */
   }
 }
 @media screen and (min-width: 1280px) and (max-width: 1500px) {
@@ -268,7 +268,7 @@ search {
     left: 15rem;
   }
 }
-@media screen and (max-width: 1280px) {
+/* @media screen and (max-width: 1280px) {
   .Search{
     left: 217px;
     width:20px
@@ -276,7 +276,7 @@ search {
   .Search input {
     width: 450px;
   }
-}
+} */
 @media screen and (min-width: 805px) and (max-width: 1280px) {
   .Library {
     left: 15rem;
