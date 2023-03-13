@@ -28,7 +28,7 @@ export default function HomePage({ setSearch }) {
     const retreivedDetails = await retreiveUser(id);
     const retreivedDe=retreivedDetails.data.body[0].SearchList
     const Ret=JSON.parse(retreivedDe);
-    console.log(typeof(retreivedDetails.data.body[0].SearchList))
+
     setSearchHistory(Ret)
  
   }
