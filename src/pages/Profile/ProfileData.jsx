@@ -24,7 +24,7 @@ const ProfileData = ({ setupdateDataUser }) => {
   }, []);
 
   useEffect(() => {
-    console.log(userId);
+
     if (userId !== undefined) {
       axios
         .post(

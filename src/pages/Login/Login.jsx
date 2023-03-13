@@ -36,10 +36,10 @@ const Login = (props) => {
         }
       )
       .then((result) => {
-        console.log(result.data.statusCode);
+
         if (result.data.statusCode == 200) {
           const user_data = result.data.body[0];
-          console.log(user_data.UserId);
+
 
           localStorage.setItem("UserId", user_data.UserId);
           history.push("/home");
