@@ -9,7 +9,7 @@ export default function AddNote({ open, onClose,post }) {
   // setRating=post.Rating
   // console.log(retreivedRating)
   // const retreivedRating=post.Rating
-  console.log(rating)
+// 
   if(!open) {
     return null
     };
