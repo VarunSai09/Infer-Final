@@ -45,10 +45,11 @@
   margin-left: 15.88rem;
   border-left: 2px solid #f7f7f7;
 }
-@media screen and (max-width: 440px) {
+@media screen and (min-width:391px) and (max-width: 480px) {
   #Articles {
     position: absolute;
-    left: 7rem;
+    top: 12px;
+    left: 0.5rem;
     font-size: 17px;
     line-height: 28px;
     margin-top: 29px;
@@ -63,5 +64,20 @@
   }
   #Saved-Nav {
     border-left: 0;
+  }
+  .Logo{
+        left: 6px;
+    top: 5px;
+  }
+}
+@media screen and (max-width:390px){
+  .Logo{
+        left: 6px;
+    top: 1px;
+  }
+  #Articles{
+        top: 12px;
+    left: -19rem;
+    font-size: 18px;
   }
 }

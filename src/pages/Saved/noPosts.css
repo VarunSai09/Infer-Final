@@ -1,0 +1,28 @@
+.no-posts-to-display{
+    position:relative;
+    top:300px;
+    left: 40%;
+    width: fit-content;
+}
+
+@media screen and (max-width:390px){
+    .no-posts-to-display{
+                top: 144px;
+    left: 8%;
+    font-size: 11px;
+    }
+}
+@media screen and (min-width:391px) and (max-width:440px){
+    .no-posts-to-display{
+     top: 183px;
+    left: 4%;
+    font-size: 13px;
+    }
+}
+@media screen and (min-width:441px) and (max-width:800px){
+    .no-posts-to-display{
+     top: 183px;
+    left: 4%;
+    font-size: 13px;
+    }
+}

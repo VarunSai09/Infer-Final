@@ -416,7 +416,11 @@ input::placeholder {
  
 }
 @media screen and (min-width: 692px)and (max-width: 880px) {
+  .Login-Page{
+    
+  }
   .loginform {
+        margin: 173 auto;
     width: 50%;
     left: 25%;
   }

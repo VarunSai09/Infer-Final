@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./noPosts.css"
 import SavedNav from "./Saved-Nav";
 
 import {retreiveSavedPosts} from "../../api/retreiveSavedPosts"
@@ -36,7 +36,9 @@ export default function Home() {
       <Navbar />
       <SavedNav />
       <div className="SavedContent-Display">
-        <ListPage posts={posts} />
+        {posts.length!==0 ?<ListPage posts={posts} />:
+        <><div className="no-posts-to-display" ><h1>Sorry there are no posts to display</h1></div></>}
+            
       </div>
     </>
   );
