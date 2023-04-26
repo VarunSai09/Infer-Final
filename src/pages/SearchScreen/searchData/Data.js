@@ -9,7 +9,7 @@ const Data = ({ data, searchTerm }) => {
     if(active===false){
       axios
         .post(
-          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/savedposts",
+          "https://j17uufls85.execute-api.ap-south-1.amazonaws.com/Infer-Prototype/savepost",
           { UserId: id,URL: data.Links, Title: data.Title,Tag: data.Author,Context:data.Context }
         )
 

@@ -29,7 +29,7 @@ const Login = (props) => {
   const handleApi = () => {
     axios
       .post(
-        "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/login",
+        "https://j17uufls85.execute-api.ap-south-1.amazonaws.com/Infer-Prototype/userlogin",
         {
           email: email,
           password: password,

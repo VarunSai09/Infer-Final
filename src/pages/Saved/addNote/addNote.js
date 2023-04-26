@@ -13,7 +13,7 @@ export default function AddNote({ open, onClose, post }) {
     if (userId !== undefined) {
       axios
         .post(
-          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/articlenotes",
+          "https://j17uufls85.execute-api.ap-south-1.amazonaws.com/Infer-Prototype/addnote",
           { DocumentId: DocumentID, note:notes }
         ).then((result) => {
           

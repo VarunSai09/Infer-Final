@@ -44,7 +44,7 @@ const Login = () => {
       console.log("Registering.......")
        axios
       .post(
-        "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/userdb",
+        "https://j17uufls85.execute-api.ap-south-1.amazonaws.com/Infer-Prototype/userregister",
         {
             name: name,
       email: email,
