@@ -1,62 +1,61 @@
 import "./rateNote.css";
 import React, { useState } from "react";
-import axios from "axios"
+import axios from "axios";
 
-import StarIcon from '@material-ui/icons/Star';
-export default function AddNote({ open, onClose,post }) {
+import StarIcon from "@material-ui/icons/Star";
+export default function AddNote({ open, onClose, post }) {
   const [rating, setRating] = useState(post.Rating);
-  const DocumentID=post.DocumentID
+  const DocumentID = post.DocumentID;
   // setRating=post.Rating
   // console.log(retreivedRating)
   // const retreivedRating=post.Rating
-// 
-  if(!open) {
-    return null
-    };
+  //
+  if (!open) {
+    return null;
+  }
   const handleClick = () => {
     // setRating(num);
-    const userId=localStorage.getItem("UserId")
-    
+    const userId = localStorage.getItem("UserId");
+
     if (userId !== undefined) {
       axios
         .post(
-          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/ratearticle",
-          { DocumentId: DocumentID, Rating:rating }
-        ).then((result) => {
-          
-          window.location.reload()
-        })
-   }
-  }
+          "https://j17uufls85.execute-api.ap-south-1.amazonaws.com/Infer-Prototype/ratearticle",
+          { DocumentId: DocumentID, Rating: rating }
+        )
+        .then((result) => {
+          window.location.reload();
+        });
+    }
+  };
 
   const renderStars = () => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       stars.push(
-        <StarIcon 
-          key={i} 
-          onClick={() => setRating(i)} 
-          style={{ color: i <= rating ? 'gold' : 'grey', cursor: 'pointer' }}
+        <StarIcon
+          key={i}
+          onClick={() => setRating(i)}
+          style={{ color: i <= rating ? "gold" : "grey", cursor: "pointer" }}
         />
       );
     }
     return stars;
-  }
+  };
 
-return (
+  return (
     <>
       <div className="body"> </div>
-      
+
       <div className="rate-popup">
         <h4>Rate this article </h4>
-        <div class="rate">
-          {renderStars()}
-        </div>
+        <div class="rate">{renderStars()}</div>
         <div className="review-note">
           <h4 className="review-note-header">Write a review</h4>
           <textarea
             id="review-note-input"
-            rows="4" cols="50"
+            rows="4"
+            cols="50"
             type="text"
             className="input-box-rate"
             placeholder="start typing here"
@@ -65,7 +64,9 @@ return (
         </div>
 
         <div className="buttons">
-          <button className="save-button-rate" onClick={handleClick}>Submit Rating</button>
+          <button className="save-button-rate" onClick={handleClick}>
+            Submit Rating
+          </button>
           <button className="cancel-button-rate" onClick={onClose}>
             Cancel
           </button>
@@ -74,10 +75,6 @@ return (
     </>
   );
 }
-
-
-
-
 
 //   return (
 //     <div>
@@ -88,19 +85,16 @@ return (
 //   );
 // }
 
-
-   
-  
 //   const [rated,setRated]=useState("")
 //   if (!open) return null;
 //   const rateClicked =(e)=>{
-    
+
 //   }
 //   console.log(rated)
 //   return (
 //     <>
 //       <div className="body"> </div>
-      
+
 //       <div className="rate-popup">
 //         <h4>Rate this article </h4>
 //         <div class="rate">
