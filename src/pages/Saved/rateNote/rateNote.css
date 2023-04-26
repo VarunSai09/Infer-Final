@@ -95,10 +95,11 @@ h4 {
   width: 409px;
   height: 402px;
 } */
-.input-box {
+.input-box-rate {
   box-sizing: border-box;
   position: absolute;
-
+  width: 400px;
+  height: 330px;
   left: 32px;
   top: 250px;
   background: #f6f6f6;
@@ -110,7 +111,7 @@ h4 {
   font-size: 0.51em;
 }
 
-.input-box::placeholder {
+.input-box-rate::placeholder {
   position: absolute;
   width: 172px;
   height: 27px;
@@ -136,7 +137,7 @@ h4 {
   position: absolute;
   width: 324px;
   height: 48px;
-  left: 70px;
+  left: 45px;
   top: 600px;
 }
 .save-button-rate {
@@ -184,7 +185,7 @@ h4 {
   .review-note-header{
     top: 150px
   }
-  .input-box{
+  .input-box-rate{
     left: 24px;
     top: 227px;
   }
@@ -218,7 +219,7 @@ h4 {
   .review-note-header {
     top: 95;
   }
-  .input-box {
+  .input-box-rate {
     top: 175px;
     width: 250px;
     height: 250;

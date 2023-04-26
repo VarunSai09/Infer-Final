@@ -32,8 +32,11 @@ export default function AddNote({ open, onClose, post }) {
         <h3 className="header-title">Add a Note</h3>
         <h3 className="note-title">{post.Title}</h3>
         <div className="input-div">
-          <input
+ 
+
+          <textarea
             id="add-note-input"
+            rows="4" cols="50"
             type="text"
             className="input-box"
             placeholder={"start typing here"}
