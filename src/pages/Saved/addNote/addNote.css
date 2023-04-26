@@ -58,12 +58,11 @@
   align-items: center;
   color: #222222;
 }
-.input-div{
-  
+.input-div {
 }
 #add-note-input {
-  width: 409px;
-  height: 402px;
+  width: 422px;
+  height: 363px;
 }
 .input-box {
   box-sizing: border-box;
@@ -106,7 +105,7 @@
   position: absolute;
   width: 324px;
   height: 48px;
-  left: 35px;
+  left: 45px;
   top: 675px;
 }
 .save-button {
@@ -135,7 +134,7 @@
   align-items: center;
   padding: 6px 36px;
   gap: 8px;
-  width: 123px;
+  width: 177px;
   height: 48px;
   border: 1px solid #305ba5;
   border-radius: 8px;
@@ -144,41 +143,37 @@
   flex-grow: 0;
 }
 @media screen and (max-width: 390px) {
-    .add-note-popup {
-      width: 300;
-    height: 550px;;
-    
+  .add-note-popup {
+    width: 300;
+    height: 550px;
+
     margin-top: 50px;
-      left: 40px;}
+    left: 40px;
+  }
 }
-.note-title{
+.note-title {
   width: fit-content;
   font-size: 18px;
 }
- #add-note-input {
-    width: 250px;
-    height: 300px;
-    left: 21;
-    top: 180;
-  }
-.input-box{
+#add-note-input {
+  width: 400px;
+  height: 450px;
+  left: 21;
+  top: 180;
+}
+.input-box {
   top: 175px;
-    width: 250px;
-    height: 250;
+  width: 250px;
+  height: 250;
 }
-.buttons-addNote{
-      width: 50;
-    height: 48px;
-    left: 117px;
-    top: 493px;
+.buttons-addNote {
+  width: 50;
+  height: 48px;
+  left: 190px;
+  top: 650px;
 }
-.save-button{
-  width: 110px;
-}
-.cancel-button{
-  width: 110px;
-}
-@media screen and (min-width:391px) and (max-width: 480px) {
+
+@media screen and (min-width: 391px) and (max-width: 480px) {
   .add-note-popup {
     width: 300;
     height: 550px;
@@ -258,8 +253,8 @@
     top: 50px;
   }
   #add-note-input {
-    width: 550px;
-    height: 400px;
+    width: 422px;
+    height: 363px;
     left: 13%;
     top: 20%;
   }

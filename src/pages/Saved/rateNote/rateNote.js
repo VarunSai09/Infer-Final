@@ -54,10 +54,11 @@ return (
         </div>
         <div className="review-note">
           <h4 className="review-note-header">Write a review</h4>
-          <input
+          <textarea
             id="review-note-input"
+            rows="4" cols="50"
             type="text"
-            className="input-box"
+            className="input-box-rate"
             placeholder="start typing here"
           />
           <div></div>

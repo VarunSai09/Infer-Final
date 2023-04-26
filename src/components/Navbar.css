@@ -78,7 +78,7 @@ body {
   position: relative;
   width: 125;
   height: 125;
-  left: 20rem;
+  left: 21rem;
   top: 0rem;
   border-radius: 358.343px;
 }
@@ -105,7 +105,7 @@ body {
   position: relative;
   top: 12rem;
   /* bottom: 4.8rem; */
-  right: 22rem;
+  right: 21rem;
   width: 85px;
   height: 16px;
   padding-top: 0;
@@ -129,7 +129,7 @@ body {
   position: relative;
   top: 10.5rem;
   /* bottom: 6rem; */
-  right: 22.2rem;
+  right: 21.2rem;
   width: fit-content;
   height: 25px;
   padding: 0;
