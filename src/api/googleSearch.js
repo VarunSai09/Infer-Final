@@ -11,7 +11,7 @@ import axios from "axios";
 
 export const searchData = async (term,id) => {
   const { data } = await axios.post(
-    "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/search",
+    "https://j17uufls85.execute-api.ap-south-1.amazonaws.com/Infer-Prototype/mediumsearch",
     { term ,id}
     // {
     //   params: {

@@ -23,7 +23,7 @@ export default function Navbar() {
     if (userId !== undefined) {
       axios
         .post(
-          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/userdetails",
+          "https://j17uufls85.execute-api.ap-south-1.amazonaws.com/Infer-Prototype/userdetails",
           { UserId: userId }
         )
         .then((result) => {
