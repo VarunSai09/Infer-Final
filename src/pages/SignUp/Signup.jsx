@@ -30,60 +30,67 @@ const Login = () => {
     }
   });
 
-
   const handleApi = () => {
     history.push("/");
   };
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Clicked")
+    console.log("Clicked");
     if (password !== passwordConfirm) {
       setError("Passwords do not match");
       console.log("error");
     } else if (password === passwordConfirm) {
-      console.log("Registering.......")
-       axios
-      .post(
-        "https://j17uufls85.execute-api.ap-south-1.amazonaws.com/Infer-Prototype/userregister",
+      console.log("Registering.......");
+      axios.post(
+        "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/userregister",
         {
-            name: name,
-      email: email,
-      passwordConfirm: passwordConfirm,
-      mobileNumber: mobileNumber,
+          Name: name,
+          Email: email,
+          PasswordConfirm: passwordConfirm,
+          MobileNumber: mobileNumber,
         }
       )
       .then((result) => {
-        console.log(result.data)
-        if(result.data.statusCode==401){
-          setError(result.data.body)
-        }
-        else if(result.data.statusCode==200){
+        console.log(result.data);
+        if (result.status == 401) {
+          setError(result.data.body);
+        } else if (result.status == 200) {
           // localStorage.setItem("UserId", result.data.UserId);
           // const UserId=localStorage.getItem(UserId)
           // console.log(UserId)
-          console.log(result.data)
-          const user = result.data;
+          console.log(result.data);
+          const user = result.data.response;
+          console.log( user)
           console.log(user.UserId);
 
           localStorage.setItem("UserId", user.UserId);
-          history.push("/home")
+          history.push("/home");
         }
-        
+        else {
+      setError("");
+    }
       })
+      .catch((response) => {
+        console.log(response);
+        if(response.response.status==401){
+          setError(response.response.data.message)
+        }
+         if(response.response.status==400){
+          setError(response.response.data.error)
+        }
+      });
       // setUserRegister(name, email, passwordConfirm, mobileNumber);
       // if(response !== undefined){
       //   console.log(response)
       // }
       // if(result_1.data.status)
       //  const result_1 = await registerUser
-    } else {
-      setError("");
-    }
+    } 
   }
 
   return (
     <div className="Signup-Page">
-      <div id="signupform" >
+      <div id="signupform">
         <div className="signupform">
           <img
             alt="Infer-logo"
@@ -150,23 +157,24 @@ const Login = () => {
                   placeholder="Retype your Password"
                 />
               </div>
-              </form>
-              </div>
-              {error && <div style={{ color: "red",position: "relative",bottom: "25px"}}>{error}</div>}
-              <div className="row-button-Signup" id="button" >
-                <button onClick={handleSubmit} >Signup</button>
-              </div>
-            
-
-  
-              <div id="registerd-user">
-                <p>Already have an account</p>
-                <a onClick={handleApi} className="registerd-user-login">
-                  Login
-                </a>
-
+            </form>
+          </div>
+          {error && (
+            <div style={{ color: "red", position: "relative", bottom: "25px" }}>
+              {error}
             </div>
-          
+          )}
+          <div className="row-button-Signup" id="button">
+            <button onClick={handleSubmit}>Signup</button>
+          </div>
+
+          <div id="registerd-user">
+            <p>Already have an account</p>
+            <a onClick={handleApi} className="registerd-user-login">
+              Login
+            </a>
+          </div>
+
           <label className="copyright">
             ©Copyright Infer Solutions, Inc. All Rights Reserved
           </label>

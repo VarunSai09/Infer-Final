@@ -9,15 +9,15 @@ const Data = ({ data, searchTerm }) => {
     if(active===false){
       axios
         .post(
-          "https://j17uufls85.execute-api.ap-south-1.amazonaws.com/Infer-Prototype/savepost",
-          { UserId: id,URL: data.Links, Title: data.Title,Tag: data.Author,Context:data.Context }
+          "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/savepost",
+          { UserId: id,Url: data.Links, Title: data.Title,Tag: data.Author,Context:data.Context }
         )
 
     }
     else{
        axios
-        .post("https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/unsavepost",
-        { UserId: id,URL: data.Links, Title: data.Title }
+        .post("https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/removesavedpost",
+        { UserId: id,Url: data.Links, Title: data.Title }
         )
     }
   }

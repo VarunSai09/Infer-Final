@@ -38,7 +38,8 @@ export default function App(props) {
     setLoading(true)
     const id = localStorage.getItem("UserId");
     const data = await searchData(term, id);
-    setGoogleData(data);
+    console.log(data);
+    setGoogleData(data.response);
     history.push("/search");
     setLoading(false)
   };

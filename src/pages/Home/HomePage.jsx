@@ -26,7 +26,10 @@ export default function HomePage({ setSearch }) {
    const setUserDetails=async()=>{
     const id = localStorage.getItem("UserId");
     const retreivedDetails = await retreiveUser(id);
-    const retreivedDe=retreivedDetails.data.body[0].SearchList
+    console.log(retreivedDetails)
+    
+    const retreivedDe=retreivedDetails.data.response.SearchHistory
+    // const Ret=retreivedDe;
     const Ret=JSON.parse(retreivedDe);
 
     setSearchHistory(Ret)

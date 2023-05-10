@@ -15,12 +15,12 @@ const Post = ({ post }) => {
 
   // }
   const handleRemove=()=>{
-    const id = localStorage.getItem("UserId");
-     axios
-        .post("https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/unsavepost",
-        { UserId: id,URL: post.UrlId, Title: post.Title }
-        )
-      window.location.reload();
+    // const id = localStorage.getItem("UserId");
+    //  axios
+    //     .post("https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/removesavedpost",
+    //     { UserId: id,Url: data.Links, Title: data.Title }
+    //     )
+    //   window.location.reload();
   }
   return (
     <>

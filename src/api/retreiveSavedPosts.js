@@ -1,7 +1,7 @@
 import axios from "axios";
 export const retreiveSavedPosts = async (UserId) => {
   const data = await axios.post(
-    "https://j17uufls85.execute-api.ap-south-1.amazonaws.com/Infer-Prototype/reterivesaved",
+    "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/getsavedpost",
     {
       UserId
     }

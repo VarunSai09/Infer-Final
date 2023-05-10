@@ -9,10 +9,10 @@
 
 import axios from "axios";
 
-export const searchData = async (term,id) => {
+export const searchData = async (Term,UserId) => {
   const { data } = await axios.post(
-    "https://j17uufls85.execute-api.ap-south-1.amazonaws.com/Infer-Prototype/mediumsearch",
-    { term ,id}
+    "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/mediumsearch",
+    { Term ,UserId}
     // {
     //   params: {
     //     key: "AIzaSyAIMBuNrGNeX1F1nznzo5A20PBhnG1rrFU",
