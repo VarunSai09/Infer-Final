@@ -31,7 +31,6 @@ export default function HomePage({ setSearch }) {
     const retreivedDe=retreivedDetails.data.response.SearchHistory
     // const Ret=retreivedDe;
     const Ret=JSON.parse(retreivedDe);
-
     setSearchHistory(Ret)
  
   }

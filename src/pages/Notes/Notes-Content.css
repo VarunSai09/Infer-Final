@@ -191,6 +191,7 @@ a:hover + .add-delete {
 .Notes-Display {
   padding-top: 120px;
   background-color: #fcffff;
+  height: 100vh;
 }
 @media screen and (max-width: 935px) {
   .NotesPage-Note {

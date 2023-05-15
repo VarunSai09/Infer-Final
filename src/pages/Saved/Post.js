@@ -15,18 +15,19 @@ const Post = ({ post }) => {
 
   // }
   const handleRemove=()=>{
-    // const id = localStorage.getItem("UserId");
-    //  axios
-    //     .post("https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/removesavedpost",
-    //     { UserId: id,Url: data.Links, Title: data.Title }
-    //     )
-    //   window.location.reload();
+    const id = localStorage.getItem("UserId");
+    const DocumentId=post.DocumentId;
+     axios
+        .post("https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/removesavedpost",
+        { UserId: id,DocumentId:DocumentId }
+        )
+      window.location.reload();
   }
   return (
     <>
       <div className="saved">
         <div className="saved-note">
-          <div className="note-header" key={post.DocumentID}>
+          <div className="note-header" key={post.DocumentId}>
             <a id="saved-title" href={post.UrlId} target="_blank" >
               {post.Title}
             </a>

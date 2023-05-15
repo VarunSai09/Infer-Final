@@ -17,7 +17,7 @@ const Post = ({ post }) => {
             <p id="Tags">Tags : </p>
             <label className="Tags">{post.Tag}</label>
           </div>
-          {post.SavedNotes ? <p>Notes:  "{post.SavedNotes}"</p>:<p>Context:  "{post.Context}"</p>}
+          {post.Notes ? <p>Notes:  "{post.Notes}"</p>:<p>Context:  "{post.Context}"</p>}
         </div>
 
       </div>

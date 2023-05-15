@@ -28,10 +28,10 @@ export default function AddProfilePic({ open, onClose }) {
         setProfileImage(imageData);
 
         fetch(
-          "https://c5rbbler50.execute-api.us-east-1.amazonaws.com/new/save-profile-inno",
+          "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/updateprofileimage",
           {
             method: "POST",
-            body: JSON.stringify({ image: imageData, UserId: id }),
+            body: JSON.stringify({ Image: imageData, UserId: id }),
           }
         ).then((result) => {
           console.log(result);

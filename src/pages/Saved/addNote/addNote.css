@@ -63,6 +63,7 @@
 #add-note-input {
   width: 422px;
   height: 363px;
+  padding: 15px 10px 10px 10px;
 }
 .input-box {
   box-sizing: border-box;

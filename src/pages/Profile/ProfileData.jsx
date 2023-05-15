@@ -28,16 +28,17 @@ const ProfileData = ({ setupdateDataUser }) => {
     if (userId !== undefined) {
       axios
         .post(
-          "https://j17uufls85.execute-api.ap-south-1.amazonaws.com/Infer-Prototype/userdetails",
+          "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/userdetails",
           { UserId: userId }
         )
         .then((result) => {
-          setData(result.data.body[0]);
-          setName(result.data.body[0].Name);
-          setEmail(result.data.body[0].Email);
-          setMobileNumber(result.data.body[0].MobileNumber);
-          if (result.data.body[0].ProfileImage) {
-            setImageUrl(result.data.body[0].ProfileImage);
+          console.log(result)
+          setData(result.data.response);
+          setName(result.data.response.Name);
+          setEmail(result.data.response.Email);
+          setMobileNumber(result.data.response.MobileNo);
+          if (result.data.response.ProfileImageUrl) {
+            setImageUrl(result.data.response.ProfileImageUrl);
           }
         });
     }

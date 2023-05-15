@@ -4,17 +4,17 @@ import React, { useState } from "react";
 export default function AddNote({ open, onClose, post }) {
   const [notes,setNotes]=useState()
   const [newNotes,setNewNotes]=useState()
-  const DocumentID=post.DocumentID
+  const DocumentID=post.DocumentId
   // console.log(DocumentID)
   if (!open) return null;
   const handleSubmit=(e)=>{
-    const userId=localStorage.getItem("UserId")
+    const UserId=localStorage.getItem("UserId")
     
-    if (userId !== undefined) {
+    if (UserId !== undefined) {
       axios
         .post(
-          "https://j17uufls85.execute-api.ap-south-1.amazonaws.com/Infer-Prototype/addnote",
-          { DocumentId: DocumentID, note:notes }
+          "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/addnote",
+          { DocumentId: DocumentID, Note:notes,UserId:UserId }
         ).then((result) => {
           
           window.location.reload()
@@ -40,7 +40,7 @@ export default function AddNote({ open, onClose, post }) {
             type="text"
             className="input-box"
             placeholder={"start typing here"}
-            value={post.SavedNotes}
+            value={post.Notes}
             // style={{height: "337.7px"}}
             onChange={(event) => setNotes(event.target.value)}
           />

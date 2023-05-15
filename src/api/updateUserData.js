@@ -1,17 +1,17 @@
 import axios from "axios";
 export const updateUser = async (
-  name,
-  email,
-  mobileNumber,
-  userId
+  Name,
+       Email,
+       MobileNo,
+       UserId
 ) => {
   const data = await axios.post(
-    "https://j17uufls85.execute-api.ap-south-1.amazonaws.com/Infer-Prototype/userdataupdate",
+    "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/updateuserdetails",
     {
-      name,
-       email,
-       mobileNumber,
-       userId
+      Name,
+       Email,
+       MobileNo,
+       UserId
     }
   );
 

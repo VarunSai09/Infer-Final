@@ -5,7 +5,7 @@ import axios from "axios";
 import StarIcon from "@material-ui/icons/Star";
 export default function AddNote({ open, onClose, post }) {
   const [rating, setRating] = useState(post.Rating);
-  const DocumentID = post.DocumentID;
+  const DocumentID = post.DocumentId;
   // setRating=post.Rating
   // console.log(retreivedRating)
   // const retreivedRating=post.Rating
@@ -15,13 +15,13 @@ export default function AddNote({ open, onClose, post }) {
   }
   const handleClick = () => {
     // setRating(num);
-    const userId = localStorage.getItem("UserId");
+    const UserId = localStorage.getItem("UserId");
 
-    if (userId !== undefined) {
+    if (UserId !== undefined) {
       axios
         .post(
-          "https://j17uufls85.execute-api.ap-south-1.amazonaws.com/Infer-Prototype/ratearticle",
-          { DocumentId: DocumentID, Rating: rating }
+          "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/ratearticle",
+          { DocumentId: DocumentID, Rating:rating,UserId:UserId }
         )
         .then((result) => {
           window.location.reload();

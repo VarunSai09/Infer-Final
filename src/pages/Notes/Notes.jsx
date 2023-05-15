@@ -20,13 +20,26 @@ export default function Home() {
     }
   });
 
+  // useEffect(() => {
+  //   const id=localStorage.getItem("UserId")
+  //   retreiveSavedPosts(id).then((result) => {
+
+  //     if(result.data.statusCode===200){
+  //     setPosts(result.data.body[0]);
+  //     setSearchResults(result.data.body[0]);
+  //     }
+      
+  //   });
+  // }, []);
+  
   useEffect(() => {
     const id=localStorage.getItem("UserId")
     retreiveSavedPosts(id).then((result) => {
-
-      if(result.data.statusCode===200){
-      setPosts(result.data.body[0]);
-      setSearchResults(result.data.body[0]);
+      console.log(result)
+      if(result.status===200){
+      console.log((result.data.response.SavedPosts))
+      setPosts(result.data.response.SavedPosts);
+      setSearchResults(result.data.response.SavedPosts);
       }
       
     });

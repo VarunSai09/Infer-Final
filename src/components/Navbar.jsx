@@ -30,7 +30,7 @@ export default function Navbar() {
         )
         .then((result) => {
           setData(result.data.response.Name);
-          if (result.data.response.ProfileImage) {
+          if (result.data.response.ProfileImageUrl) {
             setImageUrl(result.data.response.ProfileImageUrl);
           }
         });
