@@ -3,15 +3,14 @@
 // thunk.js
 import axios from 'axios';
 import { postDataRequest, postDataSuccess, postDataFailure,postDataUnauthorized } from './actions';
-
+import {API_Address} from "../../shared/constants"
 export const LoginAPI = (Email,Password) => {
-  // console.log(email)
-  // console.log(password)
+  const API={API_Address}.API_Address
   return (dispatch) => {
     dispatch(postDataRequest());
 
     axios
-      .post('https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/signin', {Email,Password})
+      .post(API+'signin', {Email,Password})
       .then((response) => {
         if (response.status === 200) {
           dispatch(postDataSuccess(response.data));
