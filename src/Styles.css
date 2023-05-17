@@ -2,7 +2,9 @@
     font-family: 'Avenir';
     
 }
-
+body{
+    margin: 0;
+}
 .spinner {
     margin: 0;
     position: relative;

@@ -1,0 +1,82 @@
+#Login-Page {
+  font-family: "Avenir Next";
+  background: url(./images/login-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+}
+.loginform {
+  border-radius: 8px;
+  margin: auto;
+  width: 50vh;
+  background-color: #ffffff;
+}
+.loginHeader {
+  display: inline-flex;
+}
+.infer-logo-Login {
+  left: calc(50% - 199.83px / 2 - 0.08px);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 50px;
+  margin-top: 1em;
+  width: fit-content;
+}
+#headerTitle{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.desc{
+     display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+     
+  position: relative;
+}
+
+.Login_Form{
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#Remember-Links{
+  display: inline-block;
+  font-family: "Avenir Next";
+}
+#forgot{
+  margin-left: 40px;
+}
+#Login{
+
+    width: 40vh;
+      justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#register-user{
+  display: inline-flex;
+  margin:0 auto;
+}
+.register-user-link{
+  margin: 16px auto 16px 10px;
+}
+.copyright-Login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 1em;
+}
+
+/* #version{
+    
+} */
