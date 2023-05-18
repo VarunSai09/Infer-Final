@@ -1,7 +1,7 @@
 import React from "react";
 import "../src/Styles.css";
 import { Switch, Route } from "react-router-dom";
-import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
 
 // import Navbar from "./components/Navbar";
 
@@ -18,7 +18,7 @@ export default function App(props) {
       
       {/* <Login /> */}
       <Switch>
-        <Route exact path="/" component={Login} />
+        <Route exact path="/" component={Signup} />
       </Switch>
     </div>
   );

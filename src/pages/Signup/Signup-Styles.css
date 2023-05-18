@@ -47,21 +47,15 @@
   align-items: center;
   text-align: center;
 }
-#Remember-Links{
-  display: inline-block;
-  font-family: "Avenir Next";
-}
-#forgot{
-  margin-left: 40px;
-}
-#Login{
+
+#Register{
 
     width: 40vh;
       justify-content: center;
   align-items: center;
   text-align: center;
 }
-#register-user{
+#Login-user{
   display: inline-flex;
   margin:0 auto;
 }

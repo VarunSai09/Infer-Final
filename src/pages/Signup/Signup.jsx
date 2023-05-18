@@ -5,22 +5,32 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+
 // import axios from "axios";
 import Button from '@mui/material/Button';
-import "./login-styles.css";
+import "./Signup-Styles.css";
 // import {API_Address} from "../../shared/constants"
 import { connect } from 'react-redux';
-import { LoginAPI } from './thunk';
+import { SignupAPI } from './thunk';
 
-const Login = ({loading, data, error, unauthorized, LoginAPI}) => {
+const Signup = ({loading, data, error, unauthorized, SignupAPI}) => {
   
-  // const API={API_Address}.API_Address
-  // console.log({LoginAPI})
+
   const history = useHistory("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [error, setError] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [errormsg, setErrorMsg] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [isValid, setValid] = useState(true);
+   const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handlePasswordConfirmChange = (event) => {
+    setPasswordConfirm(event.target.value);
+  };
 
   useEffect(() => {
     if (localStorage.getItem("UserId")) {
@@ -29,68 +39,36 @@ const Login = ({loading, data, error, unauthorized, LoginAPI}) => {
   });
   const handleEmail = (e) => {
     setEmail(e.target.value);
+    if (e.target.checkValidity()) {
+      setValid(true);
+    } else {
+      setValid(false);
+    }
+    
+    
   };
   const handlePass = (e) => {
     setPassword(e.target.value);
   };
-  const handleSignup = (e) => {
-    history.push("/signup");
+  const handleLogin = (e) => {
+   e.preventDefault();
   };
-  const handleApi = () => {
-    LoginAPI(email,password);
-    
-     if (loading) {
-        history.push("/home");
-     }
-     if (error) {
-       return <div>Error: {error}</div>;
-  }
-  
-      // .then((response) => {
-      //   console.log(response);
-
-      //   if (response.status == 200) {
-      //     console.log(response);
-      //     console.log(response.data.UserId);
-      //     const UserId = response.data.UserId;
-      //     localStorage.setItem("UserId", UserId);
-      //     history.push("/home");
-      //   }
-      // })
-
-      // .catch((error) => {
-      //   if (error.response) {
-      //     // The request was made and the server responded with a status code
-      //     const statusCode = error.response.status;
-      //     switch (statusCode) {
-      //       case 400:
-      //         // Handle 400 Bad Request error
-      //         console.error("Bad Request");
-      //         break;
-      //       case 401:
-      //         // Handle 401 Unauthorized error
-      //         console.error("Unauthorized");
-      //         break;
-      //       case 500:
-      //         // Handle 500 Internal Server Error
-      //         console.error("Internal Server Error");
-      //         break;
-      //       // Add more cases for other status codes as needed
-      //       default:
-      //         // Handle other status codes
-      //         console.error("An error occurred:", error.response.data);
-      //     }
-      //   } else if (error.request) {
-      //     // The request was made, but no response was received
-      //     console.error("No response received:", error.request);
-      //   } else {
-      //     // Something happened in setting up the request that triggered an error
-      //     console.error("Error:", error.message);
-      //   }
-      //   console.error("Error config:", error.config);
-      // });
+  const handleApi = (e) => {
+    e.preventDefault();
+      if (password !== passwordConfirm) {
+      setErrorMsg("Passwords do not match");
+      console.log("error");
+      } else if (password === passwordConfirm) {
+      SignupAPI(email,password,name,mobileNumber);
+      } 
   };
-
+  const handleKeyPress = (event) => {
+    const keyCode = event.keyCode || event.which;
+    const keyValue = String.fromCharCode(keyCode);
+    if (!/^\d+$/.test(keyValue)) {
+      event.preventDefault();
+    }
+  };
 
 
   function handleSubmit(e) {
@@ -287,124 +265,67 @@ const Login = ({loading, data, error, unauthorized, LoginAPI}) => {
           alt="Infer-logo"
           src="https://www.figma.com/file/IPy3pQjr57SW81vWN3dlBK/Infer?type=design&node-id=1123-2173&t=upl2K2MtOpYhB6dD-4"
         /> */}
-        <h2 id="headerTitle">Welcome Back!</h2>
-        <p className="desc">
-          Welcome to Infer! This is an MVP. Please enter your login details to
-          use the platform.
-        </p>
+        <h2 id="headerTitle">Welcome to Infer!</h2>
+        
         <div className="Login_Form">
           <Box onSubmit={handleSubmit}
             component="form"
             sx={{
-              "& > :not(style)": { m: 1, width: "80%", marginBottom: 0, marginBlockEnd: 0,fontFamily: 'Avenir Next' },marginBlockEnd: 0,
+              "& > :not(style)": { m: 1, width: "80%", marginBottom: 0, marginBlockEnd: 0,fontFamily: 'Avenir Next' },marginBlockEnd: '1em',
             }}
             noValidate
             autoComplete="off"
           >
             <TextField sx={{
+              "& > :not(style)": {fontFamily: 'Avenir Next' } }} value={name}
+                onChange={(event) => setName(event.target.value)} id="outlined-basic" label="Enter your Name" variant="outlined" />
+            <TextField sx={{
               "& > :not(style)": {fontFamily: 'Avenir Next' } }} value={email}
-                onChange={handleEmail} id="outlined-basic" label="Email" variant="outlined" />
+              type="email" 
+        className={!isValid ? 'invalid' : ''} 
+                onChange={handleEmail} id="outlined-basic" s label="Enter your Email" variant="outlined" />
+               {!isValid && <p className="error-message" style={{ color: 'red' }}>Invalid email address</p>}
+                <TextField sx={{
+              "& > :not(style)": {fontFamily: 'Avenir Next' } }} required value={mobileNumber}
+                  onChange={(event) => setMobileNumber(event.target.value)} onKeyPress={handleKeyPress} id="outlined-basic" label="Enter your Mobile Number" variant="outlined" />
             <TextField sx={{
               "& > :not(style)": {fontFamily: 'Avenir Next' } }}
               value={password}
                 onChange={handlePass}
               id="outlined-basic"
-              label="Password"
+              label="Enter your Password"
+              type="password"
+              variant="outlined"
+            />
+            <TextField sx={{
+              "& > :not(style)": {fontFamily: 'Avenir Next' } }}
+               value={passwordConfirm}
+                  onChange={handlePasswordConfirmChange}
+              id="outlined-basic"
+              label="Re-Enter your Password"
               type="password"
               variant="outlined"
             />
           </Box>
-          <FormGroup id="Remember-Links">
-            <FormControlLabel sx={{
-              "& > :not(style)": {fontFamily: 'Avenir Next' } }} control={<Checkbox />} label="Remember Me" />
-            <a id="forgot" href="/">
-              Forgot Password
-            </a>
-          </FormGroup>
            <Button  sx={{
-              "& > :not(style)": {fontFamily: 'Avenir Next' } }} onClick={handleApi} id="Login" variant="contained" disableElevation>
-      Login
+              "& > :not(style)": {fontFamily: 'Avenir Next' } }} onClick={handleApi} id="Register" variant="contained" disableElevation>
+      Register
     </Button>
     {unauthorized && <p>Unauthorized access. Please login.</p>}
       {error && <p>Error: {error}</p>}
       
-    <div id="register-user">
-                <p className="">New User?</p>
-                <a onClick={handleSignup} href="/" className="register-user-link">
-                   Register here
+    <div id="Login-user">
+                <p className="">Already a User?</p>
+                <a  href="/" onClick={handleLogin} className="register-user-link">
+                   Login here
                 </a>
               </div>
         </div>
          <label className="copyright-Login">
           ©Copyright Infer Solutions, Inc. All Rights Reserved
         </label>
-        {/* <p id="version">Version 1.0</p> */}
       </div>
-      {/* <div className="loginform">
-        <img
-          className="infer-logo-Login"
-          alt="Infer-logo"
-          src="https://www.infersol.com/wp-content/uploads/2020/02/logo.png"
-        />
-        <p id="version">Version 1.0</p>
-        <FormHeader />
-        <div className="input-fields-login">
-          <form onSubmit={handleSubmit}>
-            <div className="row">
-              <input
-                value={email}
-                onChange={handleEmail}
-                type="text"
-                id="email"
-                className="email"
-                placeholder="Email"
-              />
-            </div>
-            <div className="row">
-              <input
-                value={password}
-                onChange={handlePass}
-                type="password"
-                id="password"
-                className="password"
-                placeholder="Password"
-              />
-            </div>
-          </form>
-        </div>
-        {error && (
-          <div style={{ color: "red", position: "relative", bottom: "11px" }}>
-            {error}
-          </div>
-        )}
-
-        <div className="remembrer-links">
-          <div className="remember">
-            
-            <input type="checkbox" id="box" className="check-box" />
-          
-            <label className="remember-label" for="box">
-              Remember Me
-            </label>
-            <a id="forgot" href="/">
-              Forgot Password
-            </a>
-          </div>
-        </div>
-        <div className="Login-Button" id="button">
-          <button onClick={handleApi}>Login</button>
-        </div>
-        <div id="register-user">
-          <p>New User?</p>
-          <a onClick={handleSignup} className="register-user-link">
-            Register here
-          </a>
-        </div>
-
-        <label className="copyright-Login">
-          ©Copyright Infer Solutions, Inc. All Rights Reserved
-        </label>
-      </div> */}
+     
     </div>
   );
 };
@@ -415,7 +336,7 @@ const Login = ({loading, data, error, unauthorized, LoginAPI}) => {
 });
 
 const mapDispatchToProps = {
-  LoginAPI,
+  SignupAPI,
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);
 // export default Login;

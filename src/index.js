@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { Provider } from 'react-redux';
-import store from '../src/pages/Login/store';
+import store from '../src/pages/Signup/store';
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
