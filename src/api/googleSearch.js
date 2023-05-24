@@ -9,10 +9,11 @@
 
 import axios from "axios";
 
-export const searchData = async (Term,UserId) => {
-  const { data } = await axios.post(
-    "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/mediumsearch",
-    { Term ,UserId}
+export const searchData = async (SearchTerm,UserId) => {
+  const id=localStorage.getItem("UserId")
+  const data = await axios.post(
+    " https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/findrelevantdocument",
+    { SearchTerm ,UserId}
     // {
     //   params: {
     //     key: "AIzaSyAIMBuNrGNeX1F1nznzo5A20PBhnG1rrFU",
@@ -21,6 +22,7 @@ export const searchData = async (Term,UserId) => {
     //   },
     // }
   );
+  
 
   return data;
 };

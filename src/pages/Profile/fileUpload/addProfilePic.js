@@ -24,7 +24,7 @@ export default function AddProfilePic({ open, onClose }) {
           /^data:image\/[a-z]+;base64,/,
           ""
         );
-        // console.log(imageData);
+
         setProfileImage(imageData);
 
         fetch(

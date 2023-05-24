@@ -14,7 +14,7 @@ export default function Profile() {
   })
   return (
     <>
-    <Navbar/>
+
       <SettingsNav />
       <SettingsData />
     </>

@@ -383,3 +383,35 @@ span {
   position: absolute;
   right: -6px;
 }
+
+
+.spinner {
+    margin: 0;
+    position: relative;
+    bottom: 461px;
+    left: 48.3%;
+    width: 50px;
+    height: 50px;
+}
+
+@media screen and (max-width:390px){
+    .spinner{
+            bottom: 417px;
+    left: 35.3%;
+    }
+}
+@media screen and (min-width:391px) and (max-width:480px){
+    .spinner{
+           bottom: 407px;
+    left: 36.3%;
+    }
+}
+@media screen and (max-width:1100px){
+   .spinner{
+       bottom: 365px;
+    left: 57.7%;
+   }
+    
+}
+
+    

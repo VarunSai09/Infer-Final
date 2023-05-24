@@ -34,11 +34,12 @@ export default function Home() {
   }, []);
   return (
     <>
-      <Navbar />
+
       <SavedNav />
       <div className="SavedContent-Display">
+        {posts?
         <ListPage posts={posts} />
-      </div>
+:<></>}</div>
     </>
   );
 }

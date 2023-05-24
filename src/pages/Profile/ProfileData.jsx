@@ -4,7 +4,9 @@ import "./profile-data.css";
 import { useHistory } from "react-router-dom";
 import AddProfilePic from "./fileUpload/addProfilePic";
 import RemoveProfilePic from "./fileDelete/removeProfilePic";
-const ProfileData = ({ setupdateDataUser }) => {
+import {UpdateUserAPI} from "./thunk"
+import { connect } from 'react-redux';
+const ProfileData = ({loading, error, unauthorized, UpdateUserAPI}) => {
   const history = useHistory();
   var [name, setName] = useState();
   var [email, setEmail] = useState();
@@ -46,9 +48,8 @@ const ProfileData = ({ setupdateDataUser }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(name, email, mobileNumber, userId);
-
-    setupdateDataUser(name, email, mobileNumber, userId);
+    UpdateUserAPI(name, email, mobileNumber, userId);
+    
   }
 
   return (
@@ -153,4 +154,14 @@ const ProfileData = ({ setupdateDataUser }) => {
     </>
   );
 };
-export default ProfileData;
+
+  const mapStateToProps = (state) => ({
+  loading: state.loading,
+  data: state.data,
+  error: state.error,
+});
+
+const mapDispatchToProps = {
+  UpdateUserAPI,
+};
+export default connect(mapStateToProps, mapDispatchToProps) (ProfileData);

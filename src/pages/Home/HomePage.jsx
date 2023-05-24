@@ -3,17 +3,23 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import * as BsIcons from "react-icons/bs";
 import {retreiveUser} from "../../api/retreiveDetails"
+// import {searchAPI} from "./thunk"
+import { connect } from 'react-redux';
+import BounceLoader from "react-spinners/BounceLoader";
+
 import axios from "axios";
 // import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import "../../components/Searchbar.css";
 import search from "../SearchScreen/search";
 import NavbarSide from "../../components/Navbar";
-export default function HomePage({ setSearch }) {
+const HomePage=({loading, error, unauthorized, Search,SearchResults})=> {
+    const [loading_Search, setLoadingSearch] = useState(false);
   const history = useHistory("");
   const [userid, setUserId] = useState("");
   var [searchHistory, setSearchHistory] = useState([]);
-
+  const [resultsObtained,setResultsObtained]=useState([])
+  console.log(resultsObtained)
   useEffect(() => {
     if (!localStorage.getItem("UserId")) {
       history.push("/");
@@ -35,19 +41,27 @@ export default function HomePage({ setSearch }) {
  
   }
   const [term, setTerm] = useState("");
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault()
+    console.log(userid)
     if (
       /^[a-zA-Z0-9].*/.test(term) ||
       /^[a-zA-Z0-9]+[" "]/.test(term) ||
       /^[" "]+[a-zA-Z0-9]/.test(term)
     ) {
-      setSearch(term.toLowerCase(), userid);
+      history.push("/search?SearchTerm="+term.toLowerCase())
+      // console.log(term)
+      // setLoadingSearch(true);
+      // const dataFetched=Search(term.toLowerCase(), userid);
+      // //  setResultsObtained(dataFetched)
+      // console.log(SearchResults)
+      // setLoadingSearch(false);
+      
     }
   };
   return (
     <>
-      <NavbarSide /> 
+      
       <Navbar className="navbar-search" bg="light" expand="lg">
         <img
           className="Logo-Home"
@@ -55,6 +69,9 @@ export default function HomePage({ setSearch }) {
           alt="Logo"
         />
         <p className="Library-mobile Library">Library Search</p>
+        {loading_Search && (
+        <BounceLoader color="#787e83" size={70} className="spinner" />
+      )}
 
         <form className="d-flex" id="Search" onSubmit={handleSubmit}>
           <div className="Search">
@@ -120,7 +137,19 @@ export default function HomePage({ setSearch }) {
         <h3>
           Type the name of an article or Reasearch paper in the Search bar{" "}
         </h3>
+         
       </div>
+      
     </>
   );
 }
+ const mapStateToProps = (state) => ({
+  loading: state.loading,
+  data: state.data,
+  error: state.error,
+});
+
+const mapDispatchToProps = {
+  // searchAPI,
+};
+export default connect(mapStateToProps, mapDispatchToProps) (HomePage);

@@ -46,7 +46,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      <Navbar />
+      
       <NotesNav />
       <div className="Notes-Display">
         <ListPage posts={posts} />
