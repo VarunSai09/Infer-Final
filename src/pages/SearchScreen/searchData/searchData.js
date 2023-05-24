@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Data from "./Data";
-const SearchData = ({ googleData, searchTerm }) => {
-  
+const SearchData = ({ resultsObtained }) => {
+  console.log(resultsObtained);
   return (
     <div>
       {/* <p className="results-count" id="results-count">
@@ -9,8 +9,9 @@ const SearchData = ({ googleData, searchTerm }) => {
         <span className="google-count">{googleData.length} </span> search
         results for <span className="google-count">"{searchTerm}"</span>
       </p> */}
-      {googleData ? googleData.map((data, id) => (
-        <Data data={data} key={id} searchTerm={searchTerm} />
+      {resultsObtained ? resultsObtained.map((item, index) => (
+        
+        <Data data={item} key={index}  />
       )):<div className="No-SearchResults"><h3>Sorry there are no results </h3></div>}
     </div>
   );

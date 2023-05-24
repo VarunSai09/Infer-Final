@@ -58,6 +58,7 @@
 #Tags-SearchScreen {
   font-style: normal;
   font-weight: 500;
+  margin: 0 auto;
   font-size: 16px;
   line-height: 22px;
   color: #222222;
@@ -88,6 +89,7 @@
   border: 1px solid #a6a6a6;
   border-radius: 1000px;
   flex: none;
+  font-size:16px;
   order: 0;
   flex-grow: 0;
 }
@@ -98,7 +100,7 @@
   padding: 0px;
   gap: 16px;
   width: 447px;
-  margin-top: 5px;
+  margin: 5px 0;
   height: 23px;
   left: 0px;
   top: 45px;

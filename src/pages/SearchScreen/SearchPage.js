@@ -8,7 +8,7 @@ import * as BsIcons from "react-icons/bs";
 import "../../components/Searchbar.css";
 import SearchData from "./searchData/searchData";
 
-const SearchScreen = ({ searchTerm, setSearch, googleData }) => {
+const SearchScreen = ({ resultsObtained }) => {
   const history = useHistory("");
     const [userid, setUserId] = useState("");
   
@@ -23,6 +23,7 @@ const SearchScreen = ({ searchTerm, setSearch, googleData }) => {
       history.push("/");
     }
     const id = localStorage.getItem("UserId");
+    console.log(resultsObtained);
     setUserId(id);
   }, []);
   const [term, setTerm] = useState("");
@@ -33,7 +34,7 @@ const SearchScreen = ({ searchTerm, setSearch, googleData }) => {
       /^[a-zA-Z0-9]+[" "]/.test(term) ||
       /^[" "]+[a-zA-Z0-9]/.test(term)
     ) {
-      setSearch(term.toLocaleLowerCase(),userid);
+      // setSearch(term.toLocaleLowerCase(),userid);
     }
   };
   return (
@@ -64,7 +65,8 @@ const SearchScreen = ({ searchTerm, setSearch, googleData }) => {
         </form>
       </Navbar>
       <div className="SearchPage">
-        <SearchData googleData={googleData} setSearch={setSearch} searchTerm={searchTerm}/>
+        
+        <SearchData resultsObtained={resultsObtained}/>
       </div>
     </>
   );

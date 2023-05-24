@@ -41,8 +41,8 @@ const Login = (props) => {
         
         if (response.status == 200) {
           console.log(response);
-          console.log(response.data.UserId);
-          const UserId = response.data.UserId;
+          console.log(response.data.response.UserId);
+          const UserId = response.data.response.UserId;
           localStorage.setItem("UserId", UserId);
           history.push("/home");
         }

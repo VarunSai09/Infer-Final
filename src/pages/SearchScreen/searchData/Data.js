@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import axios from "axios";
-const Data = ({ data, searchTerm }) => {
+const Data = ({ data }) => {
   const [active, setActive] = useState(false);
   const handleSavePost=()=>{
     setActive(!active)
@@ -10,14 +10,14 @@ const Data = ({ data, searchTerm }) => {
       axios
         .post(
           "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/savepost",
-          { UserId: id,Url: data.Links, Title: data.Title,Tag: data.Author,Context:data.Context }
+          { UserId: id,Url: data.DocumentLink, Title: data.Title,Context:data.Summary }
         )
 
     }
     else{
        axios
         .post("https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/removesavedpost",
-        { UserId: id,Url: data.Links, Title: data.Title }
+        { UserId: id,Url: data.DocumentLink, Title: data.Title }
         )
     }
   }
@@ -25,8 +25,8 @@ const Data = ({ data, searchTerm }) => {
     <>
       <div className="SearcContent">
         <div className="note">
-          <div className="search-title-header">
-            <a href={data.Links} target="_blank" id="Search-Title">
+          <div className="search-title-header">{console.log(data)}
+            <a href={data.DocumentLink} target="_blank" id="Search-Title">
               {data.Title}
             </a>
             <label
@@ -66,10 +66,13 @@ const Data = ({ data, searchTerm }) => {
             </label>
           </div>
           <div className="TagFrame">
-            <p id="Tags-SearchScreen">Author : </p>
-            <p className="Tags-SearchScreen">{data.Author}</p>
+            <p id="Tags-SearchScreen">Author:</p>
+            {data.Tags.map((tag, tagIndex) => (
+              <li className="Tags-SearchScreen"key={tagIndex}>{tag}</li>
+              ))}
+            {/* <p className="Tags-SearchScreen">{data.Author}</p> */}
           </div>
-          <p>{data.Context}</p>
+          <p>{data.Summary}</p>
         </div>
       </div>
     </>

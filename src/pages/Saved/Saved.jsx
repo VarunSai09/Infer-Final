@@ -25,9 +25,9 @@ export default function Home() {
     retreiveSavedPosts(id).then((result) => {
       console.log(result)
       if(result.status===200){
-      console.log((result.data.response.SavedPosts))
-      setPosts(result.data.response.SavedPosts);
-      setSearchResults(result.data.response.SavedPosts);
+      console.log((result.data.response))
+      setPosts(result.data.response);
+      setSearchResults(result.data.response);
       }
       
     });
