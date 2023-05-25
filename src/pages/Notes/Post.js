@@ -13,10 +13,7 @@ const Post = ({ post }) => {
               {post.Title}
             </a>
           </div>
-          <div className="TagFrame-Saved">
-            <p id="Tags">Tags : </p>
-            <label className="Tags">{post.Tag}</label>
-          </div>
+         
           {post.Notes ? <p>Notes:  "{post.Notes}"</p>:<p>Context:  "{post.Context}"</p>}
         </div>
 

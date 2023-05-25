@@ -6,6 +6,7 @@ import Data from "./searchData/Data";
 import SearchPage from "./SearchPage";
 import { SearchApi } from "../../redux/actions";
 import { Redirect, useLocation } from "react-router-dom";
+import BounceLoader from "react-spinners/BounceLoader";
 import SearchNav from "./searchNav";
 import SearchData from "./searchData/searchData";
 import { connect } from "react-redux";
@@ -20,10 +21,10 @@ function SearchPageData({ loading, error, unauthorized, SearchApi }) {
   const userid = localStorage.getItem("UserId");
   console.log(userid);
   const searchTerm = searchParams.get("SearchTerm");
-  
+  const [resultsLoading,setResultsLoading]=useState(false)
 
   useEffect(() => {
-    //  dispatch(SearchApi(searchTerm));
+    setResultsLoading(true);
     axios
       .post(
         "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/findrelevantdocument",
@@ -31,6 +32,7 @@ function SearchPageData({ loading, error, unauthorized, SearchApi }) {
       )
       .then((response) => {
         if (response.status == 200) {
+          setResultsLoading(false);
           const SearchResults = response.data.response[0];
           setResultsObtained(SearchResults);
           const SearchResults1 = response.data.response[1];
@@ -51,9 +53,11 @@ function SearchPageData({ loading, error, unauthorized, SearchApi }) {
 
   return (
     <>
+      
       {searchTerm !== "" ? (
         <>
           <SearchNav />
+          
           <div className="SearchPage">
             <div>
               {resultsObtained ? (
@@ -77,6 +81,7 @@ function SearchPageData({ loading, error, unauthorized, SearchApi }) {
               {resultsObtained2 ? (
                 resultsObtained2.map((item, index) => (
                   <Data data={item} key={index} />
+                  
                 ))
               ) : (
                 <div className="No-SearchResults">
@@ -84,12 +89,16 @@ function SearchPageData({ loading, error, unauthorized, SearchApi }) {
                 </div>
               )}
             </div>
+            {resultsLoading && <BounceLoader color="#787e83" display="flex" size={70} id="spinner"  />
+            }
           </div>
         </>
+        
       ) : (
         <Redirect to={"/home"} />
       )}
     </>
+    
   );
 }
 const mapStateToProps = (state) => ({

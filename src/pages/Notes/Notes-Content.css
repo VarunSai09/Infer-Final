@@ -1,4 +1,6 @@
-.NotesPage{
+#notes-loader{
+  margin:35vh auto;
+}.NotesPage{
     display: flex;
     height: -webkit-fit-content;
     height: -moz-fit-content;

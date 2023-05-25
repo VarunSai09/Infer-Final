@@ -55,10 +55,6 @@ const Post = ({ post }) => {
               </a>
             </div>
           </div>
-          <div className="TagFrame-Saved">
-            <p id="Tags">Tags : </p>
-            <label className="Tags">{post.Tag}</label>
-          </div>
           <p>{post.Context}</p>
         </div>
         <AddNote
