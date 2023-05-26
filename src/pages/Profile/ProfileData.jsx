@@ -7,7 +7,7 @@ import RemoveProfilePic from "./fileDelete/removeProfilePic";
 import {UpdateUserAPI} from "./thunk"
 import { connect } from 'react-redux';
 const ProfileData = ({loading, error, unauthorized, UpdateUserAPI}) => {
-  const history = useHistory();
+  // const history = useHistory();
   var [name, setName] = useState();
   var [email, setEmail] = useState();
   var [mobileNumber, setMobileNumber] = useState();

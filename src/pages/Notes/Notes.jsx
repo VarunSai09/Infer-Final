@@ -37,10 +37,8 @@ export default function Home() {
     setResultsLoading(true)
     const id=localStorage.getItem("UserId")
     retreiveSavedPosts(id).then((result) => {
-      console.log(result)
       if(result.status===200){
         setResultsLoading(false);
-      console.log((result.data.response))
       setPosts(result.data.response);
       setSearchResults(result.data.response);
       }

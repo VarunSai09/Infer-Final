@@ -19,7 +19,7 @@ function SearchPageData({ loading, error, unauthorized, SearchApi }) {
   const [resultsObtained1, setResultsObtained1] = useState([]);
   const [resultsObtained2, setResultsObtained2] = useState([]);
   const userid = localStorage.getItem("UserId");
-  console.log(userid);
+  // console.log(userid);
   const searchTerm = searchParams.get("SearchTerm");
   const [resultsLoading,setResultsLoading]=useState(false)
 
@@ -48,7 +48,7 @@ function SearchPageData({ loading, error, unauthorized, SearchApi }) {
       });
   }, []);
   useEffect(() => {
-    console.log(resultsObtained);
+    // console.log(resultsObtained);
   });
 
   return (

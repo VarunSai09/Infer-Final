@@ -25,7 +25,7 @@ const Data = ({ data }) => {
     <>
       <div className="SearcContent">
         <div className="note">
-          <div className="search-title-header">{console.log(data)}
+          <div className="search-title-header">
             <a href={data.DocumentLink} target="_blank" id="Search-Title">
               {data.Title}
             </a>
@@ -72,7 +72,7 @@ const Data = ({ data }) => {
               ))}
             {/* <p className="Tags-SearchScreen">{data.Author}</p> */}
           </div>
-          <p>{data.Summary}</p>
+          <p>{data.Summary.slice(0,400)}</p>
         </div>
       </div>
     </>

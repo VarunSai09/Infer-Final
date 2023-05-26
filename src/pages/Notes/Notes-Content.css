@@ -34,6 +34,10 @@
 }
 #saved-title {
   transition: width 0s;
+  cursor: pointer;
+}
+.Context-title{
+  
 }
 .NotesPage-Note a {
   font-size: 0.5em;

@@ -55,7 +55,7 @@ const Post = ({ post }) => {
               </a>
             </div>
           </div>
-          <p>{post.Context}</p>
+          <p>{post.Context.slice(0,400)}</p>
         </div>
         <AddNote
         

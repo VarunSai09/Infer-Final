@@ -21,6 +21,7 @@
 }
 #saved-title {
   transition: width 0s;
+  cursor: pointer;
 }
 .saved-note a {
   font-size: 0.5em;

@@ -23,7 +23,6 @@ const SearchNav= ({ resultsObtained }) => {
       history.push("/");
     }
     const id = localStorage.getItem("UserId");
-    console.log(resultsObtained);
     setUserId(id);
   }, []);
   const [term, setTerm] = useState("");

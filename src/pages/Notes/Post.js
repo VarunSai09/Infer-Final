@@ -14,7 +14,7 @@ const Post = ({ post }) => {
             </a>
           </div>
          
-          {post.Notes ? <p>Notes:  "{post.Notes}"</p>:<p>Context:  "{post.Context}"</p>}
+          {post.Notes ? <p>Notes:  "{post.Notes}"</p>:<p>Context:  "{post.Context.slice(0,400)}"</p>}
         </div>
 
       </div>

@@ -25,7 +25,7 @@ const SearchScreen = ({ resultsObtained }) => {
     const id = localStorage.getItem("UserId");
     console.log(resultsObtained);
     setUserId(id);
-  }, []);
+  }, [userid]);
   const [term, setTerm] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();

@@ -7,12 +7,12 @@ import {retreiveUser} from "../../api/retreiveDetails"
 import { connect } from 'react-redux';
 import BounceLoader from "react-spinners/BounceLoader";
 
-import axios from "axios";
+// import axios from "axios";
 // import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import "../../components/Searchbar.css";
-import search from "../SearchScreen/search";
-import NavbarSide from "../../components/Navbar";
+// import search from "../SearchScreen/search";
+// import NavbarSide from "../../components/Navbar";
 const HomePage=({loading, error, unauthorized, Search,SearchResults})=> {
     const [loading_Search, setLoadingSearch] = useState(false);
   const history = useHistory("");

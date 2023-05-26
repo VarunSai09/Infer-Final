@@ -9,7 +9,7 @@ import {API_Address} from "../../shared/constants"
 export const SearchAPI = ( SearchTerm ,UserId) => {
 
   const API={API_Address}.API_Address
-  console.log(API)
+
 
   return(dispatch) => {
     console.log(SearchTerm ,UserId)
