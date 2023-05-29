@@ -1,53 +1,36 @@
+// _author_ = "Varun Sai Reddy T"
+// _copyright_ = "Copyright (C) 2023 Infer Solutions, Inc"
+// _version_ = "1.0"
+
+//importing libraries and modules
 import React from "react";
-import "../src/Styles.css";
 import { Switch, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+
+// importing Pages
+import "../src/Styles.css";
 import Login from "./pages/Login/Login";
 import Navbar from "./components/Navbar";
-import BounceLoader from "react-spinners/BounceLoader";
-
-// PAGES'
 import Signup from "./pages/SignUp/Signup";
-import Home from "./pages/Home/Home";
+import HomePage from "./pages/Home/HomePage";
 import Profile from "./pages/Profile/Profile";
 import Saved from "./pages/Saved/Saved";
 import Settings from "./pages/Settings/Settings";
 import Search from "./pages/SearchScreen/search";
 import Notes from "./pages/Notes/Notes";
-import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import { searchData } from "./api/googleSearch";
 
-export default function App(props) {
-  const history = useHistory();
-  const [searchTerm, setSearchTerm] = useState("");
-  const [userID, setUserID] = useState("");
-  const [googleData, setGoogleData] = useState({});
-
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    const id = localStorage.getItem("UserId");
-    setUserID(id);
-  });
-  const setSearch = async (term) => {
-    setSearchTerm(term);
-    setLoading(true);
-    const id = localStorage.getItem("UserId");
-    console.log(id);
-    const data = await searchData(term, id);
-    console.log(data);
-    setGoogleData(data.response);
-    history.push("/search");
-    setLoading(false);
-  };
-
+export default function App() {
   return (
     <div className="App">
       <Switch>
+        {" "}
+        {/* switching pages*/}
         <Route exact path="/" component={Login} />
         <Route exact path="/signup" component={Signup} />
-        <Route
-          render={({ location }) => {
-            if (location.pathname === "/" || location.pathname === "/signup") {
+        <Route                            
+          render={({ location }) => { 
+            if (location.pathname === "/" || location.pathname === "/signup") {   {/* Checks the location to avoid display of Navbar*/}
               return null;
             }
             return <Navbar />;
@@ -55,27 +38,13 @@ export default function App(props) {
         />
       </Switch>
       <Switch>
-        <Route
-          exact
-          path="/home"
-          component={() => <Home />}
-        />
-        <Route
-          exact
-          path="/search"
-          component={() => (
-            <Search
-              
-            />
-          )}
-        />
+        <Route exact path="/home" component={HomePage} />
+        <Route exact path="/search" component={Search} />
         <Route exact path="/saved" component={Saved} />
         <Route exact path="/notes" component={Notes} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/settings" component={Settings} />
       </Switch>
-
-     
     </div>
   );
 }

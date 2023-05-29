@@ -1,20 +1,23 @@
+// _author_ = "Varun Sai Reddy T"
+// _copyright_ = "Copyright (C) 2023 Infer Solutions, Inc"
+// _version_ = "1.0"
+
+//importing libraries and modules
 import React, { useState } from "react";
-import "./Saved-Content.css";
 import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
+import axios from "axios";
+
+//importing pages
 import AddNote from "./addNote/addNote";
 import RateNote from "./rateNote/rateNote";
-import axios from "axios";
-const Post = ({ post }) => {
-  const [openAddNote, setOpenAddNote] = useState(false);
-  const [openRateNote, setOpenRateNote] = useState(false);
-  // const history=useHistory('')
-  //   function handleSubmit(e){
-  //     e.preventDefault();
-  //     history.push('/saved/add-note')
+import "./Saved-Content.css";
 
-  // }
-  const handleRemove=()=>{
+const Post = ({ post }) => {
+  const [openAddNote, setOpenAddNote] = useState(false);      //Assigning the state of addnote 
+  const [openRateNote, setOpenRateNote] = useState(false);     //Assigning the state of rateNote 
+
+  const handleRemove=()=>{      //Making an call for removesavedpost
     const id = localStorage.getItem("UserId");
     const DocumentId=post.DocumentId;
      axios
@@ -27,16 +30,16 @@ const Post = ({ post }) => {
     <>
       <div className="saved">
         <div className="saved-note">
-          <div className="note-header" key={post.DocumentId}>
+          <div className="note-header" key={post.DocumentId}>  {/* Displaying the documnets retreived from API  */}
             <a id="saved-title" href={post.UrlId} target="_blank" >
               {post.Title}
             </a>
             <div className="add-delete" id="add-delete">
-              <a
+              <a                                               
                 className="add-delete-saved"
                 id="add-note-saved"
                 onClick={() => setOpenAddNote(true)}
-              >
+              >                                               {/*Add note for the saved posts*/}
                 <FaIcons.FaRegStickyNote />
                 <span className="add-note-span">Add a note</span>
               </a>
@@ -44,11 +47,11 @@ const Post = ({ post }) => {
                 className="add-delete-saved"
                 id="rate-note-saved"
                 onClick={() => setOpenRateNote(true)}
-              >
+              >                                                {/*Rate note for the saved posts*/}
                 <MdIcons.MdOutlineStarRate className="rate-note-icon" />
                 <span className="rate-note-span">Rate Article</span>
               </a>
-              <a className="add-delete-saved" id="delete-note" onClick={handleRemove}>
+              <a className="add-delete-saved" id="delete-note" onClick={handleRemove}>  {/*Remove Saved posts*/}
                 <MdIcons.MdDeleteForever className="delete-icon" />
                 <span className="delete-note-span" />
                 Remove
@@ -70,11 +73,3 @@ const Post = ({ post }) => {
 };
 export default Post;
 
-// <div className="note">
-//   <h1>{props.title}</h1>
-//   <div className="TagFrame">
-//     <p>{props.tags}</p>
-//     <p className="Tags">{props.Tags}</p>
-//   </div>
-//   <p>{props.content}</p>
-// </div>

@@ -1,25 +1,29 @@
+// _author_ = "Varun Sai Reddy T"
+// _copyright_ = "Copyright (C) 2023 Infer Solutions, Inc"
+// _version_ = "1.0"
+
+//importing librarires and modules
 import React from "react";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import * as BsIcons from "react-icons/bs";
-import {retreiveUser} from "../../api/retreiveDetails"
-// import {searchAPI} from "./thunk"
 import { connect } from 'react-redux';
 import BounceLoader from "react-spinners/BounceLoader";
 
-// import axios from "axios";
-// import Container from "react-bootstrap/Container";
+//Importing Pages
+import {retreiveUser} from "../../api/retreiveDetails"
 import Navbar from "react-bootstrap/Navbar";
 import "../../components/Searchbar.css";
-// import search from "../SearchScreen/search";
-// import NavbarSide from "../../components/Navbar";
+
+
 const HomePage=({loading, error, unauthorized, Search,SearchResults})=> {
-    const [loading_Search, setLoadingSearch] = useState(false);
+  //Assigning values to constants using useState
+  const [loading_Search, setLoadingSearch] = useState(false); 
   const history = useHistory("");
   const [userid, setUserId] = useState("");
   var [searchHistory, setSearchHistory] = useState([]);
-  const [resultsObtained,setResultsObtained]=useState([])
-  console.log(resultsObtained)
+  
+  // Checking if the userID present if not redirected to login and if present userdetails are being fetched
   useEffect(() => {
     if (!localStorage.getItem("UserId")) {
       history.push("/");
@@ -28,14 +32,14 @@ const HomePage=({loading, error, unauthorized, Search,SearchResults})=> {
     setUserId(id);
     setUserDetails(id)
   }, []);
-  
+    
+   //Function call for user details retreivals 
    const setUserDetails=async()=>{
     const id = localStorage.getItem("UserId");
-    const retreivedDetails = await retreiveUser(id);
+    const retreivedDetails = await retreiveUser(id); //Api call being made
     console.log(retreivedDetails)
     
-    const retreivedDe=retreivedDetails.data.response.SearchHistory
-    // const Ret=retreivedDe;
+    const retreivedDe=retreivedDetails.data.response.SearchHistory  //Response from APi is being assigned to constant fro search History
     const Ret=JSON.parse(retreivedDe);
     setSearchHistory(Ret)
  
@@ -49,13 +53,7 @@ const HomePage=({loading, error, unauthorized, Search,SearchResults})=> {
       /^[a-zA-Z0-9]+[" "]/.test(term) ||
       /^[" "]+[a-zA-Z0-9]/.test(term)
     ) {
-      history.push("/search?SearchTerm="+term.toLowerCase())
-      // console.log(term)
-      // setLoadingSearch(true);
-      // const dataFetched=Search(term.toLowerCase(), userid);
-      // //  setResultsObtained(dataFetched)
-      // console.log(SearchResults)
-      // setLoadingSearch(false);
+      history.push("/search?SearchTerm="+term.toLowerCase())  //On submitting the search the page is getting redirected to search scrren woth parameters being passed in url
       
     }
   };
@@ -69,7 +67,7 @@ const HomePage=({loading, error, unauthorized, Search,SearchResults})=> {
           alt="Logo"
         />
         <p className="Library-mobile Library">Library Search</p>
-        {loading_Search && (
+        {loading_Search && (        //If the loading_Search is true a spinner is to initated to show loading
         <BounceLoader color="#787e83" size={70} className="spinner" />
       )}
 
@@ -88,7 +86,7 @@ const HomePage=({loading, error, unauthorized, Search,SearchResults})=> {
               <BsIcons.BsSearch />
             </p>
             <div className="dropdown">
-              {searchHistory?searchHistory
+              {searchHistory?searchHistory    //If search History is present it is mapped to displaY in the home page
                 .filter((item) => {
                   const searchTerm = term;
                   const searchList = item;
@@ -111,8 +109,6 @@ const HomePage=({loading, error, unauthorized, Search,SearchResults})=> {
         </form>
       </Navbar>
       <div className="home">
-        {/* <img src="" alt="searchIcon" id="searchIcon"/> */}
-
         <svg
           width="136"
           height="136"
@@ -143,13 +139,5 @@ const HomePage=({loading, error, unauthorized, Search,SearchResults})=> {
     </>
   );
 }
- const mapStateToProps = (state) => ({
-  loading: state.loading,
-  data: state.data,
-  error: state.error,
-});
 
-const mapDispatchToProps = {
-  // searchAPI,
-};
-export default connect(mapStateToProps, mapDispatchToProps) (HomePage);
+export default (HomePage);

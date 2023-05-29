@@ -1,11 +1,18 @@
-import "./addNote.css";
+// _author_ = "Varun Sai Reddy T"
+// _copyright_ = "Copyright (C) 2023 Infer Solutions, Inc"
+// _version_ = "1.0"
+
+//importing modules and libraries
 import axios from "axios"
 import React, { useState } from "react";
+
+//importing pages
+import "./addNote.css";
+
 export default function AddNote({ open, onClose, post }) {
   const [notes,setNotes]=useState()
   const [newNotes,setNewNotes]=useState()
   const DocumentID=post.DocumentId
-  // console.log(DocumentID)
   if (!open) return null;
   const handleSubmit=(e)=>{
     const UserId=localStorage.getItem("UserId")
@@ -13,7 +20,7 @@ export default function AddNote({ open, onClose, post }) {
     if (UserId !== undefined) {
       axios
         .post(
-          "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/addnote",
+          "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/addnote",     //APi call to add a note for the post
           { DocumentId: DocumentID, Note:notes,UserId:UserId }
         ).then((result) => {
           

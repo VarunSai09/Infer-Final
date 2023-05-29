@@ -1,13 +1,17 @@
+// _author_ = "Varun Sai Reddy T"
+// _copyright_ = "Copyright (C) 2023 Infer Solutions, Inc"
+// _version_ = "1.0"
+
+//importing libraries and modules
 import React from "react";
-
-import SavedNav from "./Saved-Nav";
 import BounceLoader from "react-spinners/BounceLoader";
-
-import {retreiveSavedPosts} from "../../api/retreiveSavedPosts"
 import { useState, useEffect } from "react";
-import ListPage from "./ListPage";
-import Navbar from "../../components/Navbar";
 import { useHistory } from "react-router-dom";
+
+//importing pages
+import SavedNav from "./Saved-Nav";
+import {retreiveSavedPosts} from "../../api/retreiveSavedPosts"
+import ListPage from "./ListPage";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -23,12 +27,12 @@ export default function Home() {
   });
 
   useEffect(() => {
-    setResultsLoading(true)
+    setResultsLoading(true) //Setting the lading spinner true
     const id=localStorage.getItem("UserId")
-    retreiveSavedPosts(id).then((result) => {
+    retreiveSavedPosts(id).then((result) => { //Making an API call for retreiveSavedPosts
       if(result.status===200){
-        setResultsLoading(false)
-      setPosts(result.data.response);
+        setResultsLoading(false) //Setting the loading spinner false
+      setPosts(result.data.response);   //response assigned to constant
       setSearchResults(result.data.response);
       }
       
@@ -39,10 +43,11 @@ export default function Home() {
 
       <SavedNav />
       <div className="SavedContent-Display">
-        {resultsLoading && <BounceLoader color="#787e83" display="flex" size={70} id="saved-loader"  />}
+        {resultsLoading && <BounceLoader color="#787e83" display="flex" size={70} id="saved-loader"  />}    {/*Display of loading spinner */}
+        
         {posts?
         <ListPage posts={posts} />
-:<></>}</div>
+:<>No posts avaible</>}</div>
 
     </>
   );

@@ -1,11 +1,19 @@
+// _author_ = "Varun Sai Reddy T"
+// _copyright_ = "Copyright (C) 2023 Infer Solutions, Inc"
+// _version_ = "1.0"
+
+//importing librarires and modules
 import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import axios from "axios";
+
 const Data = ({ data }) => {
+  
   const [active, setActive] = useState(false);
   const handleSavePost=()=>{
     setActive(!active)
     const id = localStorage.getItem("UserId");
+    //Checking if state of search post is true or false if false then it is not saved 
     if(active===false){
       axios
         .post(
@@ -25,7 +33,9 @@ const Data = ({ data }) => {
     <>
       <div className="SearcContent">
         <div className="note">
+        
           <div className="search-title-header">
+             { /*Data from the map is used to display the documnets*/}
             <a href={data.DocumentLink} target="_blank" id="Search-Title">
               {data.Title}
             </a>
@@ -35,6 +45,7 @@ const Data = ({ data }) => {
               className="save-post"
               onClick={handleSavePost}
             >
+              {/*Checkig the state of document wether it is save or not to display relevant icon */}
               {active !== true && (
                 <svg
                   width="16"
@@ -72,7 +83,7 @@ const Data = ({ data }) => {
               ))}
             {/* <p className="Tags-SearchScreen">{data.Author}</p> */}
           </div>
-          <p>{data.Summary.slice(0,400)}</p>
+          <p>{data.Summary.slice(0,400)}</p>  {/*Summary is being sliced or restricted to specific length */}
         </div>
       </div>
     </>

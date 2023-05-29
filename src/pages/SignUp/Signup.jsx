@@ -1,10 +1,17 @@
-import React, { useState, useEffect } from "react";
-import FormHeader from "./Formheader";
-import { useHistory } from "react-router-dom";
+// _author_ = "Varun Sai Reddy T"
+// _copyright_ = "Copyright (C) 2023 Infer Solutions, Inc"
+// _version_ = "1.0"
 
+//importing modules and libraries
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
+
+//importing pages
 import "./Signup-styles.css";
-const Login = () => {
+import FormHeader from "./Formheader";
+
+const Signup = () => {
   // const Navigate=useNavigate('');
   const history = useHistory("");
 
@@ -14,23 +21,22 @@ const Login = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
-  // const [userData, setUserData] = useState("");
 
-  const handlePasswordChange = (event) => {
+  const handlePasswordChange = (event) => {                     {/* Handling the input value for password*/}
     setPassword(event.target.value);
   };
 
   const handlePasswordConfirmChange = (event) => {
     setPasswordConfirm(event.target.value);
   };
-
-  useEffect(() => {
+  
+  useEffect(() => {                                               {/* checking if userID is present or not and deleting it*/}
     if (localStorage.getItem("token")) {
       localStorage.removeItem("token");
     }
   });
 
-  const handleApi = () => {
+  const handleApi = () => {                                       {/* HAndling the API for lOgin page*/}
     history.push("/");
   };
   function handleSubmit(e) {
@@ -39,8 +45,8 @@ const Login = () => {
     if (password !== passwordConfirm) {
       setError("Passwords do not match");
       console.log("error");
-    } else if (password === passwordConfirm) {
-      console.log("Registering.......");
+    } else if (password === passwordConfirm) {                    {/*checking the requirements for Register function and making an API call for it */}
+      
       axios.post(
         "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/userregister",
         {
@@ -160,7 +166,7 @@ const Login = () => {
             </form>
           </div>
           {error && (
-            <div style={{ color: "red", position: "relative", bottom: "25px" }}>
+            <div style={{ color: "red", position: "relative", bottom: "25px" }}>      {/*Error display if exists any */}
               {error}
             </div>
           )}
@@ -183,4 +189,4 @@ const Login = () => {
     </div>
   );
 };
-export default Login;
+export default Signup;

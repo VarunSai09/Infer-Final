@@ -1,8 +1,16 @@
+// _author_ = "Varun Sai Reddy T"
+// _copyright_ = "Copyright (C) 2023 Infer Solutions, Inc"
+// _version_ = "1.0"
+
+//importing libraries and modules
 import React, { useState } from "react";
-import "./SettingData.css"
 import * as BsIcons from "react-icons/bs"
 import * as AiIcons from "react-icons/ai"
 import axios from "axios"
+
+//importing pages
+import "./SettingData.css"
+
 export default function Settings() {
   const [lightTheme,setLightTheme]=useState('false');
   const [darkTheme,setDarkTheme]=useState('false');
@@ -16,7 +24,7 @@ export default function Settings() {
     const id = localStorage.getItem("UserId");
     // console.log(id);
     axios.post(
-      "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/deletesearchhistory",
+      "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/deletesearchhistory",  //API call to delete search history
       { UserId: id }
     );
   }

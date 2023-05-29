@@ -1,7 +1,14 @@
+// _author_ = "Varun Sai Reddy T"
+// _copyright_ = "Copyright (C) 2023 Infer Solutions, Inc"
+// _version_ = "1.0"
+
+//importing libraries and modules
 import React, { useState } from "react";
-import "./Notes-Content.css";
 import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
+
+//importing pages
+import "./Notes-Content.css";
 
 const Post = ({ post }) => {
   return (

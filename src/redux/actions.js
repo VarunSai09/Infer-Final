@@ -1,7 +1,14 @@
+// _author_ = "Varun Sai Reddy T"
+// _copyright_ = "Copyright (C) 2023 Infer Solutions, Inc"
+// _version_ = "1.0"
 
+//importing libraries and modules
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
-import {API_Address} from "../shared/constants" ;
 import axios from "axios"
+
+//importing pages 
+import {API_Address} from "../shared/constants" ;
+
 export const SearchApi = createAsyncThunk("searchResultsR",async(SearchTerm)=>{
   console.log(SearchTerm);
   const UserId=localStorage.getItem("UserId")
@@ -31,10 +38,6 @@ const actionsToDo=createSlice({
     state.isLoading=false;
     state.data=action.payload;
     });
-    // builder.addCase(SearchApi.rejected,(state,action)=>{
-    // console.log("Error",action.payload)
-    // state.isError=true;
-    // });e
   }
 })
 

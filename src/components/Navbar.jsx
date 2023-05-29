@@ -1,9 +1,16 @@
+// _author_ = "Varun Sai Reddy T"
+// _copyright_ = "Copyright (C) 2023 Infer Solutions, Inc"
+// _version_ = "1.0"
+
+//importing modules and libraries
 import React, { useState, useEffect } from "react";
 import { IconContext } from "react-icons";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
+
+//importing pages
 import { SidebarData } from "./SlidebarData";
 import "./Navbar.css";
 
@@ -18,18 +25,30 @@ export default function Navbar() {
 
   useEffect(() => {
     const id = localStorage.getItem("UserId");
+    {
+      /* Extracting the UserId stored in LocalStorage */
+    }
     setUserID(id);
   }, []);
 
   useEffect(() => {
     if (userId !== undefined) {
+      {
+        /* making an API call to retreive user details */
+      }
       axios
         .post(
           "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/userdetails",
           { UserId: userId }
         )
         .then((result) => {
+          {
+            /* Setting all the output from API to a constanat */
+          }
           setData(result.data.response.Name);
+          {
+            /* Checking if the details have an profile image url and setting it */
+          }
           if (result.data.response.ProfileImageUrl) {
             setImageUrl(result.data.response.ProfileImageUrl);
           }
@@ -38,6 +57,9 @@ export default function Navbar() {
   }, [userId]);
 
   function myFunction(x) {
+    {
+      /* Checking if the page is in mobile view to adjust the size of navbar */
+    }
     if (x.matches != mobileBar) {
       setMobileBar(!mobileBar);
     }
@@ -45,6 +67,9 @@ export default function Navbar() {
 
   var mobileQuery = window.matchMedia("(max-width: 800px)");
   myFunction(mobileQuery);
+  {
+    /*Making call for mobileBar when it reaches the specific width */
+  }
   mobileQuery.addListener(myFunction);
 
   const showMobileBar = () => {
@@ -62,9 +87,12 @@ export default function Navbar() {
             <FaIcons.FaBars onClick={showMobileBar} />
           </Link>
         </div>
+        {/* Checking if mobileBar is called and displaying the page wirh respect to mobile view */}
         {mobileBar ? (
           <nav className={mobileBarVisible ? "nav-menu active" : "nav-menu"}>
             <li className="navbar-toggle" onClick={hideMobileBar}>
+              {" "}
+              {/* Handling nav for mobile view */}
               <Link to="#" className="menu-close">
                 <AiIcons.AiOutlineClose />
               </Link>
@@ -74,11 +102,15 @@ export default function Navbar() {
             </div>
             <div className="welcome-frame">
               <p className="welcome">Welcome Back,</p>
-              <p className="name">{data}</p>
+              <p className="name">{data}</p>{" "}
+              {/*Displaying the name obtainned from response of API */}
             </div>
 
             <ul className="nav-menu-items">
               {SidebarData.map((item, index) => {
+                {
+                  /* Mapping the items present in sidebarData to display the menu items */
+                }
                 return (
                   <li
                     key={index}
@@ -94,80 +126,67 @@ export default function Navbar() {
               })}
             </ul>
           </nav>
-        ) : (
-          <nav className="nav-menu active">
-            <li className="navbar-toggle">
-              <Link to="#" className="menu-close">
-                <AiIcons.AiOutlineClose />
-              </Link>
-            </li>
-            <div className="Avatar-frame">
-              <img className="Avatar" src={imageUrl} alt="Avatr" />
-            </div>
-            <div className="welcome-frame">
-              <p className="welcome">Welcome Back,</p>
-              <p className="name">
-                <span id="UserName_Nav">{data}</span>
-              </p>
-            </div>
+        ) :
+            /* This is called only if the above condition for mobbileBar fails */
+             (
+          (
+            <nav className="nav-menu active">
+              <li className="navbar-toggle">
+                <Link to="#" className="menu-close">
+                  <AiIcons.AiOutlineClose />
+                </Link>
+              </li>
+              <div className="Avatar-frame">
+                <img className="Avatar" src={imageUrl} alt="Avatr" />
+              </div>
+              <div className="welcome-frame">
+                <p className="welcome">Welcome Back,</p>
+                <p className="name">
+                  <span id="UserName_Nav">{data}</span>
+                </p>
+              </div>
 
-            <ul className="nav-menu-items">
-              {SidebarData.map((item, index) => {
-                return (
-                  <>
-                    <li key={index} className={item.cName}>
-                      <Link to={item.path}>
-                        {item.icon}
-                        {item.pageName == window.location.pathname.slice(1) ? (
-                          <>
-                            <div className="selectedItem">
+              <ul className="nav-menu-items">
+                {SidebarData.map((item, index) => {
+                  return (
+                    <>
+                      <li key={index} className={item.cName}>
+                        <Link to={item.path}>
+                          {item.icon}
+                          {/* Checking if location of page to highlight the menu option */}
+                          {item.pageName ==
+                          window.location.pathname.slice(1) ? (
+                            <>
+                              <div className="selectedItem">
+                                <span>{item.title}</span>
+                              </div>
+                              <svg
+                                className="side-line"
+                                width="4"
+                                height="36"
+                                viewBox="0 0 4 36"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M4 0V0C1.79086 0 0 1.79086 0 4V32C0 34.2091 1.79086 36 4 36V36V0Z"
+                                  fill="#305BA5"
+                                />
+                              </svg>
+                            </>
+                          ) : (
+                            <>
                               <span>{item.title}</span>
-                            </div>
-                            <svg
-                              className="side-line"
-                              width="4"
-                              height="36"
-                              viewBox="0 0 4 36"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                              // style="top: 16.8;"
-                            >
-                              <path
-                                d="M4 0V0C1.79086 0 0 1.79086 0 4V32C0 34.2091 1.79086 36 4 36V36V0Z"
-                                fill="#305BA5"
-                              />
-                            </svg>
-                          </>
-                        ) : (
-                          <>
-                            <span>{item.title}</span>
-                          </>
-                        )}
-                      </Link>
-                      {/* {item.pageName == window.location.pathname.slice(1) ? (
-                        <div className="side-line">
-                          <svg
-                            width="4"
-                            height="36"
-                            viewBox="0 0 4 36"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M4 0V0C1.79086 0 0 1.79086 0 4V32C0 34.2091 1.79086 36 4 36V36V0Z"
-                              fill="#305BA5"
-                            />
-                          </svg>
-                        </div>
-                      ) : (
-                        <></>
-                      )} */}
-                    </li>
-                  </>
-                );
-              })}
-            </ul>
-          </nav>
+                            </>
+                          )}
+                        </Link>
+                      </li>
+                    </>
+                  );
+                })}
+              </ul>
+            </nav>
+          )
         )}
       </IconContext.Provider>
     </>

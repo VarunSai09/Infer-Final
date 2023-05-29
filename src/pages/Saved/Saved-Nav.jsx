@@ -1,5 +1,11 @@
+// _author_ = "Varun Sai Reddy T"
+// _copyright_ = "Copyright (C) 2023 Infer Solutions, Inc"
+// _version_ = "1.0"
+
+//importing libraries and modules
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
+//importing pages
 import "./Saved-Nav.css";
 function SavedNav() {
   return (

@@ -1,9 +1,17 @@
-import React, { useState, useEffect } from "react";
-import FormHeader from "./Formheader";
-import { useHistory } from "react-router-dom";
+// _author_ = "Varun Sai Reddy T"
+// _copyright_ = "Copyright (C) 2023 Infer Solutions, Inc"
+// _version_ = "1.0"
 
+
+//importing libraries and modules
+import React, { useState, useEffect } from "react";
+
+import { useHistory } from "react-router-dom";
 import axios from "axios";
+
+//importing pages&styles
 import "./Login-styles.css";
+import FormHeader from "./Formheader";
 
 const Login = (props) => {
   // const Navigate=useNavigate('');
@@ -13,20 +21,20 @@ const Login = (props) => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (localStorage.getItem("UserId")) {
+    if (localStorage.getItem("UserId")) {      {/* checking if userID is present or not and deleting it*/}
       localStorage.removeItem("UserId");
     }
   });
-  const handleEmail = (e) => {
+  const handleEmail = (e) => {          {/* Taking input value*/}
     setEmail(e.target.value);
   };
-  const handlePass = (e) => {
+  const handlePass = (e) => {           {/* Taking input value*/}
     setPassword(e.target.value);
   };
-  const handleSignup = (e) => {
+  const handleSignup = (e) => {         {/* Handling the signup button*/}
     history.push("/signup");
-  };
-  const handleApi = () => {
+  };  
+  const handleApi = () => {           {/* Login API call*/}
     axios
       .post(
         "https://fhnsgxnpa9.execute-api.us-east-1.amazonaws.com/v1/signin",
@@ -42,29 +50,10 @@ const Login = (props) => {
         if (response.status == 200) {
           console.log(response);
           console.log(response.data.response.UserId);
-          const UserId = response.data.response.UserId;
-          localStorage.setItem("UserId", UserId);
+          const UserId = response.data.response.UserId;       {/* setting userID for login validation and user details retreival*/}
+          localStorage.setItem("UserId", UserId);   
           history.push("/home");
-        }
-        //  else if (response.status == 400) {
-      //     // result.preventDefault();
-      //     setError("Ener both email and password");
-      //   } else if (response.status == 401) {
-      //     // result.preventDefault();
-      //     setError("Enterd details are incorrect");
-      //   } else if (response.status == 520) {
-      //     // result.preventDefault();
-      //     setError("Forbidden");
-      //   } else {
-      //     setError("");
-      //   }
-
-      //   // Navigate("/home")
- 
-      })
-      // .catch((response) => {
-      //   console.log(response);
-      // });
+        } })
       .catch(error => {
     if (error.response) {
       // The request was made and the server responded with a status code
@@ -109,9 +98,9 @@ const Login = (props) => {
           src="https://www.infersol.com/wp-content/uploads/2020/02/logo.png"
         />
         <p id="version">Version 1.0</p>
-        <FormHeader />
+        <FormHeader />      
         <div className="input-fields-login">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>      {/*Handling the data to assign values */}
             <div className="row">
               <input
                 value={email}
@@ -134,8 +123,8 @@ const Login = (props) => {
             </div>
           </form>
         </div>
-        {error && (
-          <div style={{ color: "red", position: "relative", bottom: "11px" }}>
+        {error && (                                           
+          <div style={{ color: "red", position: "relative", bottom: "11px" }}>      {/* display of error message if arised*/}
             {error}
           </div>
         )}
@@ -154,11 +143,11 @@ const Login = (props) => {
           </div>
         </div>
         <div className="Login-Button" id="button">
-          <button onClick={handleApi}>Login</button>
+          <button onClick={handleApi}>Login</button>      {/*Calling the API to hanfle LOgin*/}
         </div>
         <div id="register-user">
           <p>New User?</p>
-          <a onClick={handleSignup} className="register-user-link">
+          <a onClick={handleSignup} className="register-user-link">   {/* New User registreation redirected to signup page*/}
             Register here
           </a>
         </div>

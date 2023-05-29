@@ -1,13 +1,21 @@
+// _author_ = "Varun Sai Reddy T"
+// _copyright_ = "Copyright (C) 2023 Infer Solutions, Inc"
+// _version_ = "1.0"
+
+//importing libraries and modules
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./profile-data.css";
+import { connect } from 'react-redux';
 import { useHistory } from "react-router-dom";
+
+//importing pages
+import "./profile-data.css";
 import AddProfilePic from "./fileUpload/addProfilePic";
 import RemoveProfilePic from "./fileDelete/removeProfilePic";
 import {UpdateUserAPI} from "./thunk"
-import { connect } from 'react-redux';
+
 const ProfileData = ({loading, error, unauthorized, UpdateUserAPI}) => {
-  // const history = useHistory();
+  //Definig useState variable to assign values
   var [name, setName] = useState();
   var [email, setEmail] = useState();
   var [mobileNumber, setMobileNumber] = useState();
@@ -25,7 +33,7 @@ const ProfileData = ({loading, error, unauthorized, UpdateUserAPI}) => {
     setUserID(id);
   }, []);
 
-  useEffect(() => {
+  useEffect(() => {  //retreiving userdetails
 
     if (userId !== undefined) {
       axios
@@ -34,7 +42,7 @@ const ProfileData = ({loading, error, unauthorized, UpdateUserAPI}) => {
           { UserId: userId }
         )
         .then((result) => {
-          console.log(result)
+          console.log(result)       //setting the data from API using useState
           setData(result.data.response);
           setName(result.data.response.Name);
           setEmail(result.data.response.Email);
@@ -48,7 +56,7 @@ const ProfileData = ({loading, error, unauthorized, UpdateUserAPI}) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    UpdateUserAPI(name, email, mobileNumber, userId);
+    UpdateUserAPI(name, email, mobileNumber, userId);  //API call using redux to upadate User Details
     
   }
 

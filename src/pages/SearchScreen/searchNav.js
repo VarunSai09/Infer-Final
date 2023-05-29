@@ -1,23 +1,22 @@
+// _author_ = "Varun Sai Reddy T"
+// _copyright_ = "Copyright (C) 2023 Infer Solutions, Inc"
+// _version_ = "1.0"
+
+//importing librarires and modules
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import * as BsIcons from "react-icons/bs";
+
+//immporting pages
+import "../../components/Searchbar.css";
 import "./searchPage.css";
 import "./SearchData.css";
-import Navbar from "react-bootstrap/Navbar";
-// import Searchbar from "../../components/Searchbar"
-import * as BsIcons from "react-icons/bs";
-import "../../components/Searchbar.css";
-import SearchData from "./searchData/searchData";
 
 const SearchNav= ({ resultsObtained }) => {
   const history = useHistory("");
-    const [userid, setUserId] = useState("");
+  const [userid, setUserId] = useState("");
   
-  // useEffect(() => {
-  //   if (searchTerm === "") {
-  //     history.push("/home");
-  //   }
-  //   //eslint-disable-next-line
-  // }, [searchTerm]);
   useEffect(() => {
     if (!localStorage.getItem("UserId")) {
       history.push("/");
@@ -33,7 +32,7 @@ const SearchNav= ({ resultsObtained }) => {
       /^[a-zA-Z0-9]+[" "]/.test(term) ||
       /^[" "]+[a-zA-Z0-9]/.test(term)
     ) {
-      // setSearch(term.toLocaleLowerCase(),userid);
+      
     }
   };
   return (
@@ -54,7 +53,6 @@ const SearchNav= ({ resultsObtained }) => {
               type="text"
               value={term}
               aria-label="Search"
-              // onClick={handleClick}
               onChange={(event) => setTerm(event.target.value)}
             ></input>
             <p id="Search-Logo">
